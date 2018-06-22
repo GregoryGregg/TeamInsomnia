@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 06/22/2018 01:06:01 PM
+// Create Date: 06/22/2018 01:13:31 PM
 // Design Name: 
-// Module Name: Top Module
+// Module Name: TopModule
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
