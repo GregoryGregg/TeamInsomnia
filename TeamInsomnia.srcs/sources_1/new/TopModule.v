@@ -36,36 +36,11 @@ module TopModule(
     output ENB
     );
     
-    reg FB_r, LR_r, S_r;
-    
-    always @(*)
-    begin
-        if (forward)
-        begin
-            FB_r <= 1;
-            S_r <= 1;
-        end
-        if (left)
-        begin
-            LR_r <= 1;
-            S_r <= 0;
-        end
-        if (right)
-        begin
-            LR_r <= 0;
-            S_r <= 0;
-        end
-        if (back)
-        begin
-            FB_r <= 0;
-            S_r <= 1;
-        end
-    end
-    
     Motor_Control MotorSurface(
-        .FB(FB_r),
-        .LR(LR_r),
-        .S(S_r),
+        .forward(forward),
+        .back(back),
+        .left(left),
+        .right(right),
         .clk(clk),
         .sw(sw),
         .brake(~brake),

@@ -21,9 +21,10 @@
 
 
 module Motor_Control(
-    input FB,
-    input LR,
-    input S,
+    input forward,
+    input back,
+    input left,
+    input right,
     input clk,
     input [5:0]sw,
     input brake,
@@ -37,6 +38,32 @@ module Motor_Control(
     
     assign ENB = ENA;
     
+       reg FB_r, LR_r, S_r;
+     
+     always @(*)
+     begin
+         if (forward)
+         begin
+             FB_r <= 1;
+             S_r <= 1;
+         end
+         if (left)
+         begin
+             LR_r <= 1;
+             S_r <= 0;
+         end
+         if (right)
+         begin
+             LR_r <= 0;
+             S_r <= 0;
+         end
+         if (back)
+         begin
+             FB_r <= 0;
+             S_r <= 1;
+         end
+     end
+    
     PWM speed (
         .clk(clk),
         .brake(brake),
@@ -45,9 +72,9 @@ module Motor_Control(
         );
         
     Direction_Conversion Decode (
-        .FB(FB),
-        .LR(LR),
-        .S(S),
+        .FB(FB_r),
+        .LR(LR_r),
+        .S(S_r),
         .brake(brake),
         .IN1(IN1),
         .IN2(IN2),
