@@ -38,6 +38,9 @@ module TopModule(
     
     reg[1:0] direction_r;
     
+    initial
+        direction_r = 2'b00;
+    
     always @(*)
     begin
         if (forward)
@@ -54,7 +57,7 @@ module TopModule(
         .direction(direction_r),
         .clk(clk),
         .sw(sw),
-        .brake(brake),
+        .brake(~brake),
         .IN1(IN1),
         .IN2(IN2),
         .IN3(IN3),
