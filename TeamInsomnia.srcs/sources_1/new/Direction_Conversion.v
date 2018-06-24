@@ -21,7 +21,8 @@
 
 
 module Direction_Conversion(
-    input direction,
+    input FB,
+    input LR,
     input brake,
     output IN1,
     output IN2,
@@ -29,31 +30,31 @@ module Direction_Conversion(
     output IN4
     );
      
-     // FORWARD = 11
-     // ROTATION = 10
-     // ANTIROTATION = 01
-     // BACKWARD = 00
+     // FB = 1; Forward
+     // LR = 1; Left
+     // LR = 0; Right
+     // FB = 0; Backward
      
     reg DirA_r, DirB_r; 
    
     always @(*)
     begin
-        if (direction == 2'b11)
+        if (FB)
         begin
             DirA_r <= 1;
             DirB_r <= 1;
         end
-        if (direction == 2'b10)
+        if (LR)
         begin
             DirA_r <= 1;
             DirB_r <= 0;
         end
-        if (direction == 2'b01)
+        if (~LR)
         begin
             DirA_r <= 0;
             DirB_r <= 1;
         end
-        if (direction == 2'b00)
+        if (~FB)
         begin
             DirA_r <= 0;
             DirB_r <= 0;
