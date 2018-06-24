@@ -47,20 +47,25 @@ module Motor_Control(
              FB_r <= 1;
              S_r <= 1;
          end
-         if (left)
+        else if (left)
          begin
              LR_r <= 1;
              S_r <= 0;
          end
-         if (right)
+         else if (right)
          begin
              LR_r <= 0;
              S_r <= 0;
          end
-         if (back)
+         else if (back)
          begin
              FB_r <= 0;
              S_r <= 1;
+         end
+         else
+         begin
+            FB_r <= 1;
+            S_r <= 0;
          end
      end
     
