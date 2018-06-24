@@ -21,32 +21,28 @@
 
 
 module Directional_Control(
-input direction,
-input brake,
-output INA,
-output INB,
-output INC,
-output IND
-    );
-    
-    //create and assign registers
-    reg INA_r,INB_r,INC_r,IND_r;
-    
-    assign INA = INA_r;
-    assign INB = INB_r;
-    assign INC = INC_r;
-    assign IND = IND_r;
-    
-    always @(*)
-    begin
-        if (brake) //if the brake is on all outputs to H-bridge go to zero
-        begin
-            INA_r <= 0;
-            INB_r <= 0;
-            INC_r <= 0;
-            IND_r <= 0;
-        end
-        else
-        begin
-    );
+   input direction,
+   input brake,
+   output INA,
+   output INB
+   );
+   
+   reg INA_r,INB_r;
+   
+   assign INA = INA_r;
+   assign INB = INB_r;
+   
+   always @(*)
+   begin
+       if (brake)
+       begin   
+           INA_r <= 0;
+           INB_r <= 0;
+       end
+       else
+       begin
+           INA_r <= direction;
+           INB_r <= ~direction;
+       end
+   end
 endmodule
