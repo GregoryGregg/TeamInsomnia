@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jun 24 10:49:57 2018
+| Date         : Sun Jun 24 11:02:28 2018
 | Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
 | Command      : report_drc -file TopModule_drc_routed.rpt -pb TopModule_drc_routed.pb -rpx TopModule_drc_routed.rpx
 | Design       : TopModule
@@ -53,22 +53,22 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net MotorSurface/Decode/DirA_r_reg_i_1_n_0 is a gated clock net sourced by a combinational pin MotorSurface/Decode/DirA_r_reg_i_1/O, cell MotorSurface/Decode/DirA_r_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MotorSurface/Decode/DirA_r_reg/G0 is a gated clock net sourced by a combinational pin MotorSurface/Decode/DirA_r_reg/L3_2/O, cell MotorSurface/Decode/DirA_r_reg/L3_2 (in MotorSurface/Decode/DirA_r_reg macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net MotorSurface/Decode/DirB_r_reg/G0 is a gated clock net sourced by a combinational pin MotorSurface/Decode/DirB_r_reg/L3_2/O, cell MotorSurface/Decode/DirB_r_reg/L3_2 (in MotorSurface/Decode/DirB_r_reg macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MotorSurface/Decode/DirA_r_reg_i_2_n_0 is a gated clock net sourced by a combinational pin MotorSurface/Decode/DirA_r_reg_i_2/O, cell MotorSurface/Decode/DirA_r_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net MotorSurface/FB_r_reg_i_2_n_0 is a gated clock net sourced by a combinational pin MotorSurface/FB_r_reg_i_2/O, cell MotorSurface/FB_r_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MotorSurface/LR_r_reg_i_1_n_0 is a gated clock net sourced by a combinational pin MotorSurface/LR_r_reg_i_1/O, cell MotorSurface/LR_r_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net MotorSurface/LR_r3_out is a gated clock net sourced by a combinational pin MotorSurface/LR_r_reg_i_1/O, cell MotorSurface/LR_r_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net MotorSurface/S_r3_out is a gated clock net sourced by a combinational pin MotorSurface/FB_r_reg_i_2/O, cell MotorSurface/FB_r_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 

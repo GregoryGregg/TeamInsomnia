@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun Jun 24 10:49:58 2018
+| Date             : Sun Jun 24 11:02:29 2018
 | Host             : DESKTOP-54CS49R running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.076        |
+| Total On-Chip Power (W)  | 0.077        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.004        |
+| Dynamic (W)              | 0.005        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       68 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       21 |     20800 |            0.10 |
+| Slice Logic    |    <0.001 |       69 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       20 |     20800 |            0.10 |
 |   CARRY4       |    <0.001 |        6 |      8150 |            0.07 |
 |   Register     |    <0.001 |       21 |     41600 |            0.05 |
-|   Others       |     0.000 |        9 |       --- |             --- |
-| Signals        |    <0.001 |       67 |       --- |             --- |
+|   Others       |     0.000 |       10 |       --- |             --- |
+| Signals        |    <0.001 |       68 |       --- |             --- |
 | DSPs           |    <0.001 |        1 |        90 |            1.11 |
-| I/O            |     0.003 |       18 |       106 |           16.98 |
+| I/O            |     0.004 |       18 |       106 |           16.98 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.076 |          |           |                 |
+| Total          |     0.077 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -141,10 +141,10 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| TopModule        |     0.004 |
-|   MotorSurface   |    <0.001 |
+| TopModule        |     0.005 |
+|   MotorSurface   |     0.001 |
 |     Decode       |    <0.001 |
-|       DirB_r_reg |    <0.001 |
+|       DirA_r_reg |    <0.001 |
 |     speed        |    <0.001 |
 +------------------+-----------+
 

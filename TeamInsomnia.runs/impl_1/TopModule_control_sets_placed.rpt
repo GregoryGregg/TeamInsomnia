@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jun 24 10:49:38 2018
+| Date         : Sun Jun 24 11:02:10 2018
 | Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
 | Design       : TopModule
@@ -46,7 +46,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               4 |            3 |
+| No           | No                    | No                     |               4 |            4 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              17 |            6 |
 | Yes          | No                    | No                     |               0 |            0 |
@@ -61,11 +61,11 @@ Table of Contents
 +-----------------------------------------+---------------+----------------------------------------+------------------+----------------+
 |               Clock Signal              | Enable Signal |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
 +-----------------------------------------+---------------+----------------------------------------+------------------+----------------+
-|  MotorSurface/Decode/DirB_r_reg/G0      |               |                                        |                1 |              1 |
-|  MotorSurface/Decode/DirA_r_reg_i_1_n_0 |               | MotorSurface/Decode/DirA_r_reg_i_2_n_0 |                1 |              1 |
-|  MotorSurface/FB_r_reg_i_2_n_0          |               | forward_IBUF                           |                1 |              1 |
-|  MotorSurface/LR_r3_out                 |               |                                        |                1 |              1 |
-|  clk_IBUF_BUFG                          |               |                                        |                1 |              2 |
+|  MotorSurface/Decode/DirA_r_reg/G0      |               |                                        |                1 |              1 |
+|  MotorSurface/Decode/DirA_r_reg_i_2_n_0 |               | MotorSurface/Decode/DirB_r_reg_i_1_n_0 |                1 |              1 |
+|  MotorSurface/LR_r_reg_i_1_n_0          |               |                                        |                1 |              1 |
+|  MotorSurface/S_r3_out                  |               | forward_IBUF                           |                1 |              1 |
+|  clk_IBUF_BUFG                          |               |                                        |                2 |              2 |
 |  clk_IBUF_BUFG                          |               | MotorSurface/speed/clear               |                4 |             15 |
 +-----------------------------------------+---------------+----------------------------------------+------------------+----------------+
 
