@@ -34,7 +34,7 @@ module Direction_Conversion(
      // FB = 1; Forward
      // LR = 1; Left
      // S = 1; Straight Back and Forth
-     // 
+     // S = 0; only turning
      // LR = 0; Right
      // FB = 0; Backward
      
