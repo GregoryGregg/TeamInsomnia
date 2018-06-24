@@ -27,7 +27,7 @@ module Directional_Control(
    output INB
    );
    
-   reg INA_r,INB_r;
+   reg INA_r,INB_r; 
    
    assign INA = INA_r;
    assign INB = INB_r;

@@ -24,15 +24,23 @@ module Motor_Control(
     input DirectionA,
     input DirectionB,
     input clk,
+    input [5:0]sw,
     input brake,
     output IN1,
     output IN2,
     output IN3,
     output IN4,
     output ENA,
-    output ENB,
+    output ENB
     );
     
+    assign ENB = ENA;
+    
     PWM speed (
+        .clk(clk),
+        .brake(brake),
+        .sw(sw),
+        .enable(ENA)
+        );
         
 endmodule
