@@ -49,4 +49,18 @@ module TopModule(
         if (back)
             direction <= 2'b00;
     end
+    
+    Motor_Control MotorSurface(
+        .direction(direction),
+        .clk(clk),
+        .sw(sw),
+        .brake(brake),
+        .IN1(IN1),
+        .IN2(IN2),
+        .IN3(IN3),
+        .IN4(IN4),
+        .ENA(ENA),
+        .ENB(ENB)
+        );
+        
 endmodule
