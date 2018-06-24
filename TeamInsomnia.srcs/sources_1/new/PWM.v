@@ -21,6 +21,27 @@
 
 
 module PWM(
-
+input clk,
+input brake,
+input [5:0]sw,
+output enable
     );
+    
+    reg pwm;
+    reg [14:0] cntr = 0;
+    
+    assign enable = pwm;
+    
+    always @(posedge clk)
+    begin
+        if (((32768/63)*sw) > cntr)
+            pwm <= 1'b1;
+        else
+            pwm <= 1'b0;
+            
+        if (brake)
+            cntr <= 0;
+        else
+            cntr <= cntr + 1;
+    end
 endmodule
