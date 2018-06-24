@@ -47,24 +47,24 @@ module Direction_Conversion(
             if (FB)
             begin
                 DirA_r <= 1;
-                DirB_r <= 1;
+                DirB_r <= 0;
             end
             if (~FB)
             begin
                 DirA_r <= 0;
-                DirB_r <= 0;
+                DirB_r <= 1;
             end
         end
         else
         begin
             if (LR)
             begin
-                DirA_r <= 1;
+                DirA_r <= 0;
                 DirB_r <= 0;
             end
             if (~LR)
             begin
-                DirA_r <= 0;
+                DirA_r <= 1;
                 DirB_r <= 1;
             end
         end    

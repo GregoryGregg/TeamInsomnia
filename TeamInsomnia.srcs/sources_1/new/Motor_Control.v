@@ -65,7 +65,7 @@ module Motor_Control(
          else
          begin
             FB_r <= 1;
-            S_r <= 0;
+            S_r <= 1;
          end
      end
     
