@@ -21,7 +21,8 @@
 
 
 module Motor_Control(
-    input direction,
+    input FB,
+    input LR,
     input clk,
     input [5:0]sw,
     input brake,
@@ -43,7 +44,8 @@ module Motor_Control(
         );
         
     Direction_Conversion Decode (
-        .direction(direction),
+        .FB(FB),
+        .LR(LR),
         .brake(brake),
         .IN1(IN1),
         .IN2(IN2),

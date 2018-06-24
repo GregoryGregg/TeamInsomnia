@@ -23,6 +23,7 @@
 module Direction_Conversion(
     input FB,
     input LR,
+    input S,
     input brake,
     output IN1,
     output IN2,
@@ -32,6 +33,7 @@ module Direction_Conversion(
      
      // FB = 1; Forward
      // LR = 1; Left
+     // S = 1; Straight Back and Forth
      // LR = 0; Right
      // FB = 0; Backward
      
@@ -44,20 +46,24 @@ module Direction_Conversion(
             DirA_r <= 1;
             DirB_r <= 1;
         end
-        if (LR)
-        begin
-            DirA_r <= 1;
-            DirB_r <= 0;
-        end
-        if (~LR)
-        begin
-            DirA_r <= 0;
-            DirB_r <= 1;
-        end
         if (~FB)
         begin
             DirA_r <= 0;
             DirB_r <= 0;
+        end
+        
+        if (~S)
+        begin
+            if (LR)
+            begin
+                DirA_r <= 1;
+                DirB_r <= 0;
+            end
+            if (~LR)
+            begin
+                DirA_r <= 0;
+                DirB_r <= 1;
+            end
         end    
     end
     
