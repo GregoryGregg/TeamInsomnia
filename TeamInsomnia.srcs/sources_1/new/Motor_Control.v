@@ -21,6 +21,18 @@
 
 
 module Motor_Control(
-
+    input DirectionA,
+    input DirectionB,
+    input clk,
+    input brake,
+    output IN1,
+    output IN2,
+    output IN3,
+    output IN4,
+    output ENA,
+    output ENB,
     );
+    
+    PWM speed (
+        
 endmodule
