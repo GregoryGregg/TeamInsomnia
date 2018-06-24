@@ -36,25 +36,36 @@ module TopModule(
     output ENB
     );
     
-    reg[1:0] direction_r;
-    
-    initial
-        direction_r = 2'b00;
+    reg FB_r, LR_r, S_r;
     
     always @(*)
     begin
         if (forward)
-            direction_r <= 2'b00;
+        begin
+            FB_r <= 1;
+            S_r <= 1;
+        end
         if (left)
-            direction_r <= 2'b10;
+        begin
+            LR_r <= 1;
+            S_r <= 0;
+        end
         if (right)
-            direction_r <= 2'b01;
+        begin
+            LR_r <= 0;
+            S_r <= 0;
+        end
         if (back)
-            direction_r <= 2'b00;
+        begin
+            FB_r <= 0;
+            S_r <= 1;
+        end
     end
     
     Motor_Control MotorSurface(
-        .direction(direction_r),
+        .FB(FB),
+        .LR(LR),
+        .S(S),
         .clk(clk),
         .sw(sw),
         .brake(~brake),
