@@ -63,9 +63,9 @@ module TopModule(
     end
     
     Motor_Control MotorSurface(
-        .FB(FB),
-        .LR(LR),
-        .S(S),
+        .FB(FB_r),
+        .LR(LR_r),
+        .S(S_r),
         .clk(clk),
         .sw(sw),
         .brake(~brake),
