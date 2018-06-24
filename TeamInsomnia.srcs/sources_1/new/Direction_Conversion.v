@@ -34,6 +34,7 @@ module Direction_Conversion(
      // FB = 1; Forward
      // LR = 1; Left
      // S = 1; Straight Back and Forth
+     // 
      // LR = 0; Right
      // FB = 0; Backward
      
@@ -41,18 +42,20 @@ module Direction_Conversion(
    
     always @(*)
     begin
-        if (FB)
+        if (S)
         begin
-            DirA_r <= 1;
-            DirB_r <= 1;
+            if (FB)
+            begin
+                DirA_r <= 1;
+                DirB_r <= 1;
+            end
+            if (~FB)
+            begin
+                DirA_r <= 0;
+                DirB_r <= 0;
+            end
         end
-        if (~FB)
-        begin
-            DirA_r <= 0;
-            DirB_r <= 0;
-        end
-        
-        if (~S)
+        else
         begin
             if (LR)
             begin
