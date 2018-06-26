@@ -40,6 +40,8 @@ module Motor_Control(
     
        reg FB_r, LR_r, S_r;
      
+     //To be removed on favor of 2 bit register
+     
      always @(*)
      begin
          if (forward)
