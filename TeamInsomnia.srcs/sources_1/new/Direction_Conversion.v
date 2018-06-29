@@ -43,12 +43,12 @@ module Direction_Conversion(
    
     always @(*)
     begin
-      if (Direction == 111)
+      if (Direction == (111||110||001))
       begin
         DirA_r <= 1;
         DirB_r <= 0;
       end
-      else if (Direction == 000)
+      else if (Direction == (000||101||010))
       begin
         DirA_r <= 0;
         DirB_r <= 1;
