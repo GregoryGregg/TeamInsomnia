@@ -33,14 +33,19 @@ module Motor_Control(
     output ENB
     );
     
-    assign ENB = ENA;
+    PWM speedB (
+        .clk(clk),
+        .brake(brake),
+        .sw(sw),
+        .enable(ENB)
+    );
     
-    PWM speed (
+    PWM speedA (
         .clk(clk),
         .brake(brake),
         .sw(sw),
         .enable(ENA)
-        );
+    );
         
     Direction_Conversion Decode (
         .Direction(Direction),
@@ -49,6 +54,6 @@ module Motor_Control(
         .IN2(IN2),
         .IN3(IN3),
         .IN4(IN4)
-        );
+    );
         
 endmodule
