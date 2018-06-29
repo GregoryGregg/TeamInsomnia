@@ -23,10 +23,7 @@
 module TopModule(
     input clk,
     input [5:0]sw,
-    input forward,
-    input back,
-    input left,
-    input right,
+    input [2:0]direction,
     input brake,
     output IN1,
     output IN2,
@@ -37,10 +34,7 @@ module TopModule(
     );
     
     Motor_Control MotorSurface(
-        .forward(forward),
-        .back(back),
-        .left(left),
-        .right(right),
+        .Direction(direction),
         .clk(clk),
         .sw(sw),
         .brake(~brake),

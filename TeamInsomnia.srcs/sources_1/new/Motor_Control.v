@@ -43,9 +43,7 @@ module Motor_Control(
         );
         
     Direction_Conversion Decode (
-        .FB(FB_r),
-        .LR(LR_r),
-        .S(S_r),
+        .Direction(Direction),
         .brake(brake),
         .IN1(IN1),
         .IN2(IN2),
