@@ -21,9 +21,7 @@
 
 
 module Direction_Conversion(
-    input FB,
-    input LR,
-    input S,
+    input [2:0]Direction,
     input brake,
     output IN1,
     output IN2,

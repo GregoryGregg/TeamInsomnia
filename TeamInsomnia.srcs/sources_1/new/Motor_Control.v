@@ -21,10 +21,7 @@
 
 
 module Motor_Control(
-    input forward,
-    input back,
-    input left,
-    input right,
+    input [2:0]Direction,
     input clk,
     input [5:0]sw,
     input brake,
@@ -37,39 +34,6 @@ module Motor_Control(
     );
     
     assign ENB = ENA;
-    
-       reg FB_r, LR_r, S_r;
-     
-     //To be removed on favor of 2 bit register
-     
-     always @(*)
-     begin
-         if (forward)
-         begin
-             FB_r <= 1;
-             S_r <= 1;
-         end
-        else if (left)
-         begin
-             LR_r <= 1;
-             S_r <= 0;
-         end
-         else if (right)
-         begin
-             LR_r <= 0;
-             S_r <= 0;
-         end
-         else if (back)
-         begin
-             FB_r <= 0;
-             S_r <= 1;
-         end
-         else
-         begin
-            FB_r <= 1;
-            S_r <= 1;
-         end
-     end
     
     PWM speed (
         .clk(clk),
