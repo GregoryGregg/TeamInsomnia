@@ -35,7 +35,7 @@ output enable
     
     always @(posedge clk)
     begin
-        if (ratio*sw) > cntr)
+        if (ratio*sw > cntr)
             pwm <= 1'b1;
         else
             pwm <= 1'b0;
