@@ -45,16 +45,16 @@
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
 extern void execute_30(char*, char *);
-extern void execute_15(char*, char *);
+extern void execute_3(char*, char *);
 extern void execute_28(char*, char *);
 extern void execute_29(char*, char *);
-extern void execute_4(char*, char *);
 extern void execute_5(char*, char *);
+extern void execute_6(char*, char *);
 extern void vlog_simple_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
-extern void execute_10(char*, char *);
+extern void execute_11(char*, char *);
 extern void execute_26(char*, char *);
 extern void execute_27(char*, char *);
-extern void execute_12(char*, char *);
+extern void execute_13(char*, char *);
 extern void execute_17(char*, char *);
 extern void execute_18(char*, char *);
 extern void execute_19(char*, char *);
@@ -64,7 +64,7 @@ extern void execute_33(char*, char *);
 extern void execute_34(char*, char *);
 extern void execute_35(char*, char *);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[20] = {(funcp)execute_30, (funcp)execute_15, (funcp)execute_28, (funcp)execute_29, (funcp)execute_4, (funcp)execute_5, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_10, (funcp)execute_26, (funcp)execute_27, (funcp)execute_12, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)execute_31, (funcp)execute_32, (funcp)execute_33, (funcp)execute_34, (funcp)execute_35, (funcp)vlog_transfunc_eventcallback};
+funcp funcTab[20] = {(funcp)execute_30, (funcp)execute_3, (funcp)execute_28, (funcp)execute_29, (funcp)execute_5, (funcp)execute_6, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_11, (funcp)execute_26, (funcp)execute_27, (funcp)execute_13, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)execute_31, (funcp)execute_32, (funcp)execute_33, (funcp)execute_34, (funcp)execute_35, (funcp)vlog_transfunc_eventcallback};
 const int NumRelocateId= 20;
 
 void relocate(char *dp)
