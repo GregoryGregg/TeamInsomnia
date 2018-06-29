@@ -22,7 +22,9 @@
 
 module PWM(
 input clk,
+input ratio,
 input brake,
+input compare,
 input [5:0]sw,
 output enable
     );
@@ -34,7 +36,7 @@ output enable
     
     always @(posedge clk)
     begin
-        if (((32768/63)*sw) > cntr)
+        if (ratio*sw) > cntr)
             pwm <= 1'b1;
         else
             pwm <= 1'b0;
