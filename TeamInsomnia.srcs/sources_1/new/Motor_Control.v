@@ -31,19 +31,21 @@ module Motor_Control(
     output IN4,
     output ENA,
     output ENB
-    );
+);
+
+    reg [5:0] swA_r, swB_r;
     
     PWM speedB (
         .clk(clk),
         .brake(brake),
-        .sw(sw),
+        .sw(swA_r),
         .enable(ENB)
     );
     
     PWM speedA (
         .clk(clk),
         .brake(brake),
-        .sw(sw),
+        .sw(swB_r),
         .enable(ENA)
     );
         
