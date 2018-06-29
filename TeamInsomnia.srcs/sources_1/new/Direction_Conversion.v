@@ -29,12 +29,15 @@ module Direction_Conversion(
     output IN4
     );
      
-     // FB = 1; Forward
-     // LR = 1; Left
-     // S = 1; Straight Back and Forth
-     // S = 0; only turning
-     // LR = 0; Right
-     // FB = 0; Backward
+     // This is a 3-bit register so there is going to be 8 possible directions
+     // Forward = 111
+     // Back = 000
+     // Left = 100
+     // Right = 001
+     // Forward-Left = 110
+     // Forward-Right = 011
+     // Back-Left = 101
+     // Back-Right = 010
      
     reg DirA_r, DirB_r; 
    
