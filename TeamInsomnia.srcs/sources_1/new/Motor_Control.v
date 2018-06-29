@@ -33,11 +33,14 @@ module Motor_Control(
     output ENB
 );
 
-    reg [14:0] ratioA_r = (32768/63);
-    reg [14:0] ratioB_r = (32768/63);
-//    reg [14:0] ratioA_r = ((Direction == 3'b110)||(Direction == 3'b101)) ? (32768/(2*63)):(32768/63);
-//    reg [14:0] ratioB_r = ((Direction == 3'b001)||(Direction == 3'b010)) ? (32768/(2*63)):(32768/63);
-
+   reg [14:0] ratioA_r, ratioB_r;
+   
+   always @(*)
+   begin
+   ratioA_r = ((Direction == 3'b110)||(Direction == 3'b101)) ? (32768/(2*63)):(32768/63);
+   ratioB_r = ((Direction == 3'b001)||(Direction == 3'b010)) ? (32768/(2*63)):(32768/63);
+   end
+   
     PWM speedB (
         .clk(clk),
         .ratio(ratioB_r),
