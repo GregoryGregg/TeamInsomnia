@@ -24,7 +24,6 @@ module PWM(
 input clk,
 input ratio,
 input brake,
-input compare,
 input [5:0]sw,
 output enable
     );
