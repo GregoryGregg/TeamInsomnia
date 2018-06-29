@@ -40,6 +40,7 @@ module Motor_Control(
 
     PWM speedB (
         .clk(clk),
+        .ratio(ratioB_r),
         .brake(brake),
         .sw(sw,
         .enable(ENB)
@@ -47,6 +48,7 @@ module Motor_Control(
     
     PWM speedA (
         .clk(clk),
+        .ratio(ratioA_r),
         .brake(brake),
         .sw(sw),
         .enable(ENA)
