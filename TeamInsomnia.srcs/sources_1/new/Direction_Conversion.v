@@ -43,26 +43,30 @@ module Direction_Conversion(
    
     always @(*)
     begin
-      if (Direction == (3'b111||3'b110||3'b001))
-      begin
-        DirA_r <= 1;
-        DirB_r <= 0;
-      end
-      else if (Direction == (3'b000||3'b101||3'b010))
-      begin
-        DirA_r <= 0;
-        DirB_r <= 1;
-      end
-      else if (Direction == 3'b100)
-      begin
-        DirA_r <= 1;
-        DirB_r <= 1;
-      end
-      else if (Direction == 3'b001)
-      begin
-        DirA_r <= 0;
-        DirB_r <= 0;
-      end
+    
+      case(Direction)
+      //Forwards and turning
+      3'b111, 3'b110, 3'b011:
+        begin
+            DirA_r = 0;
+            DirB_r = 1;
+        end
+      3'b000, 3'b101, 3'b010:
+        begin
+            DirA_r = 1;
+            DirB_r = 0;
+        end
+      3'b100:
+        begin
+            DirA_r = 1;
+            DirB_r = 1;
+        end
+      3'b001:
+        begin
+            DirA_r = 0;
+            DirB_r = 0;
+        end
+        endcase
     end
     
     Directional_Control MotorA(
