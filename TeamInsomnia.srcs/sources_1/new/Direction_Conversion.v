@@ -43,32 +43,26 @@ module Direction_Conversion(
    
     always @(*)
     begin
-        if (S)
-        begin
-            if (FB)
-            begin
-                DirA_r <= 1;
-                DirB_r <= 0;
-            end
-            if (~FB)
-            begin
-                DirA_r <= 0;
-                DirB_r <= 1;
-            end
-        end
-        else
-        begin
-            if (LR)
-            begin
-                DirA_r <= 0;
-                DirB_r <= 0;
-            end
-            if (~LR)
-            begin
-                DirA_r <= 1;
-                DirB_r <= 1;
-            end
-        end    
+      if (Direction == 111)
+      begin
+        DirA_r <= 1;
+        DirB_r <= 0;
+      end
+      else if (Direction == 000)
+      begin
+        DirA_r <= 0;
+        DirB_r <= 1;
+      end
+      else if (Direction == 100)
+      begin
+        DirA_r <= 1;
+        DirB_r <= 1;
+      end
+      else if (Direction == 001)
+      begin
+        DirA_r <= 0;
+        DirB_r <= 0;
+      end
     end
     
     Directional_Control MotorA(
