@@ -30,14 +30,14 @@ module Direction_Conversion(
     );
      
      // This is a 3-bit register so there is going to be 8 possible directions
-     // Forward = 111
-     // Back = 000
-     // Left = 100
-     // Right = 001
-     // Forward-Left = 110
-     // Forward-Right = 011
-     // Back-Left = 101
-     // Back-Right = 010
+     // Forward.........= 000
+     // Forward-Right...= 001
+     // Right...........= 010
+     // Back-Right......= 011
+     // Back............= 100
+     // Back-Left.......= 101
+     // Left............= 110
+     // Forward-Left... = 111 
      
     reg DirA_r, DirB_r; 
    
@@ -46,22 +46,22 @@ module Direction_Conversion(
     
       case(Direction)
       //Forwards and turning
-      3'b111, 3'b110, 3'b011:
+      3'b000, 3'b001, 3'b111:
         begin
             DirA_r <= 1;
             DirB_r <= 0;
         end
-      3'b000, 3'b101, 3'b010:
+      3'b100, 3'b011, 3'b101:
         begin
             DirA_r <= 0;
             DirB_r <= 1;
         end
-      3'b100:
+      3'b110:
         begin
             DirA_r <= 0;
             DirB_r <= 0;
         end
-      3'b001:
+      3'b010:
         begin
             DirA_r <= 1;
             DirB_r <= 1;

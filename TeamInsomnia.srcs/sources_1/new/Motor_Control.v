@@ -38,8 +38,8 @@ module Motor_Control(
    
    always @(*)
    begin
-   ratioA_r = ((Direction == 3'b110)||(Direction == 3'b101)) ? (32768/(2*63)):(32768/63);
-   ratioB_r = ((Direction == 3'b011)||(Direction == 3'b010)) ? (32768/(2*63)):(32768/63);
+   ratioA_r = ((Direction == 3'b111)||(Direction == 3'b101)) ? (32768/(2*63)):(32768/63);
+   ratioB_r = ((Direction == 3'b001)||(Direction == 3'b011)) ? (32768/(2*63)):(32768/63);
    end
    
     PWM speedB (
