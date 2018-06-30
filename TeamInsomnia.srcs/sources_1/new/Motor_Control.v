@@ -25,6 +25,7 @@ module Motor_Control(
     input clk,
     input [5:0]sw,
     input brake,
+    input coast,
     output IN1,
     output IN2,
     output IN3,
@@ -45,6 +46,7 @@ module Motor_Control(
         .clk(clk),
         .ratio(ratioB_r),
         .brake(brake),
+        .coast(coast),
         .sw(sw),
         .enable(ENB)
     );
@@ -53,6 +55,7 @@ module Motor_Control(
         .clk(clk),
         .ratio(ratioA_r),
         .brake(brake),
+        .coast(coast),
         .sw(sw),
         .enable(ENA)
     );

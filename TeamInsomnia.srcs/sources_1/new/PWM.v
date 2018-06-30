@@ -24,6 +24,7 @@ module PWM(
 input clk,
 input [14:0]ratio,
 input brake,
+input coast,
 input [5:0]sw,
 output enable
     );
@@ -35,14 +36,17 @@ output enable
     
     always @(posedge clk)
     begin
-        if (ratio*sw > cntr)
-            pwm <= 1'b1;
-        else
-            pwm <= 1'b0;
-            
         if (brake)
-            cntr <= 0;
+            pwm <= 1'b1;
+        else if (coast)
+            pwm <= 1'b0;
         else
-            cntr <= cntr + 1;
+        begin
+            if (ratio*sw > cntr)
+                pwm <= 1'b1;
+            else
+                pwm <= 1'b0;
+        end
+        cntr <= cntr + 1;
     end
 endmodule
