@@ -10,6 +10,10 @@
 //
 // The relative distance is displayed on the four seven segment displays on the Basys board
 //  and on the 16 LEDs on the board.
+//
+// The 5v vcc power for the sensor is grabbed from the 5v line on the usb port on the basys board.
+//
+// The echo pin is brought down from 5v using a voltage divider. In this case R1 is 57 ohms and R2 is 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -17,8 +21,8 @@
 module ultrasonic_proximity(
 
 input clk, //main clock
-input JA0, // echo pin
-output JA1, //trigger pin
+input echo, // echo pin
+output trigger, //trigger pin
 output dist //distance from object
     );
     
@@ -30,7 +34,7 @@ output dist //distance from object
     reg[25:0] delcnt = 26'b0; //counts delay between measurements
     wire outtogg;
 
-    assign JA1 = outen; //assign trigger output
+    assign trigger = outen; //assign trigger output
     assign dist = countf; //assign output distance
     assign outtogg = (delcnt == 26'b0) ?1'b1:1'b0; //begin trigger pulse
     
@@ -62,7 +66,7 @@ output dist //distance from object
     
     always @(posedge clk)
     begin
-    if (JA0) //if echo detected
+    if (echo) //if echo detected
     begin
         count <= count + 1; //count echo pulse width
     end

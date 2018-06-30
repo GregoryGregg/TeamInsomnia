@@ -42,8 +42,8 @@ module TopModule(
      
      ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
       .clk  (clk),
-      .JA0  (JA0),
-      .JA1  (JA1),
+      .echo  (JA0),
+      .trigger  (JA1),
       .dist (dist)
       );
       
