@@ -38,7 +38,7 @@ module TopModule(
         .Direction(direction),
         .clk(clk),
         .sw(sw),
-        .brake(~brake),
+        .brake(brake),
         .coast(coast),
         .IN1(IN1),
         .IN2(IN2),
