@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Jul  2 11:07:32 2018
+| Date         : Mon Jul  2 11:32:06 2018
 | Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file TopModule_timing_summary_routed.rpt -pb TopModule_timing_summary_routed.pb -rpx TopModule_timing_summary_routed.rpx -warn_on_violation
 | Design       : TopModule
@@ -892,58 +892,6 @@ Slack (MET) :             0.267ns  (arrival time - required time)
                          slack                                  0.267    
 
 Slack (MET) :             0.267ns  (arrival time - required time)
-  Source:                 Surface/speedB/cntr_reg[6]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Surface/speedB/cntr_reg[6]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.401ns  (logic 0.274ns (68.412%)  route 0.127ns (31.588%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.959ns
-    Source Clock Delay      (SCD):    1.446ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.563     1.446    Surface/speedB/clk
-    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X12Y12         FDRE (Prop_fdre_C_Q)         0.164     1.610 r  Surface/speedB/cntr_reg[6]/Q
-                         net (fo=5, routed)           0.127     1.737    Surface/speedB/out[6]
-    SLICE_X12Y12         CARRY4 (Prop_carry4_S[2]_O[2])
-                                                      0.110     1.847 r  Surface/speedB/cntr_reg[4]_i_1/O[2]
-                         net (fo=1, routed)           0.000     1.847    Surface/speedB/cntr_reg[4]_i_1_n_5
-    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.832     1.959    Surface/speedB/clk
-    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/C
-                         clock pessimism             -0.513     1.446    
-    SLICE_X12Y12         FDRE (Hold_fdre_C_D)         0.134     1.580    Surface/speedB/cntr_reg[6]
-  -------------------------------------------------------------------
-                         required time                         -1.580    
-                         arrival time                           1.847    
-  -------------------------------------------------------------------
-                         slack                                  0.267    
-
-Slack (MET) :             0.267ns  (arrival time - required time)
   Source:                 Surface/speedB/cntr_reg[14]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            Surface/speedB/cntr_reg[14]/D
@@ -1047,6 +995,58 @@ Slack (MET) :             0.278ns  (arrival time - required time)
   -------------------------------------------------------------------
                          slack                                  0.278    
 
+Slack (MET) :             0.279ns  (arrival time - required time)
+  Source:                 Surface/speedB/cntr_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Surface/speedB/cntr_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.413ns  (logic 0.274ns (66.400%)  route 0.139ns (33.600%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.563     1.446    Surface/speedB/clk
+    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X12Y12         FDRE (Prop_fdre_C_Q)         0.164     1.610 r  Surface/speedB/cntr_reg[6]/Q
+                         net (fo=5, routed)           0.139     1.749    Surface/speedB/out[6]
+    SLICE_X12Y12         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.859 r  Surface/speedB/cntr_reg[4]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.859    Surface/speedB/cntr_reg[4]_i_1_n_5
+    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.832     1.959    Surface/speedB/clk
+    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/C
+                         clock pessimism             -0.513     1.446    
+    SLICE_X12Y12         FDRE (Hold_fdre_C_D)         0.134     1.580    Surface/speedB/cntr_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.580    
+                         arrival time                           1.859    
+  -------------------------------------------------------------------
+                         slack                                  0.279    
+
 Slack (MET) :             0.303ns  (arrival time - required time)
   Source:                 Surface/speedB/cntr_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
@@ -1096,58 +1096,6 @@ Slack (MET) :             0.303ns  (arrival time - required time)
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.882    
-  -------------------------------------------------------------------
-                         slack                                  0.303    
-
-Slack (MET) :             0.303ns  (arrival time - required time)
-  Source:                 Surface/speedB/cntr_reg[6]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            Surface/speedB/cntr_reg[7]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.437ns  (logic 0.310ns (71.017%)  route 0.127ns (28.983%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.959ns
-    Source Clock Delay      (SCD):    1.446ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.563     1.446    Surface/speedB/clk
-    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X12Y12         FDRE (Prop_fdre_C_Q)         0.164     1.610 r  Surface/speedB/cntr_reg[6]/Q
-                         net (fo=5, routed)           0.127     1.737    Surface/speedB/out[6]
-    SLICE_X12Y12         CARRY4 (Prop_carry4_S[2]_O[3])
-                                                      0.146     1.883 r  Surface/speedB/cntr_reg[4]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.883    Surface/speedB/cntr_reg[4]_i_1_n_4
-    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[7]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.832     1.959    Surface/speedB/clk
-    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[7]/C
-                         clock pessimism             -0.513     1.446    
-    SLICE_X12Y12         FDRE (Hold_fdre_C_D)         0.134     1.580    Surface/speedB/cntr_reg[7]
-  -------------------------------------------------------------------
-                         required time                         -1.580    
-                         arrival time                           1.883    
   -------------------------------------------------------------------
                          slack                                  0.303    
 
@@ -1202,6 +1150,58 @@ Slack (MET) :             0.314ns  (arrival time - required time)
                          arrival time                           1.895    
   -------------------------------------------------------------------
                          slack                                  0.314    
+
+Slack (MET) :             0.315ns  (arrival time - required time)
+  Source:                 Surface/speedB/cntr_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            Surface/speedB/cntr_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.449ns  (logic 0.310ns (69.096%)  route 0.139ns (30.904%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.563     1.446    Surface/speedB/clk
+    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X12Y12         FDRE (Prop_fdre_C_Q)         0.164     1.610 r  Surface/speedB/cntr_reg[6]/Q
+                         net (fo=5, routed)           0.139     1.749    Surface/speedB/out[6]
+    SLICE_X12Y12         CARRY4 (Prop_carry4_S[2]_O[3])
+                                                      0.146     1.895 r  Surface/speedB/cntr_reg[4]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.895    Surface/speedB/cntr_reg[4]_i_1_n_4
+    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.832     1.959    Surface/speedB/clk
+    SLICE_X12Y12         FDRE                                         r  Surface/speedB/cntr_reg[7]/C
+                         clock pessimism             -0.513     1.446    
+    SLICE_X12Y12         FDRE (Hold_fdre_C_D)         0.134     1.580    Surface/speedB/cntr_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.580    
+                         arrival time                           1.895    
+  -------------------------------------------------------------------
+                         slack                                  0.315    
 
 Slack (MET) :             0.328ns  (arrival time - required time)
   Source:                 Surface/speedB/cntr_reg[12]/C
