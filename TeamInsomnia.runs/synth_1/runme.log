@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4936 
+INFO: Helper process launched with PID 12516 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 359.008 ; gain = 99.844
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 359.195 ; gain = 100.598
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TopModule' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Motor_Control' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:23]
@@ -29,7 +29,7 @@ INFO: [Synth 8-6155] done synthesizing module 'Direction_Conversion' (3#1) [C:/U
 INFO: [Synth 8-6155] done synthesizing module 'Motor_Control' (4#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'TopModule' (5#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 413.328 ; gain = 154.164
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 414.367 ; gain = 155.770
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -42,48 +42,46 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 413.328 ; gain = 154.164
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 414.367 ; gain = 155.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 413.328 ; gain = 154.164
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 414.367 ; gain = 155.770
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Project Lab/Basys-3-Master.xdc]
-Finished Parsing XDC File [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Project Lab/Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Project Lab/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopModule_propImpl.xdc].
+Parsing XDC File [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopModule_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TopModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 731.777 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 732.723 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 731.777 ; gain = 472.613
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 732.723 ; gain = 474.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 731.777 ; gain = 472.613
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 732.723 ; gain = 474.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 731.777 ; gain = 472.613
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 732.723 ; gain = 474.125
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'DirA_r_reg' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v:49]
-WARNING: [Synth 8-327] inferring latch for variable 'DirB_r_reg' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v:50]
-WARNING: [Synth 8-327] inferring latch for variable 'FB_r_reg' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:47]
-WARNING: [Synth 8-327] inferring latch for variable 'LR_r_reg' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:52]
+INFO: [Synth 8-5544] ROM "DirA_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DirB_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 731.777 ; gain = 472.613
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 732.723 ; gain = 474.125
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -96,9 +94,10 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -113,11 +112,11 @@ Detailed RTL Component Info :
 Module Direction_Conversion 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
 Module Motor_Control 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -134,10 +133,12 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-DSP Report: Generating DSP MotorSurface/speed/pwm1, operation Mode is: (A:0x208)*B.
-DSP Report: operator MotorSurface/speed/pwm1 is absorbed into DSP MotorSurface/speed/pwm1.
+DSP Report: Generating DSP Surface/speedB/pwm1, operation Mode is: A*B.
+DSP Report: operator Surface/speedB/pwm1 is absorbed into DSP Surface/speedB/pwm1.
+DSP Report: Generating DSP Surface/speedA/pwm1, operation Mode is: A*B.
+DSP Report: operator Surface/speedA/pwm1 is absorbed into DSP Surface/speedA/pwm1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 731.777 ; gain = 472.613
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 732.723 ; gain = 474.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -147,7 +148,8 @@ DSP: Preliminary Mapping  Report (see note below)
 +------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|PWM         | (A:0x208)*B | 6      | 10     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | A*B         | 15     | 6      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | A*B         | 15     | 6      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -164,13 +166,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 778.328 ; gain = 519.164
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 779.063 ; gain = 520.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 788.305 ; gain = 529.141
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 789.438 ; gain = 530.840
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -182,7 +184,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -206,7 +208,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -219,7 +221,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -231,25 +233,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -266,52 +268,46 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |     6|
-|3     |DSP48E1 |     1|
-|4     |LUT1    |     3|
-|5     |LUT2    |     5|
-|6     |LUT3    |     3|
-|7     |LUT4    |    17|
-|8     |LUT5    |     2|
-|9     |FDRE    |    16|
-|10    |LD      |     1|
-|11    |LDCP    |     1|
-|12    |LDP     |     2|
-|13    |IBUF    |    12|
-|14    |OBUF    |     6|
+|2     |CARRY4  |     8|
+|3     |DSP48E1 |     2|
+|4     |LUT1    |     1|
+|5     |LUT2    |    10|
+|6     |LUT3    |     2|
+|7     |LUT4    |    30|
+|8     |FDRE    |    15|
+|9     |FDSE    |     2|
+|10    |IBUF    |    12|
+|11    |OBUF    |     6|
 +------+--------+------+
 
 Report Instance Areas: 
-+------+---------------+---------------------+------+
-|      |Instance       |Module               |Cells |
-+------+---------------+---------------------+------+
-|1     |top            |                     |    76|
-|2     |  MotorSurface |Motor_Control        |    57|
-|3     |    Decode     |Direction_Conversion |    11|
-|4     |    speed      |PWM                  |    41|
-+------+---------------+---------------------+------+
++------+-----------+--------------+------+
+|      |Instance   |Module        |Cells |
++------+-----------+--------------+------+
+|1     |top        |              |    89|
+|2     |  Surface  |Motor_Control |    66|
+|3     |    speedA |PWM           |    22|
+|4     |    speedB |PWM_0         |    44|
++------+-----------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 788.824 ; gain = 529.660
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.945 ; gain = 531.348
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 788.824 ; gain = 211.211
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 788.824 ; gain = 529.660
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 789.945 ; gain = 212.992
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 789.945 ; gain = 531.348
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 4 instances were transformed.
-  LD => LDCE: 1 instances
-  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 1 instances
-  LDP => LDPE: 2 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-22 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 788.824 ; gain = 541.918
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 789.945 ; gain = 544.430
 INFO: [Common 17-1381] The checkpoint 'C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.017 . Memory (MB): peak = 788.824 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jun 24 11:01:32 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 789.945 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  2 11:06:32 2018...

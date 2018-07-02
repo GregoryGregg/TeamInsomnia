@@ -65,7 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -74,7 +73,7 @@ set rc [catch {
   set_property ip_output_repo C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.dcp
-  read_xdc {{C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Project Lab/Basys-3-Master.xdc}}
+  read_xdc C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc
   link_design -top TopModule -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
