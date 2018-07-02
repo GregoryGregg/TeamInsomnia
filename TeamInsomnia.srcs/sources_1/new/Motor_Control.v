@@ -38,8 +38,8 @@ module Motor_Control(
    
    always @(*)
    begin
-   ratioA_r = ((Direction == 3'b111)||(Direction == 3'b101)) ? ((32768)/(2*63)):(32768/63);
-   ratioB_r = ((Direction == 3'b001)||(Direction == 3'b011)) ? ((32768)/(2*63)):(32768/63);
+   ratioA_r = ((Direction == 3'b111)||(Direction == 3'b101)) ? ((32768)/(2*63)):(32768/63); // Half speeds for turning FL/FR/BL/BR
+   ratioB_r = ((Direction == 3'b001)||(Direction == 3'b011)) ? ((32768)/(2*63)):(32768/63); // Can be changed for Independant motor operation
    end
    
     PWM speedB (
