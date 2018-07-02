@@ -22,6 +22,7 @@
 
 module TopModule(
     input clk,
+    input [2:0]direction,
     input [5:0]sw, // Speed for the motor control module set by the switches, to be removed
     input brake, // to be removed in favor of a register in the code
     input coast, // to be removed as with brake
@@ -40,8 +41,6 @@ module TopModule(
     wire[15:0] msg; //wire for the message for the seven seg
     wire[15:0] dist; //distance from proximity sensor
     
-    reg[2:0] Direction; // I suggest using reg rather than wire
-    
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
         .msg (msg),
@@ -58,7 +57,7 @@ module TopModule(
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
-        .Direction(Direction),
+        .Direction(direction),
         .clk(clk),
         .sw(sw),    // to be removed 
         .brake(brake),
