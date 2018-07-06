@@ -27,6 +27,7 @@ output dist //distance from object
     );
     
     reg counten; //count enable reg
+    reg countint; //internal reg to represent input
     reg outen; //out enable reg
     reg[21:0] count; //count reg
     reg[15:0] countf; //stores the 16 most significant bits of count
@@ -64,9 +65,14 @@ output dist //distance from object
     end
     
     
+    always @(posedge clk) //take in value of JA1 to mitigate metastability
+    begin
+    countint <= JA1;
+    end
+
     always @(posedge clk)
     begin
-    if (echo) //if echo detected
+    if (counting) //if echo detected
     begin
         count <= count + 1; //count echo pulse width
     end

@@ -1,3 +1,6 @@
 
 *.wcfg
 *.wdb
+*.un~
+*.v~
+TeamInsomnia.srcs/sources_1/new/.ultrasonic_proximity.v.swp
