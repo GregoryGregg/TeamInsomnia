@@ -72,7 +72,7 @@ output dist //distance from object
 
     always @(posedge clk)
     begin
-    if (counting) //if echo detected
+    if (countint) //if echo detected
     begin
         count <= count + 1; //count echo pulse width
     end
