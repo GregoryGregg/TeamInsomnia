@@ -40,7 +40,7 @@ module Encoder(
     assign swb = swb_r;
     assign swa = sw;
     
-    always @(eb)
+    always @(posedge eb)
     begin
         if (~brake)
         begin
@@ -48,7 +48,7 @@ module Encoder(
         end
     end
     
-    always @(ea)
+    always @(posedge ea)
     begin
         if (~brake)
         begin
