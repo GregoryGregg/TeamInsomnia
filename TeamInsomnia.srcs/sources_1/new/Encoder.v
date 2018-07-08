@@ -21,6 +21,17 @@
 
 
 module Encoder(
-
+ input clk,
+ input [2:0]direction,
+ input [5:0]sw,
+ output SWA,
+ output SWB
     );
+    
+    reg [5:0] SWB_r;
+    
+    assign SWB = SWB_r;
+    assign SWA = sw;
+    
+    
 endmodule
