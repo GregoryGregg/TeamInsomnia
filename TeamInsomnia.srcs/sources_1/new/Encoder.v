@@ -22,16 +22,52 @@
 
 module Encoder(
  input clk,
+ input brake,
+ input ea,
+ input eb,
  input [2:0]direction,
  input [5:0]sw,
- output SWA,
- output SWB
+ output [5:0]swa,
+ output [5:0]swb
     );
     
-    reg [5:0] SWB_r;
+    reg [3:0] tolerance = 4'b1111;
+    reg check_a, check_b;
+    reg [14:0] countb_r, counta_r;
+    reg [5:0] swb_r;
+    reg [26:0] division;
     
-    assign SWB = SWB_r;
-    assign SWA = sw;
+    assign swb = swb_r;
+    assign swa = sw;
     
+    always @(eb)
+    begin
+        if (~brake)
+        begin
+            countb_r <= countb_r + 1'b1;
+        end
+    end
     
+    always @(ea)
+    begin
+        if (~brake)
+        begin
+            counta_r <= counta_r + 1'b1;
+        end
+    end
+    
+    always @(*)
+    begin
+        if ((counta_r - countb_r) > tolerance)
+        begin
+            swb_r <= swb_r + 1;
+        end else if ((counta_r - countb_r) < tolerance)
+        begin
+            swb_r <= swb_r - 1;
+        end else
+        begin
+            swb_r <= sw;
+        end
+    end
+            
 endmodule

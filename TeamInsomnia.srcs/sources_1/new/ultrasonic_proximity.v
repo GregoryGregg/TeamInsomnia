@@ -67,7 +67,7 @@ output dist //distance from object
     
     always @(posedge clk) //take in value of JA1 to mitigate metastability
     begin
-    countint <= JA1;
+    countint <= outen;
     end
 
     always @(posedge clk)
