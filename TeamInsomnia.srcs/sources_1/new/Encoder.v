@@ -32,7 +32,8 @@ module Encoder(
     );
     
     reg [3:0] tolerance = 4'b1111;
-    reg check_a, check_b;
+    reg check_a = 1'b0; 
+    reg check_b = 1'b0;
     reg [14:0] countb_r, counta_r;
     reg [5:0] swb_r;
     reg [26:0] division;
@@ -40,21 +41,30 @@ module Encoder(
     assign swb = swb_r;
     assign swa = sw;
     
-    always @(posedge eb)
+    always @(posedge clk)
     begin
         if (~brake)
         begin
-            countb_r <= countb_r + 1'b1;
-        end
-    end
-    
-    always @(posedge ea)
-    begin
-        if (~brake)
+            if (ea && ~counta_r)
+            begin
+                check_a <= 1'b1;
+                counta_r <= counta_r + 1'b1;
+            end else if (~ea && check_a)
+            begin
+                check_a <= 1'b0;
+            end
+        end if (~brake)
         begin
-            counta_r <= counta_r + 1'b1;
+            if (eb && ~countb_r)
+            begin
+                check_b <= 1'b1;
+                countb_r <= countb_r + 1'b1;
+            end else if (~eb && check_b)
+            begin
+                check_b <= 1'b0;
+            end
         end
-    end
+   end
     
     always @(*)
     begin
