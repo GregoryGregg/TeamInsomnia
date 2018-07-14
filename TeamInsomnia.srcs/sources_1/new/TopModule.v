@@ -26,6 +26,8 @@ module TopModule(
     input [5:0]sw, // Speed for the motor control module set by the switches, to be removed
     input brake, // to be removed in favor of a register in the code
     input coast, // to be removed as with brake
+    input ea, // input from the encoder of motor a
+    input eb, // input from the encoder of motor b
 //    input JA0, //echo from ultrasonic
 //    output[3:0] an, //anode for seven seg
 //    output[6:0] seg, //segment for seven seg
@@ -62,6 +64,8 @@ module TopModule(
         .sw(sw),    // to be removed 
         .brake(brake),
         .coast(coast),
+        .ea(ea),
+        .eb(eb),
         .IN1(IN1),
         .IN2(IN2),
         .IN3(IN3),
