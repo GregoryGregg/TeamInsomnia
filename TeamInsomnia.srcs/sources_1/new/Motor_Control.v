@@ -26,6 +26,8 @@ module Motor_Control(
     input [5:0]sw,
     input brake,
     input coast,
+    input ea,
+    input eb,
     output IN1,
     output IN2,
     output IN3,
@@ -35,6 +37,7 @@ module Motor_Control(
 );
 
    reg [14:0] ratioA_r, ratioB_r;
+   reg [5:0] swb;
    
    always @(*)
    begin
@@ -42,12 +45,22 @@ module Motor_Control(
    ratioB_r = ((Direction == 3'b001)||(Direction == 3'b011)) ? ((32768)/(2*63)):(32768/63); // Can be changed for Independant motor operation
    end
    
+    Encoder Speedcontrol (
+        .clk(clk),
+        .brake(brake),
+        .ea(ea),
+        .eb(eb),
+        .direction(Direction),
+        .sw(sw),
+        .swb(swb)
+    );
+    
     PWM speedB (
         .clk(clk),
         .ratio(ratioB_r),
         .brake(brake),
         .coast(coast),
-        .sw(sw),
+        .sw(swb),
         .enable(ENB)
     );
     

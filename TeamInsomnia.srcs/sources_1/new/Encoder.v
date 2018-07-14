@@ -27,7 +27,6 @@ module Encoder(
  input eb,
  input [2:0]direction,
  input [5:0]sw,
- output [5:0]swa,
  output [5:0]swb
     );
     
@@ -39,7 +38,6 @@ module Encoder(
     reg [26:0] division;
     
     assign swb = swb_r;
-    assign swa = sw;
     
     always @(posedge clk)
     begin
