@@ -23,12 +23,14 @@ module ultrasonic_proximity(
 input clk, //main clock
 input echo, // echo pin
 output trigger, //trigger pin
-output dist //distance from object
+output dist, //distance from object
+output outup //output update flag
     );
     
     reg counten; //count enable reg
     reg countint; //internal reg to represent input
     reg outen; //out enable reg
+    reg outup; //output update flag
     reg[21:0] count; //count reg
     reg[15:0] countf; //stores the 16 most significant bits of count
     reg[9:0] outcnt; //counts out trigger pulse
@@ -72,6 +74,12 @@ output dist //distance from object
 
     always @(posedge clk)
     begin
+    
+    if (outup == 1'b1)
+    begin
+        outup <= 1'b0; //reset output update flag
+    end
+    
     if (countint) //if echo detected
     begin
         count <= count + 1; //count echo pulse width
@@ -81,6 +89,7 @@ output dist //distance from object
     begin
     
         countf <= count[21:6]; //load 16 most sig bits into countf
+        outup <= 1'b1; //set output update flag
         count <= 22'b0; //reset count
     end
 
