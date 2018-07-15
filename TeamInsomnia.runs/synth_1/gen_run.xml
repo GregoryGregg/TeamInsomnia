@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1530550572">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1531685233">
   <File Type="PA-TCL" Name="TopModule.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TopModule_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TopModule_reports.tcl"/>
   <File Type="RDS-RDS" Name="TopModule.vds"/>
   <File Type="RDS-UTIL" Name="TopModule_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="TopModule_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TopModule.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TopModule_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TopModule_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Direction_Conversion.v">
@@ -16,6 +19,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Directional_Control.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Encoder.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -36,16 +46,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/TopModule.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/seven_seg.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -53,7 +55,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/ultrasonic_proximity.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/TopModule.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

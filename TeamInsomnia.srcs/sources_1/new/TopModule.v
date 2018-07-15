@@ -28,10 +28,10 @@ module TopModule(
     input coast, // to be removed as with brake
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
-//    input JA0, //echo from ultrasonic
-//    output[3:0] an, //anode for seven seg
-//    output[6:0] seg, //segment for seven seg
-//    output JA1, //trigger for ultrasonic
+    input JA0, //echo from ultrasonic
+    output[3:0] an, //anode for seven seg
+    output[6:0] seg, //segment for seven seg
+    output JA1, //trigger for ultrasonic
     output IN1, // All that follow are motor outputs and shouldn't be moved
     output IN2, 
     output IN3,
@@ -40,22 +40,26 @@ module TopModule(
     output ENB
 );
     
-//    wire[15:0] msg; //wire for the message for the seven seg
-//    wire[15:0] dist; //distance from proximity sensor
+    wire[15:0] msg; //wire for the message for the seven seg
+    wire[15:0] dist; //distance from proximity sensor
+    reg[15:0] us_mindist = 16'b0000101010100011; //minimum distance for us sensor before stop
+    wire us_outup; //ultrasonic output update flag
+    assign msg = dist;
     
-//     seven_seg Useven_seg( //instantiate the seven seg display
-//        .clk (clk),
-//        .msg (msg),
-//        .an  (an),
-//        .seg (seg)
-//     );
+     seven_seg Useven_seg( //instantiate the seven seg display
+        .clk (clk),
+        .msg (msg),
+        .an  (an),
+        .seg (seg)
+     );
      
-//     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
-//        .clk  (clk),
-//        .echo  (JA0),
-//        .trigger  (JA1),
-//        .dist (dist)
-//      );
+     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
+        .clk     (clk),
+        .echo    (JA0),
+        .trigger (JA1),
+        .dist    (dist),
+        .outup   (us_outup)
+      );
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (

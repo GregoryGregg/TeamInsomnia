@@ -4,7 +4,7 @@
 // Class: ECE 3331
 // Project: Ultrasonic Sensor
 // Target: Basys 3 Board
-// Last Modified: 6/30/2018
+// Last Modified: 7/15/2018
 //
 // This program takes makes use of the HC-SR04 to detect proximity.
 //
