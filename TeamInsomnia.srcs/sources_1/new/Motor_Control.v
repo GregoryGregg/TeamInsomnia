@@ -37,7 +37,7 @@ module Motor_Control(
 );
 
    reg [14:0] ratioA_r, ratioB_r;
-   reg [5:0] swb;
+   wire [5:0] swb;
    
    always @(*)
    begin
