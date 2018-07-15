@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jul 15 18:21:06 2018
+| Date         : Sun Jul 15 18:50:18 2018
 | Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
 | Design       : TopModule
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  120 |     0 |     20800 |  0.58 |
-|   LUT as Logic          |  120 |     0 |     20800 |  0.58 |
+| Slice LUTs*             |  115 |     0 |     20800 |  0.55 |
+|   LUT as Logic          |  115 |     0 |     20800 |  0.55 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  126 |     0 |     41600 |  0.30 |
-|   Register as Flip Flop |  126 |     0 |     41600 |  0.30 |
+| Slice Registers         |  129 |     0 |     41600 |  0.31 |
+|   Register as Flip Flop |  129 |     0 |     41600 |  0.31 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 124   |          Yes |       Reset |            - |
+| 127   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -116,7 +116,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFGCTRL   |    2 |     0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
@@ -150,19 +150,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  124 |        Flop & Latch |
+| FDRE     |  127 |        Flop & Latch |
 | LUT4     |   43 |                 LUT |
-| LUT6     |   38 |                 LUT |
-| LUT2     |   38 |                 LUT |
 | CARRY4   |   38 |          CarryLogic |
+| LUT2     |   36 |                 LUT |
+| LUT6     |   32 |                 LUT |
 | OBUF     |   18 |                  IO |
-| LUT3     |   15 |                 LUT |
+| LUT3     |   17 |                 LUT |
 | LUT5     |   14 |                 LUT |
 | IBUF     |   14 |                  IO |
-| LUT1     |    6 |                 LUT |
+| LUT1     |    7 |                 LUT |
 | FDSE     |    2 |        Flop & Latch |
 | DSP48E1  |    2 |    Block Arithmetic |
-| BUFG     |    1 |               Clock |
+| BUFG     |    2 |               Clock |
 +----------+------+---------------------+
 
 

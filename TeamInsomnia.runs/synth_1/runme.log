@@ -14,10 +14,10 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4960 
+INFO: Helper process launched with PID 3360 
 WARNING: [Synth 8-2611] redeclaration of ansi port outup is not allowed [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/ultrasonic_proximity.v:33]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 371.336 ; gain = 111.520
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 371.500 ; gain = 113.016
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TopModule' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
 INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:32]
@@ -31,8 +31,6 @@ INFO: [Synth 8-6155] done synthesizing module 'ultrasonic_proximity' (2#1) [C:/U
 WARNING: [Synth 8-689] width (16) of port connection 'dist' does not match port width (1) of module 'ultrasonic_proximity' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:62]
 INFO: [Synth 8-6157] synthesizing module 'Motor_Control' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Encoder' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Encoder.v:23]
-WARNING: [Synth 8-6014] Unused sequential element check_a_reg was removed.  [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Encoder.v:48]
-WARNING: [Synth 8-6014] Unused sequential element check_b_reg was removed.  [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Encoder.v:58]
 INFO: [Synth 8-6155] done synthesizing module 'Encoder' (3#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Encoder.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PWM' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/PWM.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PWM' (4#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/PWM.v:23]
@@ -41,15 +39,13 @@ INFO: [Synth 8-6157] synthesizing module 'Directional_Control' [C:/Users/nicho/D
 INFO: [Synth 8-6155] done synthesizing module 'Directional_Control' (5#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Directional_Control.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Direction_Conversion' (6#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Motor_Control' (7#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:23]
-WARNING: [Synth 8-6014] Unused sequential element us_hist_reg was removed.  [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:89]
-WARNING: [Synth 8-6014] Unused sequential element us_obst_reg was removed.  [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:103]
 INFO: [Synth 8-6155] done synthesizing module 'TopModule' (8#1) [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
 WARNING: [Synth 8-3331] design Encoder has unconnected port direction[2]
 WARNING: [Synth 8-3331] design Encoder has unconnected port direction[1]
 WARNING: [Synth 8-3331] design Encoder has unconnected port direction[0]
 WARNING: [Synth 8-3331] design ultrasonic_proximity has unconnected port echo
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 404.301 ; gain = 144.484
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 404.121 ; gain = 145.637
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -62,10 +58,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 404.301 ; gain = 144.484
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 404.121 ; gain = 145.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 404.301 ; gain = 144.484
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 404.121 ; gain = 145.637
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -81,22 +77,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 745.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 745.809 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 745.664 ; gain = 485.848
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 745.809 ; gain = 487.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 745.664 ; gain = 485.848
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 745.809 ; gain = 487.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 745.664 ; gain = 485.848
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 745.809 ; gain = 487.324
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sseg_temp" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3936] Found unconnected internal register 'countf_reg' and it is trimmed from '16' to '1' bits. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/ultrasonic_proximity.v:41]
@@ -105,7 +101,7 @@ INFO: [Synth 8-5544] ROM "DirA_r" won't be mapped to Block RAM because address s
 INFO: [Synth 8-5544] ROM "DirB_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 WARNING: [Synth 8-327] inferring latch for variable 'sseg_temp_reg' [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:84]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 745.664 ; gain = 485.848
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 745.809 ; gain = 487.324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -121,9 +117,10 @@ Detailed RTL Component Info :
 	   3 Input     15 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
 +---Registers : 
 	               10 Bit    Registers := 1     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 9     
 +---Muxes : 
 	   2 Input     11 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 2     
@@ -157,6 +154,9 @@ Detailed RTL Component Info :
 +---Adders : 
 	   3 Input     15 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      6 Bit        Muxes := 2     
 Module PWM 
@@ -205,7 +205,7 @@ WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_temp_reg[5]) is unus
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_temp_reg[2]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_temp_reg[1]) is unused and will be removed from module TopModule.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 745.664 ; gain = 485.848
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 745.809 ; gain = 487.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -233,15 +233,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 782.563 ; gain = 522.746
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 783.543 ; gain = 525.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4/i_196/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_4/i_188/O'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 806.281 ; gain = 546.465
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 805.258 ; gain = 546.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -253,163 +251,159 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 Found timing loop:
-     0: i_136/O (LUT2)
-     1: i_136/I1 (LUT2)
-     2: i_45/O (LUT3)
-     3: i_45/I1 (LUT3)
-     4: i_130/O (LUT2)
-     5: i_130/I1 (LUT2)
-     6: i_36/O (LUT2)
-     7: i_36/I1 (LUT2)
-     8: i_136/O (LUT2)
+     0: i_155/O (LUT2)
+     1: i_155/I1 (LUT2)
+     2: i_109/O (LUT3)
+     3: i_109/I1 (LUT3)
+     4: i_149/O (LUT2)
+     5: i_149/I1 (LUT2)
+     6: i_100/O (LUT2)
+     7: i_100/I1 (LUT2)
+     8: i_155/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_136"
+Inferred a: "set_disable_timing -from I1 -to O i_155"
 Found timing loop:
-     0: i_130/O (LUT2)
-     1: i_130/I0 (LUT2)
-     2: i_39/O (LUT6)
-     3: i_39/I5 (LUT6)
-     4: i_130/O (LUT2)
+     0: i_149/O (LUT2)
+     1: i_149/I0 (LUT2)
+     2: i_103/O (LUT6)
+     3: i_103/I5 (LUT6)
+     4: i_149/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I0 -to O i_130"
+Inferred a: "set_disable_timing -from I0 -to O i_149"
 Found timing loop:
-     0: i_131/O (LUT2)
-     1: i_131/I1 (LUT2)
-     2: i_35/O (LUT3)
-     3: i_35/I2 (LUT3)
-     4: i_131/O (LUT2)
+     0: i_150/O (LUT2)
+     1: i_150/I1 (LUT2)
+     2: i_99/O (LUT3)
+     3: i_99/I2 (LUT3)
+     4: i_150/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_131"
+Inferred a: "set_disable_timing -from I1 -to O i_150"
 Found timing loop:
-     0: i_132/O (LUT2)
-     1: i_132/I1 (LUT2)
-     2: i_49/O (LUT6)
-     3: i_49/I5 (LUT6)
-     4: i_132/O (LUT2)
+     0: i_151/O (LUT2)
+     1: i_151/I1 (LUT2)
+     2: i_113/O (LUT6)
+     3: i_113/I5 (LUT6)
+     4: i_151/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_132"
+Inferred a: "set_disable_timing -from I1 -to O i_151"
 Found timing loop:
-     0: i_132/O (LUT2)
-     1: i_132/I0 (LUT2)
-     2: i_33/O (LUT4)
-     3: i_33/I0 (LUT4)
-     4: i_132/O (LUT2)
+     0: i_151/O (LUT2)
+     1: i_151/I0 (LUT2)
+     2: i_97/O (LUT4)
+     3: i_97/I0 (LUT4)
+     4: i_151/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I0 -to O i_132"
+Inferred a: "set_disable_timing -from I0 -to O i_151"
 Found timing loop:
-     0: i_131/O (LUT2)
-     1: i_131/I0 (LUT2)
-     2: i_34/O (LUT6)
-     3: i_34/I2 (LUT6)
-     4: i_131/O (LUT2)
+     0: i_150/O (LUT2)
+     1: i_150/I0 (LUT2)
+     2: i_98/O (LUT6)
+     3: i_98/I2 (LUT6)
+     4: i_150/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I0 -to O i_131"
+Inferred a: "set_disable_timing -from I0 -to O i_150"
 Found timing loop:
-     0: i_26/O (LUT6)
-     1: i_26/I5 (LUT6)
-     2: i_136/O (LUT2)
-     3: i_136/I0 (LUT2)
-     4: i_25/O (LUT6)
-     5: i_25/I5 (LUT6)
-     6: i_26/O (LUT6)
+     0: i_90/O (LUT6)
+     1: i_90/I5 (LUT6)
+     2: i_155/O (LUT2)
+     3: i_155/I0 (LUT2)
+     4: i_89/O (LUT6)
+     5: i_89/I5 (LUT6)
+     6: i_90/O (LUT6)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I5 -to O i_26"
+Inferred a: "set_disable_timing -from I5 -to O i_90"
 Found timing loop:
-     0: i_135/O (LUT2)
-     1: i_135/I1 (LUT2)
-     2: i_46/O (LUT4)
-     3: i_46/I0 (LUT4)
-     4: i_129/O (LUT2)
-     5: i_129/I1 (LUT2)
-     6: i_37/O (LUT2)
-     7: i_37/I1 (LUT2)
-     8: i_135/O (LUT2)
+     0: i_154/O (LUT2)
+     1: i_154/I1 (LUT2)
+     2: i_110/O (LUT4)
+     3: i_110/I0 (LUT4)
+     4: i_148/O (LUT2)
+     5: i_148/I1 (LUT2)
+     6: i_101/O (LUT2)
+     7: i_101/I1 (LUT2)
+     8: i_154/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_135"
+Inferred a: "set_disable_timing -from I1 -to O i_154"
 Found timing loop:
-     0: i_129/O (LUT2)
-     1: i_129/I0 (LUT2)
-     2: i_40/O (LUT6)
-     3: i_40/I5 (LUT6)
-     4: i_129/O (LUT2)
+     0: i_148/O (LUT2)
+     1: i_148/I0 (LUT2)
+     2: i_104/O (LUT6)
+     3: i_104/I5 (LUT6)
+     4: i_148/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I0 -to O i_129"
+Inferred a: "set_disable_timing -from I0 -to O i_148"
 Found timing loop:
-     0: i_28/O (LUT6)
-     1: i_28/I5 (LUT6)
-     2: i_135/O (LUT2)
-     3: i_135/I0 (LUT2)
-     4: i_27/O (LUT6)
-     5: i_27/I5 (LUT6)
-     6: i_28/O (LUT6)
+     0: i_92/O (LUT6)
+     1: i_92/I5 (LUT6)
+     2: i_154/O (LUT2)
+     3: i_154/I0 (LUT2)
+     4: i_91/O (LUT6)
+     5: i_91/I5 (LUT6)
+     6: i_92/O (LUT6)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I5 -to O i_28"
+Inferred a: "set_disable_timing -from I5 -to O i_92"
 Found timing loop:
-     0: i_128/O (LUT2)
-     1: i_128/I1 (LUT2)
-     2: i_41/O (LUT6)
-     3: i_41/I0 (LUT6)
-     4: i_128/O (LUT2)
+     0: i_147/O (LUT2)
+     1: i_147/I1 (LUT2)
+     2: i_105/O (LUT6)
+     3: i_105/I0 (LUT6)
+     4: i_147/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_128"
+Inferred a: "set_disable_timing -from I1 -to O i_147"
 Found timing loop:
-     0: i_134/O (LUT2)
-     1: i_134/I1 (LUT2)
-     2: i_47/O (LUT5)
-     3: i_47/I0 (LUT5)
-     4: i_128/O (LUT2)
-     5: i_128/I0 (LUT2)
-     6: i_38/O (LUT2)
-     7: i_38/I1 (LUT2)
-     8: i_134/O (LUT2)
+     0: i_153/O (LUT2)
+     1: i_153/I1 (LUT2)
+     2: i_111/O (LUT5)
+     3: i_111/I0 (LUT5)
+     4: i_147/O (LUT2)
+     5: i_147/I0 (LUT2)
+     6: i_102/O (LUT2)
+     7: i_102/I1 (LUT2)
+     8: i_153/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_134"
+Inferred a: "set_disable_timing -from I1 -to O i_153"
 Found timing loop:
-     0: i_30/O (LUT5)
-     1: i_30/I4 (LUT5)
-     2: i_134/O (LUT2)
-     3: i_134/I0 (LUT2)
-     4: i_29/O (LUT6)
-     5: i_29/I5 (LUT6)
-     6: i_30/O (LUT5)
+     0: i_94/O (LUT5)
+     1: i_94/I4 (LUT5)
+     2: i_153/O (LUT2)
+     3: i_153/I0 (LUT2)
+     4: i_93/O (LUT6)
+     5: i_93/I5 (LUT6)
+     6: i_94/O (LUT5)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I4 -to O i_30"
+Inferred a: "set_disable_timing -from I4 -to O i_94"
 Found timing loop:
-     0: i_127/O (LUT2)
-     1: i_127/I1 (LUT2)
-     2: i_42/O (LUT6)
-     3: i_42/I0 (LUT6)
-     4: i_127/O (LUT2)
+     0: i_146/O (LUT2)
+     1: i_146/I1 (LUT2)
+     2: i_106/O (LUT6)
+     3: i_106/I0 (LUT6)
+     4: i_146/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_127"
+Inferred a: "set_disable_timing -from I1 -to O i_146"
 Found timing loop:
-     0: i_133/O (LUT2)
-     1: i_133/I1 (LUT2)
-     2: i_48/O (LUT6)
-     3: i_48/I0 (LUT6)
-     4: i_127/O (LUT2)
-     5: i_127/I0 (LUT2)
-     6: i_126/O (LUT2)
-     7: i_126/I1 (LUT2)
-     8: i_133/O (LUT2)
+     0: i_152/O (LUT2)
+     1: i_152/I1 (LUT2)
+     2: i_112/O (LUT6)
+     3: i_112/I0 (LUT6)
+     4: i_146/O (LUT2)
+     5: i_146/I0 (LUT2)
+     6: i_145/O (LUT2)
+     7: i_145/I1 (LUT2)
+     8: i_152/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I1 -to O i_133"
+Inferred a: "set_disable_timing -from I1 -to O i_152"
 Found timing loop:
-     0: i_32/O (LUT6)
-     1: i_32/I5 (LUT6)
-     2: i_133/O (LUT2)
-     3: i_133/I0 (LUT2)
-     4: i_31/O (LUT6)
-     5: i_31/I5 (LUT6)
-     6: i_32/O (LUT6)
+     0: i_96/O (LUT6)
+     1: i_96/I5 (LUT6)
+     2: i_152/O (LUT2)
+     3: i_152/I0 (LUT2)
+     4: i_95/O (LUT6)
+     5: i_95/I5 (LUT6)
+     6: i_96/O (LUT6)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
-Inferred a: "set_disable_timing -from I5 -to O i_32"
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_130/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_129/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_128/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_133/O'
+Inferred a: "set_disable_timing -from I5 -to O i_96"
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -433,7 +427,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -446,7 +440,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -478,124 +472,29 @@ Found timing loop:
      4: pwm1_i_12/O (LUT6)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:23]
 Inferred a: "set_disable_timing -from I0 -to O pwm1_i_12"
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_32/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_18/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_6/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_19/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_5/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_49/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_17/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_43/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_30/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_15/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_40/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_28/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_26/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_13/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_37/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /BCOUT[4]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_11/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_25/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through pwm1_i_34/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /CARRYCASCOUT'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /MULTSIGNOUT'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PATTERNBDETECT'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PATTERNDETECT'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /BCOUT[5]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /CARRYOUT[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /CARRYOUT[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /CARRYOUT[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /CARRYOUT[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[47]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[46]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[45]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[44]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[43]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[42]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[41]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[40]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[39]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[38]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[37]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[36]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[35]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[34]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[33]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[32]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[31]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[30]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[29]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[28]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[27]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[26]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[25]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[24]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[23]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[22]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[21]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[20]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[19]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[18]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[17]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[16]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[15]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[14]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[13]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[12]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[11]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[10]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[9]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[8]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[7]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[6]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[5]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[4]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /P[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[47]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[46]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[45]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[44]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[43]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[42]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[41]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[40]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[39]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[38]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[37]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[36]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[35]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[34]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[33]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[32]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[31]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \Surface/speedB/pwm1 /PCOUT[30]'
-INFO: [Common 17-14] Message 'Synth 8-326' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -611,16 +510,16 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |BUFG    |     1|
+|1     |BUFG    |     2|
 |2     |CARRY4  |    38|
 |3     |DSP48E1 |     2|
-|4     |LUT1    |     6|
-|5     |LUT2    |    38|
-|6     |LUT3    |    15|
+|4     |LUT1    |     7|
+|5     |LUT2    |    36|
+|6     |LUT3    |    17|
 |7     |LUT4    |    43|
 |8     |LUT5    |    14|
-|9     |LUT6    |    38|
-|10    |FDRE    |   124|
+|9     |LUT6    |    32|
+|10    |FDRE    |   127|
 |11    |FDSE    |     2|
 |12    |IBUF    |    14|
 |13    |OBUF    |    18|
@@ -630,33 +529,33 @@ Report Instance Areas:
 +------+------------------------+---------------------+------+
 |      |Instance                |Module               |Cells |
 +------+------------------------+---------------------+------+
-|1     |top                     |                     |   353|
-|2     |  Surface               |Motor_Control        |   180|
-|3     |    Speedcontrol        |Encoder              |   112|
+|1     |top                     |                     |   352|
+|2     |  Surface               |Motor_Control        |   178|
+|3     |    Speedcontrol        |Encoder              |   110|
 |4     |    speedA              |PWM                  |    22|
 |5     |    speedB              |PWM_0                |    46|
 |6     |  Useven_seg            |seven_seg            |    29|
 |7     |  Uultrasonic_proximity |ultrasonic_proximity |   105|
 +------+------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 19 critical warnings and 138 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 808.328 ; gain = 207.148
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 808.328 ; gain = 548.512
+Synthesis finished with 0 errors, 19 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 806.914 ; gain = 206.742
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 806.914 ; gain = 548.430
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-41 Infos, 120 Warnings, 19 Critical Warnings and 0 Errors encountered.
+40 Infos, 16 Warnings, 19 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 808.328 ; gain = 561.469
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 806.914 ; gain = 561.066
 INFO: [Common 17-1381] The checkpoint 'C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 808.328 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jul 15 18:21:06 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 806.914 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 15 18:50:19 2018...

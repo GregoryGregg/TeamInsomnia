@@ -35,15 +35,20 @@ module Encoder(
     reg check_b = 1'b0;
     reg [14:0] countb_r, counta_r;
     reg [5:0] swb_r;
-    reg [26:0] division;
+    reg counter;
     
     assign swb = swb_r;
     
     always @(posedge clk)
     begin
+    counter <= counter + 1'b1;
+    end
+    
+    always @(posedge counter)
+    begin
         if (~brake)
         begin
-            if (ea && ~counta_r)
+            if (ea && ~check_a)
             begin
                 check_a <= 1'b1;
                 counta_r <= counta_r + 1'b1;
@@ -53,7 +58,7 @@ module Encoder(
             end
         end if (~brake)
         begin
-            if (eb && ~countb_r)
+            if (eb && ~check_b)
             begin
                 check_b <= 1'b1;
                 countb_r <= countb_r + 1'b1;
