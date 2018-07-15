@@ -43,6 +43,8 @@ module TopModule(
     wire[15:0] msg; //wire for the message for the seven seg
     wire[15:0] dist; //distance from proximity sensor
     reg[15:0] us_mindist = 16'b0000101010100011; //minimum distance for us sensor before stop
+    reg[4:0] us_hist = 5'b00000; //stores the last five us readings
+    reg us_obst; //is there an obstacle detected by the us
     wire us_outup; //ultrasonic output update flag
     assign msg = dist;
     
@@ -78,5 +80,37 @@ module TopModule(
         .ENB(ENB)
      );
      
+     always @(posedge clk) //check ultrasonic
+     begin
+        
+     if (us_outup) //if dist has been updated
+     begin
+     
+        us_hist <= us_hist << 1; //shift history to the left, making room for a new reading in the lsb
+        
+        if(dist <= us_mindist) //if dist is too close
+        begin
+        us_hist[4] <= 1'b1; //make the lsb in history a 1
+        end
+        
+        else
+        begin
+        us_hist[4] <= 1'b0; //make the lsb in history a 0
+        end
+        
+        if((us_hist[4] + us_hist[3] + us_hist[2] + us_hist[1] + us_hist[0]) >= 3) //if three or more of the last five us readings are too close
+        begin
+        us_obst <= 1'b1; //warn of obstacle
+        end
+        
+        else
+        begin
+        us_obst <= 1'b0; //is no obstacle
+        end
+        
+     end
+     
+     end
+            
     
 endmodule
