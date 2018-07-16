@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jul 15 18:50:56 2018
-| Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
+| Date         : Sun Jul 15 20:18:14 2018
+| Host         : HomeSlicePC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
 | Design       : TopModule
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    23 |
+| Number of unique control sets                            |     8 |
+| Unused register locations in slices containing registers |    29 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,6 +35,7 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      2 |            2 |
+|      6 |            1 |
 |     11 |            1 |
 |     15 |            2 |
 |    16+ |            2 |
@@ -47,10 +48,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              64 |           20 |
+| No           | No                    | No                     |              92 |           27 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              13 |            7 |
-| Yes          | No                    | No                     |              30 |            8 |
+| No           | Yes                   | No                     |              13 |            6 |
+| Yes          | No                    | No                     |              36 |           10 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              22 |            6 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -62,13 +63,14 @@ Table of Contents
 +----------------+--------------------------------+------------------------------+------------------+----------------+
 |  Clock Signal  |          Enable Signal         |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +----------------+--------------------------------+------------------------------+------------------+----------------+
-|  counter_BUFG  |                                |                              |                1 |              2 |
+|  check_BUFG    |                                |                              |                1 |              2 |
 |  clk_IBUF_BUFG |                                | brake_IBUF                   |                2 |              2 |
-|  clk_IBUF_BUFG |                                | Uultrasonic_proximity/outcnt |                5 |             11 |
-|  counter_BUFG  | Surface/Speedcontrol/countb_r  |                              |                4 |             15 |
-|  counter_BUFG  | Surface/Speedcontrol/counta_r  |                              |                4 |             15 |
+|  clk_IBUF_BUFG | Surface/Speedcontrol/E[0]      |                              |                2 |              6 |
+|  clk_IBUF_BUFG |                                | Uultrasonic_proximity/outcnt |                4 |             11 |
+|  check_BUFG    | Surface/Speedcontrol/countb_r  |                              |                4 |             15 |
+|  check_BUFG    | Surface/Speedcontrol/counta_r  |                              |                4 |             15 |
 |  clk_IBUF_BUFG | Uultrasonic_proximity/countint | Uultrasonic_proximity/count  |                6 |             22 |
-|  clk_IBUF_BUFG |                                |                              |               19 |             62 |
+|  clk_IBUF_BUFG |                                |                              |               26 |             90 |
 +----------------+--------------------------------+------------------------------+------------------+----------------+
 
 

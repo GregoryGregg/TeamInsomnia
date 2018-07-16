@@ -2,11 +2,11 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun Jul 15 18:49:37 2018
-# Process ID: 7684
-# Current directory: C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1
+# Start of session at: Sun Jul 15 20:16:37 2018
+# Process ID: 19432
+# Current directory: C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1
 # Command line: vivado.exe -log TopModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopModule.tcl
-# Log file: C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.vds
-# Journal file: C:/Users/nicho/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1\vivado.jou
+# Log file: C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.vds
+# Journal file: C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source TopModule.tcl -notrace

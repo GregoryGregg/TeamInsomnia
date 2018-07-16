@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun Jul 15 18:51:16 2018
-| Host             : DESKTOP-54CS49R running 64-bit major release  (build 9200)
+| Date             : Sun Jul 15 20:18:40 2018
+| Host             : HomeSlicePC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
 | Device           : xc7a35tcpg236-1
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.088        |
+| Total On-Chip Power (W)  | 0.087        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.016        |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      333 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      115 |     20800 |            0.55 |
-|   CARRY4       |    <0.001 |       38 |      8150 |            0.47 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Register     |    <0.001 |      129 |     41600 |            0.31 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      348 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       97 |     20800 |            0.47 |
+|   CARRY4       |    <0.001 |       45 |      8150 |            0.55 |
+|   Register     |    <0.001 |      163 |     41600 |            0.39 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |      298 |       --- |             --- |
+|   BUFG         |     0.000 |        1 |        32 |            3.13 |
+| Signals        |    <0.001 |      311 |       --- |             --- |
 | DSPs           |     0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.012 |       32 |       106 |           30.19 |
+| I/O            |     0.011 |       32 |       106 |           30.19 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.088 |          |           |                 |
+| Total          |     0.087 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.005 |      0.010 |
+| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jul 15 18:50:53 2018
-| Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
+| Date         : Sun Jul 15 20:18:10 2018
+| Host         : HomeSlicePC running 64-bit major release  (build 9200)
 | Command      : report_drc -file TopModule_drc_opted.rpt -pb TopModule_drc_opted.pb -rpx TopModule_drc_opted.rpx
 | Design       : TopModule
 | Device       : xc7a35tcpg236-1
@@ -24,58 +24,17 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 16
-+---------+------------------+--------------------------+------------+
-| Rule    | Severity         | Description              | Violations |
-+---------+------------------+--------------------------+------------+
-| LUTLP-1 | Critical Warning | Combinatorial Loop Alert | 8          |
-| DPIP-1  | Warning          | Input pipelining         | 4          |
-| DPOP-1  | Warning          | PREG Output pipelining   | 2          |
-| DPOP-2  | Warning          | MREG Output pipelining   | 2          |
-+---------+------------------+--------------------------+------------+
+             Violations found: 7
++--------+----------+------------------------+------------+
+| Rule   | Severity | Description            | Violations |
++--------+----------+------------------------+------------+
+| DPIP-1 | Warning  | Input pipelining       | 3          |
+| DPOP-1 | Warning  | PREG Output pipelining | 2          |
+| DPOP-2 | Warning  | MREG Output pipelining | 2          |
++--------+----------+------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-LUTLP-1#1 Critical Warning
-Combinatorial Loop Alert  
-1 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/pwm1_i_18_n_0. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_18.
-Related violations: <none>
-
-LUTLP-1#2 Critical Warning
-Combinatorial Loop Alert  
-1 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/swb[1]. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_5.
-Related violations: <none>
-
-LUTLP-1#3 Critical Warning
-Combinatorial Loop Alert  
-2 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/pwm1_i_18_n_0. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_18, Surface/Speedcontrol/pwm1_i_32.
-Related violations: <none>
-
-LUTLP-1#4 Critical Warning
-Combinatorial Loop Alert  
-2 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/swb[1]. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_5, Surface/Speedcontrol/pwm1_i_19.
-Related violations: <none>
-
-LUTLP-1#5 Critical Warning
-Combinatorial Loop Alert  
-6 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/swb[2]. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_4, Surface/Speedcontrol/pwm1_i_16, Surface/Speedcontrol/pwm1_i_17, Surface/Speedcontrol/pwm1_i_31, Surface/Speedcontrol/pwm1_i_43, Surface/Speedcontrol/pwm1_i_45.
-Related violations: <none>
-
-LUTLP-1#6 Critical Warning
-Combinatorial Loop Alert  
-6 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/swb[3]. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_3, Surface/Speedcontrol/pwm1_i_14, Surface/Speedcontrol/pwm1_i_15, Surface/Speedcontrol/pwm1_i_29, Surface/Speedcontrol/pwm1_i_40, Surface/Speedcontrol/pwm1_i_42.
-Related violations: <none>
-
-LUTLP-1#7 Critical Warning
-Combinatorial Loop Alert  
-6 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/swb[4]. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_2__0, Surface/Speedcontrol/pwm1_i_12, Surface/Speedcontrol/pwm1_i_13, Surface/Speedcontrol/pwm1_i_27, Surface/Speedcontrol/pwm1_i_37, Surface/Speedcontrol/pwm1_i_39.
-Related violations: <none>
-
-LUTLP-1#8 Critical Warning
-Combinatorial Loop Alert  
-7 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is Surface/Speedcontrol/swb[5]. Please evaluate your design. The cells in the loop are: Surface/Speedcontrol/pwm1_i_1__0, Surface/Speedcontrol/pwm1_i_10, Surface/Speedcontrol/pwm1_i_11, Surface/Speedcontrol/pwm1_i_24, Surface/Speedcontrol/pwm1_i_25, Surface/Speedcontrol/pwm1_i_34, Surface/Speedcontrol/pwm1_i_36.
-Related violations: <none>
-
 DPIP-1#1 Warning
 Input pipelining  
 DSP Surface/speedA/pwm1 input Surface/speedA/pwm1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
@@ -89,11 +48,6 @@ Related violations: <none>
 DPIP-1#3 Warning
 Input pipelining  
 DSP Surface/speedB/pwm1 input Surface/speedB/pwm1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#4 Warning
-Input pipelining  
-DSP Surface/speedB/pwm1 input Surface/speedB/pwm1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning

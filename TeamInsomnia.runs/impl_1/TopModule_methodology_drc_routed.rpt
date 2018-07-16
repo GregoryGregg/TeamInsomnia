@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jul 15 18:51:15 2018
-| Host         : DESKTOP-54CS49R running 64-bit major release  (build 9200)
+| Date         : Sun Jul 15 20:18:40 2018
+| Host         : HomeSlicePC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file TopModule_methodology_drc_routed.rpt -pb TopModule_methodology_drc_routed.pb -rpx TopModule_methodology_drc_routed.rpx
 | Design       : TopModule
 | Device       : xc7a35tcpg236-1
@@ -23,13 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 63
+             Violations found: 57
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
 | TIMING-17 | Warning  | Non-clocked sequential cell   | 32         |
 | TIMING-18 | Warning  | Missing input or output delay | 25         |
-| TIMING-23 | Warning  | Combinational loop found      | 6          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -317,36 +316,6 @@ Related violations: <none>
 TIMING-18#25 Warning
 Missing input or output delay  
 An output delay is missing on seg[6] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-23#1 Warning
-Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between Surface/Speedcontrol/pwm1_i_18/I4 and Surface/Speedcontrol/pwm1_i_18/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#2 Warning
-Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between Surface/Speedcontrol/pwm1_i_36/I1 and Surface/Speedcontrol/pwm1_i_36/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#3 Warning
-Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between Surface/Speedcontrol/pwm1_i_39/I4 and Surface/Speedcontrol/pwm1_i_39/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#4 Warning
-Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between Surface/Speedcontrol/pwm1_i_42/I5 and Surface/Speedcontrol/pwm1_i_42/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#5 Warning
-Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between Surface/Speedcontrol/pwm1_i_45/I5 and Surface/Speedcontrol/pwm1_i_45/O to disable the timing loop
-Related violations: <none>
-
-TIMING-23#6 Warning
-Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between Surface/Speedcontrol/pwm1_i_5/I2 and Surface/Speedcontrol/pwm1_i_5/O to disable the timing loop
 Related violations: <none>
 
 

@@ -76,7 +76,7 @@ module Encoder(
         end
    end
     
-    always @(*)
+    always @(posedge clk)
     begin
         if ((counta_r - countb_r) > tolerance)
         begin
@@ -84,9 +84,6 @@ module Encoder(
         end else if ((counta_r - countb_r) < tolerance)
         begin
             swb_r <= swb_r - 1;
-        end else
-        begin
-            swb_r <= sw;
         end
     end
             
