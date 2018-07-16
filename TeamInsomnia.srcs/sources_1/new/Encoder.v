@@ -33,18 +33,25 @@ module Encoder(
     reg [3:0] tolerance = 4'b1111;
     reg check_a = 1'b0; 
     reg check_b = 1'b0;
+    reg check;
     reg [14:0] countb_r, counta_r;
     reg [5:0] swb_r;
-    reg counter;
+    reg [27:0] counter_frequency;
+    reg [27:0] limit = 27'd67108864;
     
     assign swb = swb_r;
     
     always @(posedge clk)
     begin
-    counter <= counter + 1'b1;
+        if (counter_frequency == limit)
+        begin
+            counter_frequency <= 0;
+            check <= ~check;
+        end
+        counter_frequency <= counter_frequency + 1'b1;
     end
     
-    always @(posedge counter)
+    always @(posedge check)
     begin
         if (~brake)
         begin
