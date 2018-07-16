@@ -17,6 +17,43 @@
 // Revision 0.03 - added ultrasonic and io (Justin)
 // Additional Comments: More info in ultrasonic_proximity.v
 // 
+//
+// PMOD Assignments:
+// JA[1]:  Inductance Sensor
+// JA[2]:  Ultrasonic Trigger
+// JA[3]:  Ultrasonic Echo
+// JA[4]:
+// JA[7]:
+// JA[8]:
+// JA[9]:
+// JA[10]:
+//
+// JB[1]:  ENA
+// JB[2]:  IN1
+// JB[3]:  IN2
+// JB[4]:  ea
+// JB[7]:  ENB
+// JB[8]:  IN3
+// JB[9]:  IN4
+// JB[10]: eb
+//
+// JC[1]:
+// JC[2]:
+// JC[3]:
+// JC[4]:
+// JC[7]:
+// JC[8]:
+// JC[9]:
+// JC[10]:
+//
+// JXADC[1]:
+// JXADC[2]:
+// JXADC[3]:
+// JXADC[4]:
+// JXADC[7]:
+// JXADC[8]:
+// JXADC[9]:
+// JXADC[10]:
 //////////////////////////////////////////////////////////////////////////////////
 
 
