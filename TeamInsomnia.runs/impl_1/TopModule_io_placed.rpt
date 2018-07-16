@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date                      : Sun Jul 15 20:18:14 2018
-| Host                      : HomeSlicePC running 64-bit major release  (build 9200)
+| Date                      : Mon Jul 16 17:37:30 2018
+| Host                      : MSI running 64-bit major release  (build 9200)
 | Command                   : report_io -file TopModule_io_placed.rpt
 | Design                    : TopModule
 | Device                    : xc7a35t
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            33 |
+|            32 |
 +---------------+
 
 
@@ -267,7 +267,7 @@ Table of Contents
 | W11        |              | Dedicated  | M1_0                         | Config        |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | W12        |              |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | W13        | coast        | High Range | IO_L22P_T3_A05_D21_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| W14        | brake        | High Range | IO_L22N_T3_A04_D20_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| W14        |              | High Range | IO_L22N_T3_A04_D20_14        | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | W15        | sw[4]        | High Range | IO_L21N_T3_DQS_A06_D22_14    | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | W16        | sw[2]        | High Range | IO_L20P_T3_A08_D24_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | W17        | sw[3]        | High Range | IO_L20N_T3_A07_D23_14        | INPUT         | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |

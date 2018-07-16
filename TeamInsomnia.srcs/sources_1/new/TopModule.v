@@ -24,7 +24,6 @@ module TopModule(
     input clk,
     input [2:0]direction,
     input [5:0]sw, // Speed for the motor control module set by the switches, to be removed
-    input brake, // to be removed in favor of a register in the code
     input coast, // to be removed as with brake
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
@@ -39,6 +38,7 @@ module TopModule(
     output ENA,
     output ENB
 );
+    reg brake; //stops the rover
     
     wire[15:0] msg; //wire for the message for the seven seg
     wire[15:0] dist; //distance from proximity sensor
@@ -80,37 +80,37 @@ module TopModule(
         .ENB(ENB)
      );
      
-//     always @(posedge clk) //check ultrasonic
-//     begin
+     always @(posedge clk) //check ultrasonic
+     begin
         
-//     if (us_outup) //if dist has been updated
-//     begin
+     if (us_outup) //if dist has been updated
+     begin
      
-//        us_hist <= us_hist << 1; //shift history to the left, making room for a new reading in the lsb
+        us_hist <= us_hist << 1; //shift history to the left, making room for a new reading in the lsb
         
-//        if(dist <= us_mindist) //if dist is too close
-//        begin
-//        us_hist[4] <= 1'b1; //make the lsb in history a 1
-//        end
+        if(dist <= us_mindist) //if dist is too close
+        begin
+        us_hist[4] <= 1'b1; //make the lsb in history a 1
+        end
         
-//        else
-//        begin
-//        us_hist[4] <= 1'b0; //make the lsb in history a 0
-//        end
+        else
+        begin
+        us_hist[4] <= 1'b0; //make the lsb in history a 0
+        end
         
-//        if((us_hist[4] + us_hist[3] + us_hist[2] + us_hist[1] + us_hist[0]) >= 3) //if three or more of the last five us readings are too close
-//        begin
-//        us_obst <= 1'b1; //warn of obstacle
-//        end
+        if((us_hist[4] + us_hist[3] + us_hist[2] + us_hist[1] + us_hist[0]) >= 3) //if three or more of the last five us readings are too close
+        begin
+        brake <= 1'b1; //warn of obstacle
+        end
         
-//        else
-//        begin
-//        us_obst <= 1'b0; //is no obstacle
-//        end
+        else
+        begin
+        brake <= 1'b0; //is no obstacle
+        end
         
-//     end
+     end
      
-//     end
+     end
             
     
 endmodule

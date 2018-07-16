@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun Jul 15 20:18:40 2018
-| Host             : HomeSlicePC running 64-bit major release  (build 9200)
+| Date             : Mon Jul 16 17:37:56 2018
+| Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
 | Device           : xc7a35tcpg236-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.087        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.016        |
+| Dynamic (W)              | 0.015        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      348 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       97 |     20800 |            0.47 |
+| Slice Logic    |    <0.001 |      343 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       93 |     20800 |            0.45 |
 |   CARRY4       |    <0.001 |       45 |      8150 |            0.55 |
 |   Register     |    <0.001 |      163 |     41600 |            0.39 |
 |   Others       |     0.000 |       16 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |      311 |       --- |             --- |
+| Signals        |    <0.001 |      307 |       --- |             --- |
 | DSPs           |     0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.011 |       32 |       106 |           30.19 |
+| I/O            |     0.011 |       31 |       106 |           29.25 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.087 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -142,13 +142,14 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.016 |
+| TopModule               |     0.015 |
 |   Surface               |     0.002 |
+|     Decode              |    <0.001 |
 |     Speedcontrol        |    <0.001 |
 |     speedA              |    <0.001 |
 |     speedB              |     0.001 |
 |   Useven_seg            |    <0.001 |
-|   Uultrasonic_proximity |     0.001 |
+|   Uultrasonic_proximity |    <0.001 |
 +-------------------------+-----------+
 
 

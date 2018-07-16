@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.xpr">
+<Project Version="7" Minor="36" Path="C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="08756667e20d4bfebca46b2dff0fdc26"/>
