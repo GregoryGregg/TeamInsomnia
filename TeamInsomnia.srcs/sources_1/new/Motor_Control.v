@@ -45,23 +45,23 @@ module Motor_Control(
    ratioB_r = ((Direction == 3'b001)||(Direction == 3'b011)) ? ((32768)/(2*63)):(32768/63); // Can be changed for Independant motor operation
    end
    
-    Encoder Speedcontrol (
-        .clk(clk),
-        .brake(brake),
-        .coast(coast),
-        .ea(ea),
-        .eb(eb),
-        .direction(Direction),
-        .sw(sw),
-        .swb(swb)
-    );
+//    Encoder Speedcontrol (
+//        .clk(clk),
+//        .brake(brake),
+//        .coast(coast),
+//        .ea(ea),
+//        .eb(eb),
+//        .direction(Direction),
+//        .sw(sw),
+//        .swb(swb)
+//    );
     
     PWM speedB (
         .clk(clk),
         .ratio(ratioB_r),
         .brake(brake),
         .coast(coast),
-        .sw(swb),
+        .sw(sw),
         .enable(ENB)
     );
     

@@ -73,7 +73,8 @@ module TopModule(
     output IN3,
     output IN4,
     output ENA,
-    output ENB
+    output ENB,
+    output[0:4] led
 );
     reg brake; //stops the rover
     
@@ -84,6 +85,7 @@ module TopModule(
     reg us_obst; //is there an obstacle detected by the us
     wire us_outup; //ultrasonic output update flag
     assign msg = dist;
+    assign led = us_hist;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
@@ -120,22 +122,22 @@ module TopModule(
      always @(posedge clk) //check ultrasonic
      begin
         
-     if (us_outup) //if dist has been updated
+     if (us_outup == 1'b1) //if dist has been updated
      begin
      
-        us_hist <= us_hist << 1; //shift history to the left, making room for a new reading in the lsb
+
         
-        if(dist <= us_mindist) //if dist is too close
-        begin
-        us_hist[4] <= 1'b1; //make the lsb in history a 1
-        end
+//        if(dist <= us_mindist) //if dist is too close
+//        begin
+//        us_hist[4] <= 1'b1; //make the lsb in history a 1
+//        end
         
-        else
-        begin
-        us_hist[4] <= 1'b0; //make the lsb in history a 0
-        end
+//        else
+//        begin
+//        us_hist[4] <= 1'b0; //make the lsb in history a 0
+//        end
         
-        if((us_hist[4] + us_hist[3] + us_hist[2] + us_hist[1] + us_hist[0]) >= 3) //if three or more of the last five us readings are too close
+        if(dist <= us_mindist) //if three or more of the last five us readings are too close
         begin
         brake <= 1'b1; //warn of obstacle
         end
@@ -144,6 +146,8 @@ module TopModule(
         begin
         brake <= 1'b0; //is no obstacle
         end
+        
+//        us_hist = us_hist << 1; //shift history to the left, making room for a new reading in the lsb
         
      end
      
