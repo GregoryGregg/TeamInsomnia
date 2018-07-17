@@ -30,16 +30,17 @@ output outup //output update flag
     reg counten; //count enable reg
     reg countint; //internal reg to represent input
     reg outen; //out enable reg
-    reg outup; //output update flag
+    reg outupreg;
     reg[21:0] count; //count reg
     reg[15:0] countf; //stores the 16 most significant bits of count
     reg[9:0] outcnt; //counts out trigger pulse
-    reg[25:0] delcnt = 26'b0; //counts delay between measurements
+    reg[25:0] delcnt = 24'b0; //counts delay between measurements
     wire outtogg;
 
     assign trigger = outen; //assign trigger output
     assign dist = countf; //assign output distance
-    assign outtogg = (delcnt == 26'b0) ?1'b1:1'b0; //begin trigger pulse
+    assign outtogg = (delcnt == 24'b0) ?1'b1:1'b0; //begin trigger pulse
+    assign ouup = outupreg;
     
     
     always @(posedge clk)
@@ -69,15 +70,15 @@ output outup //output update flag
     
     always @(posedge clk) //take in value of JA1 to mitigate metastability
     begin
-    countint <= outen;
+    countint <= echo;
     end
 
     always @(posedge clk)
     begin
     
-    if (outup == 1'b1)
+    if (outupreg == 1'b1)
     begin
-        outup <= 1'b0; //reset output update flag
+        outupreg <= 1'b0; //reset output update flag
     end
     
     if (countint) //if echo detected
@@ -89,7 +90,7 @@ output outup //output update flag
     begin
     
         countf <= count[21:6]; //load 16 most sig bits into countf
-        outup <= 1'b1; //set output update flag
+        outupreg <= 1'b1; //set output update flag
         count <= 22'b0; //reset count
     end
 
