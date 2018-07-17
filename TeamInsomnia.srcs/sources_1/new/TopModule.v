@@ -59,11 +59,12 @@
 
 module TopModule(
     input clk,
-    input [2:0]direction,
     input [5:0]sw, // Speed for the motor control module set by the switches, to be removed
     input coast, // to be removed as with brake
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
+    input JC1,
+    input JC2,
     input JA1, //inductance input
     input JA4, //echo from ultrasonic
     output JA2, //electromagnet enable
@@ -92,14 +93,15 @@ module TopModule(
     assign msg = dist;
     assign led = us_hist;
     
+    wire [2:0]direction;
     wire is_in;
-    wire is_out;
+    reg electroMag;
     reg is_obst;
     
-    assign is_in = JA1;
-    assign is_out = JA2;
-    assign us_trig = JA3;
+    assign is_in = ~JA1;
+    assign JA3 = us_trig;
     assign us_echo = JA4;
+    assign JA2 = electroMag;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
@@ -115,6 +117,13 @@ module TopModule(
         .dist    (dist),
         .outup   (us_outup)
       );
+      
+     BeaconFollower Directions(
+        .clk(clk),
+        .micLeft(JC1),
+        .micRight(JC2),
+        .direction(direction)
+     );
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
@@ -133,15 +142,18 @@ module TopModule(
         .ENB(ENB)
      );
      
-     always @(posedge clk) //take in is
-     begin
-     
-     is_obst <= is_in;
-     
-     end
      
      always @(posedge clk)
      begin
+     
+     if(is_in)
+     begin
+     electroMag <= 1'b1;
+     end else if(~is_in)
+     begin
+     electroMag <= 1'b0;
+     end
+     
      
      if(us_obst || is_obst)
      begin

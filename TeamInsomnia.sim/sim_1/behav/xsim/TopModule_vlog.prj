@@ -1,9 +1,12 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../TeamInsomnia.srcs/sources_1/new/Beacon_Module.v" \
 "../../../../TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v" \
 "../../../../TeamInsomnia.srcs/sources_1/new/Directional_Control.v" \
 "../../../../TeamInsomnia.srcs/sources_1/new/Motor_Control.v" \
 "../../../../TeamInsomnia.srcs/sources_1/new/PWM.v" \
+"../../../../TeamInsomnia.srcs/sources_1/new/seven_seg.v" \
+"../../../../TeamInsomnia.srcs/sources_1/new/ultrasonic_proximity.v" \
 "../../../../TeamInsomnia.srcs/sources_1/new/TopModule.v" \
 
 # compile glbl module
