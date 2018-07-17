@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Mon Jul 16 22:32:32 2018
+| Date             : Mon Jul 16 23:38:11 2018
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      248 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       69 |     20800 |            0.33 |
-|   CARRY4       |    <0.001 |       26 |      8150 |            0.32 |
-|   Register     |    <0.001 |      113 |     41600 |            0.27 |
+| Slice Logic    |    <0.001 |      258 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       68 |     20800 |            0.33 |
+|   CARRY4       |    <0.001 |       25 |      8150 |            0.31 |
+|   Register     |    <0.001 |      121 |     41600 |            0.29 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |    <0.001 |      222 |       --- |             --- |
+| Signals        |    <0.001 |      233 |       --- |             --- |
 | DSPs           |    <0.001 |        2 |        90 |            2.22 |
 | I/O            |     0.017 |       35 |       106 |           33.02 |
 | Static Power   |     0.072 |          |           |                 |

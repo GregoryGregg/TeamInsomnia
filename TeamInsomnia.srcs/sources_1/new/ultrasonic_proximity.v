@@ -30,13 +30,13 @@ output outup
     reg[21:0] count; //count reg
     reg[15:0] countf; //stores the 16 most significant bits of count
     reg[9:0] outcnt; //counts out trigger pulse
-    reg[25:0] delcnt = 26'b0; //counts delay between measurements
+    reg[22:0] delcnt = 23'b0; //counts delay between measurements
     wire outtogg;
 
     assign dist = countf; //assign output leds
     assign outup = outupreg;
     assign trigger = outen; //assign trigger output
-    assign outtogg = (delcnt == 26'b0) ?1'b1:1'b0; //begin trigger pulse
+    assign outtogg = (delcnt == 23'b0) ?1'b1:1'b0; //begin trigger pulse
     
     always @(posedge clk)
     begin
