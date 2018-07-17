@@ -48,6 +48,7 @@ module Motor_Control(
     Encoder Speedcontrol (
         .clk(clk),
         .brake(brake),
+        .coast(coast),
         .ea(ea),
         .eb(eb),
         .direction(Direction),

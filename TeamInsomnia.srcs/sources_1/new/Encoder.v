@@ -23,6 +23,7 @@
 module Encoder(
  input clk,
  input brake,
+ input coast,
  input ea,
  input eb,
  input [2:0]direction,
@@ -53,7 +54,7 @@ module Encoder(
     
     always @(posedge check)
     begin
-        if (~brake)
+        if (~brake && ~coast)
         begin
             if (ea && ~check_a)
             begin
@@ -63,7 +64,7 @@ module Encoder(
             begin
                 check_a <= 1'b0;
             end
-        end if (~brake)
+        end if (~brake && ~coast)
         begin
             if (eb && ~check_b)
             begin
