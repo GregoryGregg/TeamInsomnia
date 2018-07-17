@@ -40,7 +40,7 @@ output outup //output update flag
     assign trigger = outen; //assign trigger output
     assign dist = countf; //assign output distance
     assign outtogg = (delcnt == 24'b0) ?1'b1:1'b0; //begin trigger pulse
-    assign ouup = outupreg;
+    assign outup = outupreg;
     
     
     always @(posedge clk)

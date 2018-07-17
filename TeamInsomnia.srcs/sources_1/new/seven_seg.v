@@ -102,24 +102,5 @@ reg [6:0] sseg_temp; // 7 bit register to hold the binary value of each input gi
    assign seg = sseg_temp; 
 reg [26:0] count1 = 27'b0;
 reg toggle = 1'b0;
-
-always @ (posedge clk)
-    begin
-        begin
-        count1 <= count1 + msg;
-        end
-    if(count1 >= 50000000)
-     begin
-      count1 <= count1 - 50000000;
-        if(toggle == 0)
-            begin
-            toggle = 1;
-            end
-        else
-            begin
-            toggle = 0;
-            end
-        end
-  end
         
 endmodule
