@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Jul 16 17:37:30 2018
-| Host         : MSI running 64-bit major release  (build 9200)
+| Date         : Mon Jul 16 19:26:09 2018
+| Host         : HomeSlicePC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
 | Design       : TopModule
 | Device       : xc7a35t
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    21 |
+| Unused register locations in slices containing registers |    22 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,7 +35,7 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      2 |            1 |
-|      6 |            1 |
+|      5 |            1 |
 |     11 |            1 |
 |     15 |            2 |
 |    16+ |            2 |
@@ -48,10 +48,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              94 |           28 |
+| No           | No                    | No                     |              94 |           29 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              11 |            5 |
-| Yes          | No                    | No                     |              36 |           10 |
+| Yes          | No                    | No                     |              35 |           10 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              22 |            6 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -64,12 +64,12 @@ Table of Contents
 |  Clock Signal  |          Enable Signal         |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +----------------+--------------------------------+------------------------------+------------------+----------------+
 |  check_BUFG    |                                |                              |                2 |              2 |
-|  clk_IBUF_BUFG | Surface/Speedcontrol/E[0]      |                              |                2 |              6 |
+|  clk_IBUF_BUFG | Surface/Speedcontrol/E[0]      |                              |                2 |              5 |
 |  clk_IBUF_BUFG |                                | Uultrasonic_proximity/outcnt |                5 |             11 |
 |  check_BUFG    | Surface/Speedcontrol/check_a0  |                              |                4 |             15 |
 |  check_BUFG    | Surface/Speedcontrol/check_b0  |                              |                4 |             15 |
 |  clk_IBUF_BUFG | Uultrasonic_proximity/countint | Uultrasonic_proximity/count  |                6 |             22 |
-|  clk_IBUF_BUFG |                                |                              |               26 |             92 |
+|  clk_IBUF_BUFG |                                |                              |               27 |             92 |
 +----------------+--------------------------------+------------------------------+------------------+----------------+
 
 

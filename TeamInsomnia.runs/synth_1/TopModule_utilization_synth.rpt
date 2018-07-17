@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Jul 16 17:36:42 2018
-| Host         : MSI running 64-bit major release  (build 9200)
+| Date         : Mon Jul 16 19:25:23 2018
+| Host         : HomeSlicePC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
 | Design       : TopModule
 | Device       : 7a35tcpg236-1
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   93 |     0 |     20800 |  0.45 |
-|   LUT as Logic          |   93 |     0 |     20800 |  0.45 |
+| Slice LUTs*             |   94 |     0 |     20800 |  0.45 |
+|   LUT as Logic          |   94 |     0 |     20800 |  0.45 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  163 |     0 |     41600 |  0.39 |
-|   Register as Flip Flop |  163 |     0 |     41600 |  0.39 |
+| Slice Registers         |  162 |     0 |     41600 |  0.39 |
+|   Register as Flip Flop |  162 |     0 |     41600 |  0.39 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 163   |          Yes |       Reset |            - |
+| 162   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,16 +150,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  163 |        Flop & Latch |
+| FDRE     |  162 |        Flop & Latch |
 | CARRY4   |   45 |          CarryLogic |
-| LUT4     |   37 |                 LUT |
+| LUT4     |   36 |                 LUT |
 | LUT2     |   35 |                 LUT |
-| LUT6     |   22 |                 LUT |
+| LUT6     |   23 |                 LUT |
 | OBUF     |   18 |                  IO |
 | IBUF     |   13 |                  IO |
 | LUT5     |    9 |                 LUT |
+| LUT3     |    9 |                 LUT |
 | LUT1     |    8 |                 LUT |
-| LUT3     |    7 |                 LUT |
 | DSP48E1  |    2 |    Block Arithmetic |
 | BUFG     |    2 |               Clock |
 +----------+------+---------------------+

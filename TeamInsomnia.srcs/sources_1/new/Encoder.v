@@ -37,7 +37,7 @@ module Encoder(
     reg [14:0] countb_r, counta_r;
     reg [5:0] swb_r;
     reg [27:0] counter_frequency;
-    reg [27:0] limit = 27'd67108864;
+    reg [27:0] limit = 27'd134217727;
     
     assign swb = swb_r;
     
