@@ -20,9 +20,9 @@
 //
 // PMOD Assignments:
 // JA[1]:  Inductance Sensor
-// JA[2]:  Ultrasonic Trigger
-// JA[3]:  Ultrasonic Echo
-// JA[4]:
+// JA[2]:  Electromagnet enable
+// JA[3]:  Ultrasonic Trigger
+// JA[4]:  Ultrasonic Echo
 // JA[7]:
 // JA[8]:
 // JA[9]:
@@ -64,10 +64,12 @@ module TopModule(
     input coast, // to be removed as with brake
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
-    input JA0, //echo from ultrasonic
+    input JA1, //inductance input
+    input JA4, //echo from ultrasonic
+    output JA2, //electromagnet enable
+    output JA3, //ultrasonic trigger
     output[3:0] an, //anode for seven seg
     output[6:0] seg, //segment for seven seg
-    output JA1, //trigger for ultrasonic
     output IN1, // All that follow are motor outputs and shouldn't be moved
     output IN2, 
     output IN3,
@@ -76,8 +78,11 @@ module TopModule(
     output ENB,
     output[0:4] led
 );
+
     reg brake; //stops the rover
     
+    wire us_trig;
+    wire us_echo;
     wire[15:0] msg; //wire for the message for the seven seg
     wire[15:0] dist; //distance from proximity sensor
     reg[15:0] us_mindist = 16'b0000101010100011; //minimum distance for us sensor before stop
@@ -87,7 +92,14 @@ module TopModule(
     assign msg = dist;
     assign led = us_hist;
     
+    wire is_in;
+    wire is_out;
     reg is_obst;
+    
+    assign is_in = JA1;
+    assign is_out = JA2;
+    assign us_trig = JA3;
+    assign us_echo = JA4;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
@@ -98,8 +110,8 @@ module TopModule(
      
      ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
         .clk     (clk),
-        .echo    (JA0),
-        .trigger (JA1),
+        .echo    (JA4),
+        .trigger (JA3),
         .dist    (dist),
         .outup   (us_outup)
       );
@@ -120,6 +132,13 @@ module TopModule(
         .ENA(ENA),
         .ENB(ENB)
      );
+     
+     always @(posedge clk) //take in is
+     begin
+     
+     is_obst <= is_in;
+     
+     end
      
      always @(posedge clk)
      begin
