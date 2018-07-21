@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sat Jul 21 14:45:54 2018
+| Date             : Sat Jul 21 16:48:51 2018
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.080        |
+| Total On-Chip Power (W)  | 0.082        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.008        |
+| Dynamic (W)              | 0.010        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -49,23 +49,22 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.001 |        3 |       --- |             --- |
-| Slice Logic             |    <0.001 |      175 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |       44 |     20800 |            0.21 |
-|   CARRY4                |    <0.001 |       19 |      8150 |            0.23 |
-|   Register              |    <0.001 |       72 |     41600 |            0.17 |
-|   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
-|   LUT as Shift Register |    <0.001 |        1 |      9600 |            0.01 |
-|   Others                |     0.000 |       16 |       --- |             --- |
-| Signals                 |    <0.001 |      148 |       --- |             --- |
-| DSPs                    |    <0.001 |        2 |        90 |            2.22 |
-| I/O                     |     0.006 |       35 |       106 |           33.02 |
-| Static Power            |     0.072 |          |           |                 |
-| Total                   |     0.080 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      175 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       44 |     20800 |            0.21 |
+|   CARRY4       |    <0.001 |       19 |      8150 |            0.23 |
+|   Register     |    <0.001 |       73 |     41600 |            0.18 |
+|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
+|   Others       |     0.000 |       16 |       --- |             --- |
+| Signals        |    <0.001 |      148 |       --- |             --- |
+| DSPs           |    <0.001 |        2 |        90 |            2.22 |
+| I/O            |     0.007 |       35 |       106 |           33.02 |
+| Static Power   |     0.072 |          |           |                 |
+| Total          |     0.082 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -143,7 +142,7 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.008 |
+| TopModule               |     0.010 |
 |   Directions            |    <0.001 |
 |   Surface               |     0.001 |
 |     speedA              |    <0.001 |

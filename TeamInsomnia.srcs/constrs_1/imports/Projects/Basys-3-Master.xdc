@@ -181,7 +181,7 @@ set_property PACKAGE_PIN C16 [get_ports {eb}]
 #Sch name = JC1
 set_property PACKAGE_PIN K17 [get_ports {JC1}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {JC1}]
-    set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {JC1}]
+#    set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {JC1}]
 
 #Sch name = JC2
 set_property PACKAGE_PIN M18 [get_ports {JC2}]

@@ -119,8 +119,8 @@ module TopModule(
       
      Beacon_Module Directions(
         .clk(clk),
-        .micLeft(JC1),
-        .micRight(JC2),
+        .micLeft(JC2),
+        .micRight(JC1),
         .direction(direction)
      );
       

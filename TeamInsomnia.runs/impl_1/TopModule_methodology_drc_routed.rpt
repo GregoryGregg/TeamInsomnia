@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sat Jul 21 14:45:54 2018
+| Date         : Sat Jul 21 16:48:51 2018
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file TopModule_methodology_drc_routed.rpt -pb TopModule_methodology_drc_routed.pb -rpx TopModule_methodology_drc_routed.rpx
 | Design       : TopModule
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 19
+             Violations found: 20
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
 | TIMING-17 | Warning  | Non-clocked sequential cell   | 1          |
-| TIMING-18 | Warning  | Missing input or output delay | 18         |
+| TIMING-18 | Warning  | Missing input or output delay | 19         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -95,35 +95,40 @@ Related violations: <none>
 
 TIMING-18#12 Warning
 Missing input or output delay  
-An output delay is missing on IN3 relative to clock(s) sys_clk_pin
+An output delay is missing on IN2 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#13 Warning
 Missing input or output delay  
-An output delay is missing on IN4 relative to clock(s) sys_clk_pin
+An output delay is missing on IN3 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#14 Warning
 Missing input or output delay  
-An output delay is missing on JA3 relative to clock(s) sys_clk_pin
+An output delay is missing on IN4 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#15 Warning
 Missing input or output delay  
-An output delay is missing on an[0] relative to clock(s) sys_clk_pin
+An output delay is missing on JA3 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#16 Warning
 Missing input or output delay  
-An output delay is missing on an[1] relative to clock(s) sys_clk_pin
+An output delay is missing on an[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#17 Warning
 Missing input or output delay  
-An output delay is missing on an[2] relative to clock(s) sys_clk_pin
+An output delay is missing on an[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on an[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#19 Warning
 Missing input or output delay  
 An output delay is missing on an[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
