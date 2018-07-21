@@ -19,12 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module BeaconFollower(
+module Beacon_Module(
     input clk,
     input micLeft,
     input micRight,
-    output direction
+    output[2:0] direction
     );
 
 reg micRight_reg;  

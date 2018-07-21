@@ -36,8 +36,16 @@ module seven_seg(
     output [6:0] seg
     );
     localparam N = 18;
-     
-    reg [N-1:0]count; //the 18 bit counter which allows us to multiplex at 1000Hz
+    reg [7:0] sseg_deco; //used in decoding to hex
+    reg [15:0]sseg; //the 7 bit register to hold the data to output
+    reg [3:0]anint; //register for the 4 bit enable
+    reg [N-1:0]count; //multiplexer reg
+    reg [26:0] count1 = 27'b0;
+    reg toggle = 1'b0;
+    
+    assign seg = sseg_deco;
+    assign an = anint;
+       
     always @ (posedge clk)
      begin
         begin
@@ -45,8 +53,6 @@ module seven_seg(
         end
      end
      
-    reg [15:0]sseg; //the 7 bit register to hold the data to output
-    reg [3:0]an_temp; //register for the 4 bit enable
      
     always @ (*)
      begin
@@ -55,52 +61,47 @@ module seven_seg(
        2'b00 :  //When the 2 MSB's are 00 enable the fourth display
         begin
          sseg = msg[3:0];
-         an_temp = 4'b1110;
+         anint = 4'b1110;
         end
        2'b01:  //When the 2 MSB's are 01 enable the third display
         begin
          sseg = msg[7:4];
-         an_temp = 4'b1101;
+         anint = 4'b1101;
         end
        2'b10: //enable the second display
        begin
         sseg = msg[11:8];
-        an_temp = 4'b1011;
+        anint = 4'b1011;
        end
        2'b11: //enable the first display
        begin
         sseg = msg[15:12];
-        an_temp = 4'b0111;
+        anint = 4'b0111;
        end
        endcase
      end
-   assign an = an_temp;
-   
-reg [6:0] sseg_temp; // 7 bit register to hold the binary value of each input given
     
    always @ (*)
     begin
      case(sseg)
-      4'd0 : sseg_temp = 7'b1000000; //to display 0
-      4'd1 : sseg_temp = 7'b1111001; //to display 1
-      4'd2 : sseg_temp = 7'b0100100; //to display 2
-      4'd3 : sseg_temp = 7'b0110000; //to display 3
-      4'd4 : sseg_temp = 7'b0011001; //to display 4
-      4'd5 : sseg_temp = 7'b0010010; //to display 5
-      4'd6 : sseg_temp = 7'b0000010; //to display 6
-      4'd7 : sseg_temp = 7'b1111000; //to display 7
-      4'd8 : sseg_temp = 7'b0000000; //to display 8
-      4'd9 : sseg_temp = 7'b0010000; //to display 9
-      4'd10 : sseg_temp = 7'b0001000; //to display A
-      4'd11 : sseg_temp = 7'b0000011; //to display b
-      4'd12 : sseg_temp = 7'b1000110; //to display C
-      4'd13 : sseg_temp = 7'b0100001; //to display d
-      4'd14 : sseg_temp = 7'b0000110; //to display E
-      4'd15 : sseg_temp = 7'b0001110; //to display F
+      4'b0000 : sseg_deco = 7'b1000000; //to display 0
+      4'b0001 : sseg_deco = 7'b1111001; //to display 1
+      4'b0010 : sseg_deco = 7'b0100100; //to display 2
+      4'b0011 : sseg_deco = 7'b0110000; //to display 3
+      4'b0100 : sseg_deco = 7'b0011001; //to display 4
+      4'b0101 : sseg_deco = 7'b0010010; //to display 5
+      4'b0110 : sseg_deco = 7'b0000010; //to display 6
+      4'b0111 : sseg_deco = 7'b1111000; //to display 7
+      4'b1000 : sseg_deco = 7'b0000000; //to display 8
+      4'b1001 : sseg_deco = 7'b0010000; //to display 9
+      4'b1010 : sseg_deco = 7'b0001000; //to display A
+      4'b1011 : sseg_deco = 7'b0000011; //to display b
+      4'b1100 : sseg_deco = 7'b1000110; //to display C
+      4'b1101 : sseg_deco = 7'b0100001; //to display d
+      4'b1110 : sseg_deco = 7'b0000110; //to display E
+      4'b1111 : sseg_deco = 7'b0001110; //to display F
      endcase
     end
-   assign seg = sseg_temp; 
-reg [26:0] count1 = 27'b0;
-reg toggle = 1'b0;
+
         
 endmodule

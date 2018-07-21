@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Tue Jul 17 15:09:25 2018
-| Host         : HomeSlicePC running 64-bit major release  (build 9200)
+| Date         : Sat Jul 21 14:45:27 2018
+| Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
 | Design       : TopModule
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    30 |
+| Number of unique control sets                            |     5 |
+| Unused register locations in slices containing registers |    32 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,11 +34,10 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      1 |            1 |
+|      1 |            2 |
 |      2 |            1 |
 |     10 |            1 |
-|     11 |            1 |
-|    16+ |            3 |
+|    16+ |            1 |
 +--------+--------------+
 
 
@@ -48,28 +47,26 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              60 |           18 |
+| No           | No                    | No                     |              59 |           18 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              12 |            5 |
-| Yes          | No                    | No                     |              27 |            8 |
+| No           | Yes                   | No                     |              12 |            4 |
+| Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              23 |            7 |
+| Yes          | Yes                   | No                     |               1 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+--------------------------------+------------------------------+------------------+----------------+
-|  Clock Signal  |          Enable Signal         |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
-+----------------+--------------------------------+------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | Uultrasonic_proximity/outen    | Uultrasonic_proximity/outcnt |                1 |              1 |
-|  clk_IBUF_BUFG |                                | brake                        |                1 |              2 |
-|  clk_IBUF_BUFG |                                | Uultrasonic_proximity/outcnt |                4 |             10 |
-|  clk_IBUF_BUFG | Uultrasonic_proximity/E[0]     |                              |                3 |             11 |
-|  clk_IBUF_BUFG | Uultrasonic_proximity/count    |                              |                5 |             16 |
-|  clk_IBUF_BUFG | Uultrasonic_proximity/countint | Uultrasonic_proximity/count  |                6 |             22 |
-|  clk_IBUF_BUFG |                                |                              |               18 |             60 |
-+----------------+--------------------------------+------------------------------+------------------+----------------+
++----------------+-----------------------------+------------------------------+------------------+----------------+
+|  Clock Signal  |        Enable Signal        |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
++----------------+-----------------------------+------------------------------+------------------+----------------+
+|  JC1_IBUF_BUFG |                             |                              |                1 |              1 |
+|  clk_IBUF_BUFG | Uultrasonic_proximity/outen | Uultrasonic_proximity/outcnt |                1 |              1 |
+|  clk_IBUF_BUFG |                             | brake                        |                1 |              2 |
+|  clk_IBUF_BUFG |                             | Uultrasonic_proximity/outcnt |                3 |             10 |
+|  clk_IBUF_BUFG |                             |                              |               18 |             59 |
++----------------+-----------------------------+------------------------------+------------------+----------------+
 
 

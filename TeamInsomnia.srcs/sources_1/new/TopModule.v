@@ -84,41 +84,40 @@ module TopModule(
     
     wire us_trig;
     wire us_echo;
-    wire[15:0] msg; //wire for the message for the seven seg
-    wire[15:0] dist; //distance from proximity sensor
-    reg[15:0] us_mindist = 16'b0000101010100011; //minimum distance for us sensor before stop
-    reg[4:0] us_hist = 5'b00000; //stores the last five us readings
-    reg us_obst; //is there an obstacle detected by the us
-    wire us_outup; //ultrasonic output update flag
-    assign msg = dist;
+    wire[15:0] ss_msg; //wire for the message for the seven seg
+    wire[15:0] us_dist; //distance from proximity sensor
+    wire[4:0] us_hist;
+    wire us_obst; //is there an obstacle detected by the us
+    assign ss_msg = us_dist;
     assign led = us_hist;
     
     wire [2:0]direction;
     wire is_in;
     reg electroMag;
-    reg is_obst;
+    wire is_obst;
     
-    assign is_in = ~JA1;
+    assign is_obst = ~JA1;
     assign JA3 = us_trig;
     assign us_echo = JA4;
     assign JA2 = electroMag;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
-        .msg (msg),
+        .msg (ss_msg),
         .an  (an),
         .seg (seg)
      );
      
      ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
         .clk     (clk),
-        .echo    (JA4),
-        .trigger (JA3),
-        .dist    (dist),
-        .outup   (us_outup)
+        .echo    (us_echo),
+        .trigger (us_trig),
+        .dist    (us_dist),
+        .obst    (us_obst),
+        .us_hist (us_hist)
       );
       
-     BeaconFollower Directions(
+     Beacon_Module Directions(
         .clk(clk),
         .micLeft(JC1),
         .micRight(JC2),
@@ -163,39 +162,6 @@ module TopModule(
      else
      begin
      brake <= 1'b0;
-     end
-     
-     end
-     
-     
-     always @(posedge clk) //check ultrasonic
-     begin
-        
-     if (us_outup == 1'b1) //if dist has been updated
-     begin
-     
-        us_hist <= us_hist >> 1;
-        
-        if(dist <= us_mindist) //if dist is too close
-        begin
-        us_hist[4] <= 1'b1; //make the lsb in history a 1
-        end
-        
-        else
-        begin
-        us_hist[4] <= 1'b0; //make the lsb in history a 0
-        end
-        
-        if((us_hist[0] + us_hist[1] + us_hist[2] + us_hist[3] + us_hist[4] >= 2)) //if three or more of the last five us readings are too close
-        begin
-        us_obst <= 1'b1; //warn of obstacle
-        end
-        
-        else
-        begin
-        us_obst <= 1'b0; //is no obstacle
-        end
-        
      end
      
      end

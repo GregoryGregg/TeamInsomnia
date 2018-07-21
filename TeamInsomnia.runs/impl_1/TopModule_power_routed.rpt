@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Tue Jul 17 15:09:51 2018
-| Host             : HomeSlicePC running 64-bit major release  (build 9200)
+| Date             : Sat Jul 21 14:45:54 2018
+| Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.087        |
+| Total On-Chip Power (W)  | 0.080        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.016        |
+| Dynamic (W)              | 0.008        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -49,21 +49,23 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      253 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       64 |     20800 |            0.31 |
-|   CARRY4       |    <0.001 |       25 |      8150 |            0.31 |
-|   Register     |    <0.001 |      122 |     41600 |            0.29 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |    <0.001 |      226 |       --- |             --- |
-| DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.013 |       34 |       106 |           32.08 |
-| Static Power   |     0.072 |          |           |                 |
-| Total          |     0.087 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.001 |        3 |       --- |             --- |
+| Slice Logic             |    <0.001 |      175 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |       44 |     20800 |            0.21 |
+|   CARRY4                |    <0.001 |       19 |      8150 |            0.23 |
+|   Register              |    <0.001 |       72 |     41600 |            0.17 |
+|   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
+|   LUT as Shift Register |    <0.001 |        1 |      9600 |            0.01 |
+|   Others                |     0.000 |       16 |       --- |             --- |
+| Signals                 |    <0.001 |      148 |       --- |             --- |
+| DSPs                    |    <0.001 |        2 |        90 |            2.22 |
+| I/O                     |     0.006 |       35 |       106 |           33.02 |
+| Static Power            |     0.072 |          |           |                 |
+| Total                   |     0.080 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.013 |       0.003 |      0.010 |
+| Vccint    |       1.000 |     0.012 |       0.003 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,12 +143,13 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.016 |
-|   Surface               |    <0.001 |
+| TopModule               |     0.008 |
+|   Directions            |    <0.001 |
+|   Surface               |     0.001 |
 |     speedA              |    <0.001 |
 |     speedB              |    <0.001 |
 |   Useven_seg            |    <0.001 |
-|   Uultrasonic_proximity |     0.001 |
+|   Uultrasonic_proximity |    <0.001 |
 +-------------------------+-----------+
 
 

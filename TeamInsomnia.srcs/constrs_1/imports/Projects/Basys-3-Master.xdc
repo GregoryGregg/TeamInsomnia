@@ -35,12 +35,12 @@ set_property PACKAGE_PIN W13 [get_ports {coast}]
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[11]}]
 #set_property PACKAGE_PIN W2 [get_ports {sw[12]}]
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[12]}]
-set_property PACKAGE_PIN U1 [get_ports {direction[0]}]
-	set_property IOSTANDARD LVCMOS33 [get_ports {direction[0]}]
-set_property PACKAGE_PIN T1 [get_ports {direction[1]}]
-	set_property IOSTANDARD LVCMOS33 [get_ports {direction[1]}]
-set_property PACKAGE_PIN R2 [get_ports {direction[2]}]
-	set_property IOSTANDARD LVCMOS33 [get_ports {direction[2]}]
+#set_property PACKAGE_PIN U1 [get_ports {direction[0]}]
+#	set_property IOSTANDARD LVCMOS33 [get_ports {direction[0]}]
+#set_property PACKAGE_PIN T1 [get_ports {direction[1]}]
+#	set_property IOSTANDARD LVCMOS33 [get_ports {direction[1]}]
+#set_property PACKAGE_PIN R2 [get_ports {direction[2]}]
+#	set_property IOSTANDARD LVCMOS33 [get_ports {direction[2]}]
 
 
 ## LEDs
@@ -181,6 +181,8 @@ set_property PACKAGE_PIN C16 [get_ports {eb}]
 #Sch name = JC1
 set_property PACKAGE_PIN K17 [get_ports {JC1}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {JC1}]
+    set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {JC1}]
+
 #Sch name = JC2
 set_property PACKAGE_PIN M18 [get_ports {JC2}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {JC2}]
