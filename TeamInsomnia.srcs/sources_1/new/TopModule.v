@@ -67,6 +67,7 @@ module TopModule(
     input JC2,
     input JA1, //inductance input
     input JA4, //echo from ultrasonic
+    input signed [8:0]Adjust,
     output JA2, //electromagnet enable
     output JA3, //ultrasonic trigger
     output[3:0] an, //anode for seven seg
@@ -77,10 +78,11 @@ module TopModule(
     output IN4,
     output ENA,
     output ENB,
-    output[0:4] led
+    output[0:9] led
 );
 
     reg brake; //stops the rover
+    wire [5:0] DEBUG;
     
     wire us_trig;
     wire us_echo;
@@ -89,9 +91,13 @@ module TopModule(
     wire[4:0] us_hist;
     wire us_obst; //is there an obstacle detected by the us
     assign ss_msg = us_dist;
-    assign led = us_hist;
+//    assign led = us_hist;
+
+    assign led[0] = ea;
+    assign led[1] = eb;
+    assign led[2:6] = DEBUG;
     
-    wire [2:0]direction;
+    reg [2:0]direction = 3'b000;
     wire is_in;
     reg electroMag;
     wire is_obst;
@@ -101,34 +107,35 @@ module TopModule(
     assign us_echo = JA4;
     assign JA2 = electroMag;
     
-     seven_seg Useven_seg( //instantiate the seven seg display
-        .clk (clk),
-        .msg (ss_msg),
-        .an  (an),
-        .seg (seg)
-     );
+//     seven_seg Useven_seg( //instantiate the seven seg display
+//        .clk (clk),
+//        .msg (ss_msg),
+//        .an  (an),
+//        .seg (seg)
+//     );
      
-     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
-        .clk     (clk),
-        .echo    (us_echo),
-        .trigger (us_trig),
-        .dist    (us_dist),
-        .obst    (us_obst),
-        .us_hist (us_hist)
-      );
+//     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
+//        .clk     (clk),
+//        .echo    (us_echo),
+//        .trigger (us_trig),
+//        .dist    (us_dist),
+//        .obst    (us_obst),
+//        .us_hist (us_hist)
+//      );
       
-     Beacon_Module Directions(
-        .clk(clk),
-        .micLeft(JC2),
-        .micRight(JC1),
-        .direction(direction)
-     );
+//     Beacon_Module Directions(
+//        .clk(clk),
+//        .micLeft(JC2),
+//        .micRight(JC1),
+//        .direction(direction)
+//     );
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
         .Direction(direction),
         .clk(clk),
         .sw(sw),    // to be removed 
+        .Adjust(Adjust),
         .brake(brake),
         .coast(coast),
         .ea(ea),
@@ -138,33 +145,34 @@ module TopModule(
         .IN3(IN3),
         .IN4(IN4),
         .ENA(ENA),
-        .ENB(ENB)
+        .ENB(ENB),
+        .DEBUG(DEBUG)
      );
      
      
-     always @(posedge clk)
-     begin
+//     always @(posedge clk)
+//     begin
      
-     if(is_in)
-     begin
-     electroMag <= 1'b1;
-     end else if(~is_in)
-     begin
-     electroMag <= 1'b0;
-     end
+//     if(is_in)
+//     begin
+//     electroMag <= 1'b1;
+//     end else if(~is_in)
+//     begin
+//     electroMag <= 1'b0;
+//     end
      
      
-     if(us_obst || is_obst)
-     begin
-     brake <= 1'b1;
-     end
+//     if(us_obst || is_obst)
+//     begin
+//     brake <= 1'b1;
+//     end
      
-     else
-     begin
-     brake <= 1'b0;
-     end
+//     else
+//     begin
+//     brake <= 1'b0;
+//     end
      
-     end
+//     end
             
     
 endmodule

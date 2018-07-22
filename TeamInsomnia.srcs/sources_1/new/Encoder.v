@@ -24,6 +24,7 @@ module Encoder(
  input clk,
  input brake,
  input coast,
+ input signed [8:0]Adjust,
  input ea,
  input eb,
  input [2:0]direction,
@@ -31,61 +32,57 @@ module Encoder(
  output [5:0]swb
     );
     
-    reg [3:0] tolerance = 4'b1111;
+    reg reset;
+    reg signed [27:0] ERROR;
+    reg signed [27:0] ADJUST = 6000;
     reg check_a = 1'b0; 
     reg check_b = 1'b0;
-    reg check;
-    reg [14:0] countb_r, counta_r;
-    reg [5:0] swb_r;
-    reg [27:0] counter_frequency;
-    reg [27:0] limit = 27'd134217727;
+    reg check = 1'b0;
+    reg signed [27:0] countb_r, counta_r;
+    reg signed [6:0] swb_r = 6'd63;
+    reg [30:0] counter_frequency = 1'b0;
+    reg [30:0] limit = 30'd50000000;
     
     assign swb = swb_r;
     
     always @(posedge clk)
     begin
-        if (counter_frequency == limit)
+        if (counter_frequency > limit)
         begin
             counter_frequency <= 0;
             check <= ~check;
         end
-        counter_frequency <= counter_frequency + 1'b1;
+    counter_frequency <= counter_frequency + 1'b1;
+    end
+    
+    always @(posedge clk)
+    begin
+        if (~brake && ~coast)
+        begin
+            if (ea && !check_a)
+            begin
+                check_a = 1'b1;
+                counta_r <= counta_r + 1'b1;
+            end if (!ea && check_a)
+            begin
+                check_a = 1'b0;
+            end if (eb && !check_b)
+            begin
+                check_b = 1'b1;
+                countb_r <= countb_r + 1'b1;
+            end if (!eb && check_b)
+            begin
+                check_b = 1'b0;
+            end
+        end
+        
     end
     
     always @(posedge check)
     begin
-        if (~brake && ~coast)
-        begin
-            if (ea && ~check_a)
-            begin
-                check_a <= 1'b1;
-                counta_r <= counta_r + 1'b1;
-            end else if (~ea && check_a)
-            begin
-                check_a <= 1'b0;
-            end
-        end if (~brake && ~coast)
-        begin
-            if (eb && ~check_b)
-            begin
-                check_b <= 1'b1;
-                countb_r <= countb_r + 1'b1;
-            end else if (~eb && check_b)
-            begin
-                check_b <= 1'b0;
-            end
-        end
-   end
-    
-    always @(posedge clk)
-    begin
-        if ((counta_r - countb_r) > tolerance)
-        begin
-            swb_r <= swb_r + 1;
-        end else if ((counta_r - countb_r) < tolerance)
-        begin
-            swb_r <= swb_r - 1;
-        end
+        reset <= 1'b1;
+        ERROR <= counta_r - countb_r;
+        swb_r <= swb_r + ERROR/ADJUST;
     end
             
 endmodule
