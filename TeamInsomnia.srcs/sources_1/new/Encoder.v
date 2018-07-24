@@ -24,7 +24,7 @@ module Encoder(
  input clk,
  input brake,
  input coast,
- input signed [8:0]Adjust,
+ input [8:0]Adjust,
  input ea,
  input eb,
  input [2:0]direction,
@@ -33,17 +33,18 @@ module Encoder(
     );
     
     reg reset;
-    reg signed [27:0] ERROR;
-    reg signed [27:0] ADJUST = 6000;
-    reg check_a = 1'b0; 
-    reg check_b = 1'b0;
-    reg check = 1'b0;
-    reg signed [27:0] countb_r, counta_r;
-    reg signed [6:0] swb_r = 6'd63;
+    reg [6:0] ERROR;
+    reg [8:0] ADJUST;
+    reg check_a; 
+    reg check_b;
+    reg check;
+    reg [5:0] countb_r, counta_r;
+    reg [5:0] swb_r;
     reg [30:0] counter_frequency = 1'b0;
-    reg [30:0] limit = 30'd50000000;
+    reg [30:0] limit = 30'd100000;
     
-    assign swb = swb_r;
+    
+    assign swb = swb_r[5:0];
     
     always @(posedge clk)
     begin
@@ -75,14 +76,16 @@ module Encoder(
                 check_b = 1'b0;
             end
         end
-        
     end
     
     always @(posedge check)
     begin
-        reset <= 1'b1;
-        ERROR <= counta_r - countb_r;
-        swb_r <= swb_r + ERROR/ADJUST;
+        ERROR = counta_r - countb_r;
+        if (ERROR[6]) begin
+        swb_r <= swb_r - ERROR[5:0]/Adjust;
+        end else if (!ERROR[6]) begin
+        swb_r <= swb_r + ERROR[5:0]/Adjust;
+        end
     end
             
 endmodule
