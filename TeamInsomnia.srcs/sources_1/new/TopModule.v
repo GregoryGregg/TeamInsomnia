@@ -90,14 +90,16 @@ module TopModule(
     wire[15:0] us_dist; //distance from proximity sensor
     wire[4:0] us_hist;
     wire us_obst; //is there an obstacle detected by the us
+    wire MICCHECK;
+    
     assign ss_msg = us_dist;
 //    assign led = us_hist;
 
     assign led[0] = ea;
     assign led[1] = eb;
-    assign led[2:6] = DEBUG;
+    assign led[3] = MICCHECK;
     
-    reg [2:0]direction = 3'b000;
+    wire [2:0]direction;
     wire is_in;
     reg electroMag;
     wire is_obst;
@@ -123,12 +125,13 @@ module TopModule(
 //        .us_hist (us_hist)
 //      );
       
-//     Beacon_Module Directions(
-//        .clk(clk),
-//        .micLeft(JC2),
-//        .micRight(JC1),
-//        .direction(direction)
-//     );
+     Beacon_Module Directions(
+        .clk(clk),
+        .micLeft(JC2),
+        .micRight(JC1),
+        .direction(direction),
+        .MICCHECK(MICCHECK)
+     );
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (

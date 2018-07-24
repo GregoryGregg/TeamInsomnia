@@ -23,14 +23,18 @@ module Beacon_Module(
     input clk,
     input micLeft,
     input micRight,
-    output[2:0] direction
+    output[2:0]direction,
+    output MICCHECK
     );
 
+reg check;
 reg micRight_reg;  
 reg micLeft_reg;
 reg direction_reg;
 reg direction_regms;
 reg [2:0]MotorDirection_r;
+reg [30:0] counter_frequency;
+reg [30:0] limit = 30'd50000000;
 
 always @(posedge micLeft)       // We save the value of micRight at every posedge of micLeft
     begin
@@ -49,8 +53,19 @@ always @(posedge clk)           // Every time the clk rises, we set direction to
 //    begin
 //    direction_regms <= direction_reg;
 //    end
-    
 always @(posedge clk)
+begin
+    if (counter_frequency > limit)
+    begin
+    counter_frequency <= 0;
+    check <= ~check;
+    end
+    counter_frequency <= counter_frequency + 1;
+end
+    
+    
+    
+always @(posedge check)
     begin
     if (direction_reg) begin
     MotorDirection_r <= 3'b010;
@@ -61,7 +76,8 @@ always @(posedge clk)
     end
 
     end
-     
+    
+assign MICCHECK = direction_reg;     
 assign direction = MotorDirection_r;       // direction =0 means go left. direction =1 means go right.
 
 endmodule
