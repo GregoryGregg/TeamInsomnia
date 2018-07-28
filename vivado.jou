@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Jul 28 16:24:16 2018
+# Process ID: 18516
+# Current directory: C:/Users/iankr/Documents/GitHub/TeamInsomnia
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1640 C:\Users\iankr\Documents\GitHub\TeamInsomnia\TeamInsomnia.xpr
+# Log file: C:/Users/iankr/Documents/GitHub/TeamInsomnia/vivado.log
+# Journal file: C:/Users/iankr/Documents/GitHub/TeamInsomnia\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/iankr/Documents/GitHub/TeamInsomnia/TeamInsomnia.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

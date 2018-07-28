@@ -1,0 +1,91 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 16480
+License: Customer
+
+Current time: 	Sat Jul 28 13:42:59 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 244 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	iankr
+User home directory: C:/Users/iankr
+User working directory: D:/TeamInsomnia
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/iankr/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/iankr/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/iankr/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	D:/TeamInsomnia/vivado.log
+Vivado journal file location: 	D:/TeamInsomnia/vivado.jou
+Engine tmp dir: 	D:/TeamInsomnia/.Xil/Vivado-16480-Ians
+
+GUI allocated memory:	181 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 506 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 51 MB (+51522kb) [00:00:11]
+// [Engine Memory]: 494 MB (+366733kb) [00:00:11]
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: D:\TeamInsomnia\TeamInsomnia.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/TeamInsomnia/TeamInsomnia.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/TeamInsomnia/TeamInsomnia.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Xilinx/Vivado/Projects/TeamInsomnia' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 510 MB. GUI used memory: 35 MB. Current time: 7/28/18 1:43:01 PM CDT
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 554 MB (+36895kb) [00:00:21]
+// [Engine Memory]: 582 MB (+601kb) [00:00:25]
+// [GUI Memory]: 57 MB (+2882kb) [00:00:25]
+// [Engine Memory]: 619 MB (+8292kb) [00:00:28]
+// Tcl Message: open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 785.008 ; gain = 69.988 
+// Project name: TeamInsomnia; location: D:/TeamInsomnia; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 626 MB. GUI used memory: 40 MB. Current time: 7/28/18 1:43:16 PM CDT
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 60 MB (+820kb) [00:00:34]
+// Tcl Message: update_compile_order -fileset sources_1 

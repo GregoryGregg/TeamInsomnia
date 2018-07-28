@@ -82,6 +82,14 @@ module TopModule(
 );
 
     reg brake; //stops the rover
+    wire st_in;
+    reg st_obst;
+    reg st_go;
+    reg st_done;
+    reg st_dirf;
+    reg[2:0] st_dir;
+    reg st_brk;
+    reg st_brc;
     wire [5:0] DEBUG;
     
     wire us_trig;
@@ -89,7 +97,16 @@ module TopModule(
     wire[15:0] ss_msg; //wire for the message for the seven seg
     wire[15:0] us_dist; //distance from proximity sensor
     wire[4:0] us_hist;
-    wire us_obst; //is there an obstacle detected by the us
+    reg us_obst;
+    reg us_go;
+    reg us_done;
+    reg us_brk;
+    reg[2:0] us_dir;
+    reg us_dirf;
+    reg us_brc;
+    wire us_in; //is there an obstacle detected by the us
+    
+    wire[2:0] bd_dir;
     wire MICCHECK;
     
     assign ss_msg = us_dist;
@@ -99,37 +116,44 @@ module TopModule(
     assign led[1] = eb;
     assign led[3] = MICCHECK;
     
-    wire [2:0]direction;
+    reg [2:0]direction;
     wire is_in;
     reg electroMag;
-    wire is_obst;
+    reg is_obst;
+    reg is_go;
+    reg is_done;
+    reg is_brk;
     
-    assign is_obst = ~JA1;
+    reg rev_cnt;
+    reg rev_dn;
+    reg[26:0] rev_con = 27'b101111101011110000100000000; //time to reverse
+    
+    assign is_in = ~JA1;
     assign JA3 = us_trig;
     assign us_echo = JA4;
     assign JA2 = electroMag;
     
-//     seven_seg Useven_seg( //instantiate the seven seg display
-//        .clk (clk),
-//        .msg (ss_msg),
-//        .an  (an),
-//        .seg (seg)
-//     );
+     seven_seg Useven_seg( //instantiate the seven seg display
+        .clk (clk),
+        .msg (ss_msg),
+        .an  (an),
+        .seg (seg)
+     );
      
-//     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
-//        .clk     (clk),
-//        .echo    (us_echo),
-//        .trigger (us_trig),
-//        .dist    (us_dist),
-//        .obst    (us_obst),
-//        .us_hist (us_hist)
-//      );
+     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
+        .clk     (clk),
+        .echo    (us_echo),
+        .trigger (us_trig),
+        .dist    (us_dist),
+        .obst    (us_in),
+        .us_hist (us_hist)
+      );
       
      Beacon_Module Directions(
         .clk(clk),
         .micLeft(JC2),
         .micRight(JC1),
-        .direction(direction),
+        .direction(bd_dir),
         .MICCHECK(MICCHECK)
      );
       
@@ -153,6 +177,180 @@ module TopModule(
      );
      
      
+     
+       always @(posedge clk) //state machine
+       begin
+       
+       if(is_in && is_done) //if inductance sensor found something and the submodule isn't running
+       begin
+       
+       is_obst <= 1'b1; //set inductance obstacle flag
+       is_go <= 1'b1; //trigger inductance submodule
+       end
+       
+       else if (us_in && us_done) //if ultrasonic sensor found something and the submodule isn't running
+       begin
+       
+       us_obst <= 1'b1; //set ultrasonic obstacle flag
+       us_go <= 1'b1; //triggers inductance submodule
+       
+       end
+       
+       else if (st_in && st_done) //if the stall detect is triggered and the submodule isn't running
+       begin
+       
+       st_obst <= 1'b1; //set stall flag
+       st_go <= 1'b1; //triggers stall submodule
+       
+       end
+       
+       //everything below here happens one clktick after everything above it, this creates a 1 tick go pulse
+       
+       else if(is_go) //if inductnace submodule has been triggered
+       begin
+       
+       is_go <= 1'b0; //set to 0, this produces a 1 tick go pulse
+       
+       end
+       
+       else if(us_go) //if ultrasonic submodule has been triggered
+       begin
+       
+       us_go <= 1'b0; //set to 0, this produces a 1 tick go pulse
+       
+       end
+       
+       else if(st_go) //if stall submodule has been triggered
+       begin
+       
+       st_go <= 1'b0; //set to 0, this produces a 1 tick go pulse
+       
+       end
+       
+       //again everything below here happens one clktick after the above block, now the machine waits for the done signal from the submodules
+       
+       else if(is_done) //if inductance submodule is done
+       begin
+       
+       is_obst <= 1'b0; //clear inductance obstacle flag
+       
+       end
+       
+       else if(us_done) //if ultrasonic submodule is done
+       begin
+       
+       us_obst <= 1'b0; //clear ultrasonic obstacle flag
+       
+       end
+       
+       else if(st_done) //if stall submodule is done
+       begin
+       
+       st_obst <= 1'b0; //clear stall flag
+       
+       end
+       
+       end
+       
+       always @(posedge clk) //direction submodule
+       begin
+       
+       if(us_dirf) //if ultrasonic submodule is overriding direction
+       begin
+       
+       direction <= us_dir; //set rover direciton to ultrasonic direction
+       
+       end
+       
+       else if(st_dirf) //if stall submodule is overriding direction
+       begin
+       
+       direction <= st_dir; //set rover direction to stall direction
+       
+       end
+       
+       else //if no submodule is overriding direction
+       begin
+       
+       direction <= bd_dir; //set rover direction to beacon direction
+       
+       end
+       
+       end 
+       
+       always @(posedge clk) //brake submodule
+       begin
+       
+       if(is_brk || us_brk || st_brk) //if any submodule sets the brake
+       begin
+       
+       brake <= 1'b1; //set the brake
+       
+       end
+       
+       else //if nothing is setting the brake
+       begin
+       
+       brake <= 1'b0; //turn off the brake
+       
+       end
+       
+       end
+       
+       always @(posedge clk) //reverse submodule
+       begin
+       
+       if(us_brc || st_brc) //if told to count by either submodule
+       begin
+         
+       if(rev_dn)
+       begin
+       rev_dn <= 1'b0; //restart counter
+       rev_cnt <= rev_con; //load constant into counter
+       end
+       
+       rev_cnt <= rev_cnt - 1'b1;
+       
+       if(rev_cnt == 0)
+       rev_dn <= 1'b1;
+       end
+       
+       end
+       
+       
+//      always @(posedge clk) //inductance submodule
+//      begin
+      
+//      if(is_go) //if the module is supposed to be running
+//      begin
+      
+//      is_done <= 1'b0; //set done to 0 and run the module
+      
+//      end
+      
+//      if(is_go || ~is_done)
+//      begin
+      
+//      is_brk <= 1'b1;
+      
+      always @(posedge clk) //ultrasonic submodule
+      begin
+      
+      if(us_go) //if the module is supposed to be running
+      begin
+      
+      us_done <= 1'b0; //set done to 0 and run the module
+      
+      end
+      
+      if(us_go || ~us_done) //run the module
+      begin
+      
+      us_brk <= 1'b1; //turn on the brake
+      us_brc <= 1'b1;
+      
+      
+       
 //     always @(posedge clk)
 //     begin
      

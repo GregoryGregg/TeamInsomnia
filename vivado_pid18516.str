@@ -1,0 +1,261 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 18516
+License: Customer
+
+Current time: 	Sat Jul 28 16:24:30 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 244 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	iankr
+User home directory: C:/Users/iankr
+User working directory: C:/Users/iankr/Documents/GitHub/TeamInsomnia
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/iankr/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/iankr/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/iankr/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/iankr/Documents/GitHub/TeamInsomnia/vivado.log
+Vivado journal file location: 	C:/Users/iankr/Documents/GitHub/TeamInsomnia/vivado.jou
+Engine tmp dir: 	C:/Users/iankr/Documents/GitHub/TeamInsomnia/.Xil/Vivado-18516-Ians
+
+GUI allocated memory:	211 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 586 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\iankr\Documents\GitHub\TeamInsomnia\TeamInsomnia.xpr. Version: Vivado v2018.1 
+// [GUI Memory]: 51 MB (+50530kb) [00:00:06]
+// [Engine Memory]: 539 MB (+413751kb) [00:00:06]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/iankr/Documents/GitHub/TeamInsomnia/TeamInsomnia.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/iankr/Documents/GitHub/TeamInsomnia/TeamInsomnia.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 59 MB (+6394kb) [00:00:09]
+// [Engine Memory]: 615 MB (+51690kb) [00:00:09]
+// [GUI Memory]: 64 MB (+2217kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 629 MB. GUI used memory: 38 MB. Current time: 7/28/18 4:24:34 PM CDT
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 905.512 ; gain = 119.715 
+// Project name: TeamInsomnia; location: C:/Users/iankr/Documents/GitHub/TeamInsomnia; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 74 MB (+7251kb) [00:08:54]
+// [GUI Memory]: 82 MB (+3842kb) [00:08:57]
+// Elapsed time: 524 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (TopModule.v)]", 1); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (TopModule.v)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (TopModule.v)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// Elapsed time: 15 seconds
+selectCodeEditor("TopModule.v", 193, 199); // cd (w, ch)
+// Elapsed time: 47 seconds
+selectCodeEditor("TopModule.v", 330, 232); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (f, ch)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (f, ch)
+selectCodeEditor("TopModule.v", 146, 147); // cd (w, ch)
+selectCodeEditor("TopModule.v", 109, 227); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (f, ch)
+selectCodeEditor("TopModule.v", 131, 133); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (f, ch)
+selectCodeEditor("TopModule.v", 129, 146); // cd (w, ch)
+selectCodeEditor("TopModule.v", 125, 166); // cd (w, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 651 MB. GUI used memory: 42 MB. Current time: 7/28/18 4:35:12 PM CDT
+// [Engine Memory]: 651 MB (+5150kb) [00:10:52]
+// Elapsed time: 62 seconds
+selectCodeEditor("TopModule.v", 315, 202); // cd (w, ch)
+// Elapsed time: 60 seconds
+selectCodeEditor("TopModule.v", 41, 191); // cd (w, ch)
+selectCodeEditor("TopModule.v", 156, 189); // cd (w, ch)
+selectCodeEditor("TopModule.v", 156, 188, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("TopModule.v", 67, 191); // cd (w, ch)
+selectCodeEditor("TopModule.v", 131, 145); // cd (w, ch)
+selectCodeEditor("TopModule.v", 177, 188); // cd (w, ch)
+selectCodeEditor("TopModule.v", 177, 188, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("TopModule.v", 177, 188, false, false, false, true, false); // cd (w, ch) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ac (ai, Popup.HeavyWeightWindow)
+// HMemoryUtils.trashcanNow. Engine heap size: 674 MB. GUI used memory: 43 MB. Current time: 7/28/18 4:36:52 PM CDT
+// Elapsed time: 57 seconds
+selectCodeEditor("TopModule.v", 301, 196); // cd (w, ch)
+// Elapsed time: 22 seconds
+selectCodeEditor("TopModule.v", 99, 196); // cd (w, ch)
+// Elapsed time: 17 seconds
+selectCodeEditor("TopModule.v", 249, 75); // cd (w, ch)
+selectCodeEditor("TopModule.v", 249, 75, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("TopModule.v", 249, 75, false, false, false, true, false); // cd (w, ch) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, Popup.HeavyWeightWindow)
+selectCodeEditor("TopModule.v", 165, 75); // cd (w, ch)
+// Elapsed time: 23 seconds
+selectCodeEditor("TopModule.v", 67, 173); // cd (w, ch)
+// Elapsed time: 18 seconds
+selectCodeEditor("TopModule.v", 177, 134); // cd (w, ch)
+selectCodeEditor("TopModule.v", 143, 195); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("TopModule.v", 397, 131); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("TopModule.v", 137, 109); // cd (w, ch)
+selectCodeEditor("TopModule.v", 165, 112); // cd (w, ch)
+selectCodeEditor("TopModule.v", 190, 83); // cd (w, ch)
+// [GUI Memory]: 86 MB (+16kb) [00:16:39]
+// Elapsed time: 76 seconds
+selectCodeEditor("TopModule.v", 144, 203); // cd (w, ch)
+selectCodeEditor("TopModule.v", 136, 215); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (f, ch)
+selectCodeEditor("TopModule.v", 229, 87); // cd (w, ch)
+selectCodeEditor("TopModule.v", 178, 246); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (f, ch)
+selectCodeEditor("TopModule.v", 220, 107); // cd (w, ch)
+selectCodeEditor("TopModule.v", 168, 209); // cd (w, ch)
+// [GUI Memory]: 91 MB (+560kb) [00:36:43]
+// HMemoryUtils.trashcanNow. Engine heap size: 674 MB. GUI used memory: 45 MB. Current time: 7/28/18 5:06:52 PM CDT
+// [GUI Memory]: 96 MB (+815kb) [01:00:49]
+// HMemoryUtils.trashcanNow. Engine heap size: 674 MB. GUI used memory: 41 MB. Current time: 7/28/18 5:36:53 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 674 MB. GUI used memory: 41 MB. Current time: 7/28/18 6:06:53 PM CDT
+// Elapsed time: 6712 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (TopModule.v)]", 1); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (TopModule.v), Uultrasonic_proximity : ultrasonic_proximity (ultrasonic_proximity.v)]", 3, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (TopModule.v), Uultrasonic_proximity : ultrasonic_proximity (ultrasonic_proximity.v)]", 3, false, false, false, false, false, true); // B (D, ch) - Double Click
+// Elapsed time: 16 seconds
+selectCodeEditor("ultrasonic_proximity.v", 261, 188); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 261, 188, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 260, 188, false, false, false, true, false); // cd (w, ch) - Popup Trigger
+selectCodeEditor("ultrasonic_proximity.v", 212, 180); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 219, 196); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 219, 196, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 171, 213); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 171, 213, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 129, 174); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 207, 183); // cd (w, ch)
+// Elapsed time: 46 seconds
+selectCodeEditor("ultrasonic_proximity.v", 200, 235); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 17, 39); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 66, 174); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 66, 174, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 66, 174); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 127, 179); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 127, 179, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 62, 177); // cd (w, ch)
+// Elapsed time: 36 seconds
+selectCodeEditor("ultrasonic_proximity.v", 91, 73); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 113, 55); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 113, 55, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 113, 55); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 113, 55); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 61, 123); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 41, 127); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 231, 175); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 239, 175); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 262, 200); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 89, 143); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 122, 132); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 120, 125); // cd (w, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 674 MB. GUI used memory: 42 MB. Current time: 7/28/18 6:36:54 PM CDT
+// Elapsed time: 89 seconds
+selectCodeEditor("ultrasonic_proximity.v", 177, 80); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 177, 80, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("ultrasonic_proximity.v", 157, 71); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 19, 72); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 16, 115); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 9, 122); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 92, 128); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 161, 166); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 185, 136); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 185, 136, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 81, 131); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 116, 131); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 278, 131); // cd (w, ch)
+// Elapsed time: 27 seconds
+selectCodeEditor("ultrasonic_proximity.v", 302, 131); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 207, 173); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 186, 129); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 185, 129, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 166, 147); // cd (w, ch)
+// Elapsed time: 21 seconds
+selectCodeEditor("ultrasonic_proximity.v", 244, 109); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 244, 109, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 182, 110); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 229, 97); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 213, 109); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 213, 109, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 23 seconds
+selectCodeEditor("ultrasonic_proximity.v", 149, 100); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 225, 109); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 225, 109, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 221, 107); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 221, 107, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ultrasonic_proximity.v", 221, 107); // cd (w, ch)
+// Elapsed time: 66 seconds
+selectCodeEditor("ultrasonic_proximity.v", 4, 124); // cd (w, ch)
+selectCodeEditor("ultrasonic_proximity.v", 24, 151); // cd (w, ch)
+// Elapsed time: 97 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModule.v", 1); // k (j, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModule.v", 1); // k (j, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModule.v", 1); // k (j, ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
