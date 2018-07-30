@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Fri Jul 27 17:29:54 2018
-| Host             : DESKTOP-15JT7GG running 64-bit major release  (build 9200)
+| Date             : Mon Jul 30 16:47:43 2018
+| Host             : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.084        |
+| Total On-Chip Power (W)  | 0.089        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.013        |
+| Dynamic (W)              | 0.017        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      222 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       52 |     20800 |            0.25 |
-|   CARRY4       |    <0.001 |       27 |      8150 |            0.33 |
-|   Register     |    <0.001 |      105 |     41600 |            0.25 |
+| Slice Logic    |    <0.001 |      331 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      103 |     20800 |            0.50 |
+|   CARRY4       |    <0.001 |       33 |      8150 |            0.40 |
+|   Register     |    <0.001 |      151 |     41600 |            0.36 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |      194 |       --- |             --- |
+|   Others       |     0.000 |       18 |       --- |             --- |
+| Signals        |    <0.001 |      259 |       --- |             --- |
 | DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.010 |       41 |       106 |           38.68 |
+| I/O            |     0.013 |       46 |       106 |           43.40 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.084 |          |           |                 |
+| Total          |     0.089 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.013 |       0.003 |      0.010 |
+| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
+| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,11 +142,12 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.013 |
+| TopModule               |     0.017 |
 |   Directions            |    <0.001 |
-|   Surface               |     0.001 |
+|   Surface               |    <0.001 |
 |     speedA              |    <0.001 |
 |     speedB              |    <0.001 |
+|   Ucarriage             |    <0.001 |
 |   Useven_seg            |    <0.001 |
 |   Uultrasonic_proximity |    <0.001 |
 +-------------------------+-----------+
