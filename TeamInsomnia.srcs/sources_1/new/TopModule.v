@@ -23,10 +23,10 @@
 // JAI[2]:  Carriage Switch A
 // JAI[3]:  Carriage Switch B
 // JAI[4]:  Ultrasonic Echo
-// JAO[7]:  Electromagnet Enable
-// JAO[8]:  Carriage Direction A
-// JAO[9]:  Carriage Direction B
-// JAO[10]: Ultrasonic Trigger
+// JAO[7]:  Ultrasonic Trigger
+// JAO[8]:  Electromagnet Enable
+// JAO[9]:  Carriage Direction A
+// JAO[10]: Carriage Direction B
 //
 // JB[1]:  ENA
 // JB[2]:  IN1
@@ -113,8 +113,8 @@ module TopModule(
     assign ss_msg = us_dist;
 //    assign led = us_hist;
 
-    assign led[0] = ea;
-    assign led[1] = eb;
+//    assign led[0] = ea;
+//    assign led[1] = eb;
     assign led[3] = MICCHECK;
     
     reg [2:0]direction;
@@ -140,38 +140,39 @@ module TopModule(
     assign is_sw[0] = JAI[2];
     assign is_sw[1] = JAI[3];
     assign us_echo = JAI[4];
-    assign JAO[7] = is_mag;
-    assign JAO[8] = is_dir[0];
-    assign JAO[9] = is_dir[1];
-    assign JAO[10] = us_trig;
+    assign JAO[7] = us_trig;
+    assign JAO[8] = is_mag;
+    assign JAO[9] = is_dir[0];
+    assign JAO[10] = is_dir[1];
+    assign led[4] = bd_dir;
 
     
-     seven_seg Useven_seg( //instantiate the seven seg display
-        .clk (clk),
-        .msg (ss_msg),
-        .an  (an),
-        .seg (seg)
-     );
+//     seven_seg Useven_seg( //instantiate the seven seg display
+//        .clk (clk),
+//        .msg (ss_msg),
+//        .an  (an),
+//        .seg (seg)
+//     );
      
-     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
-        .clk     (clk),
-        .echo    (us_echo),
-        .trigger (us_trig),
-        .dist    (us_dist),
-        .obst    (us_in),
-        .us_hist (us_hist)
-      );
+//     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
+//        .clk     (clk),
+//        .echo    (us_echo),
+//        .trigger (us_trig),
+//        .dist    (us_dist),
+//        .obst    (us_in),
+//        .us_hist (us_hist)
+//      );
      
-     carriage Ucarriage( //instantiate the carriage module
-        .clk   (clk),
-        .ips   (is_in),
-        .sw    (is_sw),
-        .brake (is_st),
-        .dir   (is_dir),
-        .mag   (is_mag),
-        .mine  (is_brk),
-        .LED   (is_led)
-        );
+//     carriage Ucarriage( //instantiate the carriage module
+//        .clk   (clk),
+//        .ips   (is_in),
+//        .sw    (is_sw),
+//        .brake (is_st),
+//        .dir   (is_dir),
+//        .mag   (is_mag),
+//        .mine  (is_brk),
+//        .LED   (is_led)
+//        );
       
      Beacon_Module Directions( //instantiate the beacon detector module
         .clk(clk),

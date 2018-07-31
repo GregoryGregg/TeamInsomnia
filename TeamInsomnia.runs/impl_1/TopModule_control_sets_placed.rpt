@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Jul 30 16:47:12 2018
+| Date         : Tue Jul 31 13:22:41 2018
 | Host         : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
 | Design       : TopModule
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     8 |
-| Unused register locations in slices containing registers |    49 |
+| Number of unique control sets                            |     3 |
+| Unused register locations in slices containing registers |    19 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,10 +34,8 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      1 |            4 |
-|      2 |            1 |
-|     10 |            1 |
-|    16+ |            2 |
+|      1 |            2 |
+|    16+ |            1 |
 +--------+--------------+
 
 
@@ -47,29 +45,24 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             115 |           34 |
+| No           | No                    | No                     |              69 |           22 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              12 |            6 |
+| No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              24 |            8 |
+| Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------+-----------------------------+------------------------------+------------------+----------------+
-|    Clock Signal   |        Enable Signal        |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
-+-------------------+-----------------------------+------------------------------+------------------+----------------+
-|  Directions/check |                             |                              |                1 |              1 |
-|  JC2_IBUF_BUFG    |                             |                              |                1 |              1 |
-|  clk_IBUF_BUFG    | Ucarriage/done0_out         | Ucarriage/done1_out          |                1 |              1 |
-|  clk_IBUF_BUFG    | Uultrasonic_proximity/outen | Uultrasonic_proximity/outcnt |                1 |              1 |
-|  clk_IBUF_BUFG    |                             | is_st                        |                1 |              2 |
-|  clk_IBUF_BUFG    |                             | Uultrasonic_proximity/outcnt |                5 |             10 |
-|  clk_IBUF_BUFG    | Ucarriage/count0            | Ucarriage/is_brk             |                6 |             22 |
-|  clk_IBUF_BUFG    |                             |                              |               32 |            113 |
-+-------------------+-----------------------------+------------------------------+------------------+----------------+
++-------------------+---------------+------------------+------------------+----------------+
+|    Clock Signal   | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-------------------+---------------+------------------+------------------+----------------+
+|  Directions/check |               |                  |                1 |              1 |
+|  JC2_IBUF_BUFG    |               |                  |                1 |              1 |
+|  clk_IBUF_BUFG    |               |                  |               20 |             67 |
++-------------------+---------------+------------------+------------------+----------------+
 
 
