@@ -59,23 +59,23 @@ always @(posedge clk)                   // Repeat to maintain metastability.
     begin
     direction_regms <= direction_reg;
     end
+//always @(posedge clk)
+//begin
+//    if (counter_frequency > limit)
+//    begin
+//    counter_frequency <= 0;
+//    check <= ~check;
+//    end
+//    counter_frequency <= counter_frequency + 1;
+//end
+    
+    
+    
 always @(posedge clk)
-begin
-    if (counter_frequency > limit)
     begin
-    counter_frequency <= 0;
-    check <= ~check;
-    end
-    counter_frequency <= counter_frequency + 1;
-end
-    
-    
-    
-always @(posedge check)
-    begin
-    if (direction_reg) begin
+    if (directionbit) begin
     MotorDirection_r <= 3'b010;
-    end else if (direction_reg<=0) begin
+    end else if (directionbit<=0) begin
     MotorDirection_r <= 3'b110;
     end else begin
     MotorDirection_r <= 3'b000;
@@ -83,31 +83,31 @@ always @(posedge check)
 
     end
     
-assign MICCHECK = direction_reg;     
+assign MICCHECK = directionbit;     
 assign direction = MotorDirection_r;       // direction =0 means go left. direction =1 means go right
 
-//    always @(posedge clk) //average code
-//    begin
+    always @(posedge clk) //average code
+    begin
        
-//    if (update != lastupdate) //if direction has been updated
-//    begin
-//       lastupdate <= update;
-//       hist <= hist >> 1;
+    if (update != lastupdate) //if direction has been updated
+    begin
+       lastupdate <= update;
+       hist <= hist >> 1;
        
-//       hist[4] <= direction_reg; //make the lsb in history current direction
+       hist[4] <= direction_reg; //make the lsb in history current direction
        
-//       if((hist[0] + hist[1] + hist[2] + hist[3] + hist[4] >= 2)) //if three or more of the last five us readings are high
-//       begin
-//       directionbit <= 1'b1; //warn of obstacle
-//       end
+       if((hist[0] + hist[1] + hist[2] + hist[3] + hist[4] >= 2)) //if three or more of the last five us readings are high
+       begin
+       directionbit <= 1'b1; //warn of obstacle
+       end
        
-//       else
-//       begin
-//       directionbit <= 1'b0; //is no obstacle
-//       end
+       else
+       begin
+       directionbit <= 1'b0; //is no obstacle
+       end
        
-//    end
+    end
     
-//    end
+    end
 endmodule
 

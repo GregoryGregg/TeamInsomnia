@@ -81,14 +81,14 @@ module TopModule(
 
     reg brake; //stops the rover
     wire st_in;
-    reg st_obst;
-    reg st_go;
-    reg st_done;
-    reg st_dirf;
+    reg st_obst = 1'b0;
+    reg st_go = 1'b0;
+    reg st_done = 1'b1;
+    reg st_dirf = 1'b0;
     reg[2:0] st_dir;
     reg[2:0] st_state = 3'b000;
-    reg st_brk;
-    reg st_brc;
+    reg st_brk = 1'b0;
+    reg st_brc = 1'b0;
     wire [5:0] DEBUG;
     
     wire[15:0] ss_msg; //wire for the message for the seven seg
@@ -98,10 +98,10 @@ module TopModule(
     wire[15:0] us_dist; //distance from proximity sensor
     wire[4:0] us_hist;
     reg[2:0] us_state = 3'b000;
-    reg us_obst;
-    reg us_go;
-    reg us_done;
-    reg us_brk;
+    reg us_obst = 1'b0;
+    reg us_go = 1'b0;
+    reg us_done = 1'b1;
+    reg us_brk = 1'b0;
     reg[2:0] us_dir;
     reg us_dirf;
     reg us_brc;
@@ -147,32 +147,31 @@ module TopModule(
     assign led[4] = bd_dir;
 
     
-//     seven_seg Useven_seg( //instantiate the seven seg display
-//        .clk (clk),
-//        .msg (ss_msg),
-//        .an  (an),
-//        .seg (seg)
-//     );
+     seven_seg Useven_seg( //instantiate the seven seg display
+        .clk (clk),
+        .msg (ss_msg),
+        .an  (an),
+        .seg (seg)
+     );
      
-//     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
-//        .clk     (clk),
-//        .echo    (us_echo),
-//        .trigger (us_trig),
-//        .dist    (us_dist),
-//        .obst    (us_in),
-//        .us_hist (us_hist)
-//      );
+     ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
+        .clk     (clk), 
+        .trigger (us_trig),
+        .dist    (us_dist),
+        .obst    (us_in),
+        .us_hist (us_hist)
+      );
      
-//     carriage Ucarriage( //instantiate the carriage module
-//        .clk   (clk),
-//        .ips   (is_in),
-//        .sw    (is_sw),
-//        .brake (is_st),
-//        .dir   (is_dir),
-//        .mag   (is_mag),
-//        .mine  (is_brk),
-//        .LED   (is_led)
-//        );
+     carriage Ucarriage( //instantiate the carriage module
+        .clk   (clk),
+        .ips   (is_in),
+        .sw    (is_sw),
+        .brake (is_st),
+        .dir   (is_dir),
+        .mag   (is_mag),
+        .mine  (is_brk),
+        .LED   (is_led)
+        );
       
      Beacon_Module Directions( //instantiate the beacon detector module
         .clk(clk),
@@ -202,10 +201,10 @@ module TopModule(
      );
      
      
-     
-       always @(posedge clk) //state machine
+     //***************************************************State Machine****************************************************************//
+       always @(posedge clk) 
        begin
-       
+     //***************************************************Check Conditions************************************************************//
        if(!is_brk) //if inductance sensor found something and the submodule isn't running
        begin
        
@@ -224,42 +223,49 @@ module TopModule(
        us_go <= 1'b1; //triggers inductance submodule
        
        end
-        
+     //***************************************************Check Conditions*************************************************************//
+     //***************************************************Reset Go Statements**********************************************************//   
+       
        //everything below here happens one clktick after everything above it, this creates a 1 tick go pulse
-      
-       else if(st_go) //if stall submodule has been triggered
+             
+       if(st_go) //if stall submodule has been triggered
        begin
        
        st_go <= 1'b0; //set to 0, this produces a 1 tick go pulse
        
        end      
        
-       else if(us_go) //if ultrasonic submodule has been triggered
+       if(us_go) //if ultrasonic submodule has been triggered
        begin
        
        us_go <= 1'b0; //set to 0, this produces a 1 tick go pulse
        
        end
-      
+     //**************************************************Reset Go Statements***********************************************************//
+     //**************************************************Reset Done Statements*********************************************************//
+     
        //again everything below here happens one clktick after the above block, now the machine waits for the done signal from the submodules
        
-       else if(st_done) //if stall submodule is done
+       if(st_done) //if stall submodule is done
        begin
        
        st_obst <= 1'b0; //clear stall flag
        
        end       
        
-       else if(us_done) //if ultrasonic submodule is done
+       if(us_done) //if ultrasonic submodule is done
        begin
        
        us_obst <= 1'b0; //clear ultrasonic obstacle flag
        
        end
        end
-       
+      
        end
-       
+    
+    //*************************************************Reset Done Statements*********************************************************//
+    
+    //*************************************************Direction Flags***************************************************************//   
        always @(posedge clk) //direction submodule
        begin
        
@@ -289,10 +295,9 @@ module TopModule(
        always @(posedge clk) //brake submodule
        begin
        
-       if(is_brk || us_brk || st_brk) //if any submodule sets the brake
+       if(us_brk || st_brk) //if any submodule sets the brake
        begin
        
-       is_st <= 1'b1; //stop the carriage
        brake <= 1'b1; //set the brake
        
        end
@@ -300,7 +305,6 @@ module TopModule(
        else //if nothing is setting the brake
        begin
        
-       is_st <= 1'b0; //start the carriage
        brake <= 1'b0; //turn off the brake
        
        end
@@ -395,7 +399,7 @@ module TopModule(
             
         default: //if none of the other states are reached
             begin
-            us_brk <= 1'b1; //stop the rover
+            us_brk <= 1'b0; //stop the rover
             end
         
         endcase
@@ -445,7 +449,7 @@ module TopModule(
                    
                default: //if none of the other states are reached
                    begin
-                   st_brk <= 1'b1; //stop the rover
+                   st_brk <= 1'b0; //stop the rover
                    end
                
                endcase
