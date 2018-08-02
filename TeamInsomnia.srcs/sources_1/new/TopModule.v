@@ -66,6 +66,8 @@ module TopModule(
     input eb, // input from the encoder of motor b
     input JC1,
     input JC2,
+    input JC3, // Input from stall hardware
+    input JC4, // Input from stall hardware
     input signed [8:0]Adjust,
     output[10:7] JAO,
     output[3:0] an, //anode for seven seg
@@ -80,7 +82,7 @@ module TopModule(
 );
 
     reg brake; //stops the rover
-    wire st_in;
+    reg st_in = 1'b0;
     reg st_obst = 1'b0;
     reg st_go = 1'b0;
     reg st_done = 1'b1;
@@ -117,7 +119,7 @@ module TopModule(
 //    assign led[1] = eb;
     assign led[3] = MICCHECK;
     
-    reg [2:0]direction;
+    reg [2:0]direction = 3'b000;
     
     wire is_brk;
     wire is_in;
@@ -144,8 +146,9 @@ module TopModule(
     assign JAO[8] = is_mag;
     assign JAO[9] = is_dir[0];
     assign JAO[10] = is_dir[1];
-    assign led[4] = bd_dir;
-
+    assign led[4] = bd_dir; 
+//    assign st_in = (JC4||JC3);
+    
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
@@ -174,13 +177,13 @@ module TopModule(
         .LED   (is_led)
         );
       
-     Beacon_Module Directions( //instantiate the beacon detector module
-        .clk(clk),
-        .micLeft(JC2),
-        .micRight(JC1),
-        .direction(bd_dir),
-        .MICCHECK(MICCHECK)
-     );
+//     Beacon_Module Directions( //instantiate the beacon detector module
+//        .clk(clk),
+//        .micLeft(JC2),
+//        .micRight(JC1),
+//        .direction(bd_dir),
+//        .MICCHECK(MICCHECK)
+//     );
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
@@ -292,7 +295,8 @@ module TopModule(
        end
        
        end 
-       
+    //****************************************************Direction Flags***********************************************************//
+    //****************************************************Brake Controls************************************************************//   
        always @(posedge clk) //brake submodule
        begin
        
@@ -311,6 +315,8 @@ module TopModule(
        end
        
        end
+     //**************************************************Brake Controls************************************************************//  
+     //**************************************************Reverse Controls**********************************************************//  
        
        always @(posedge clk) //reverse submodule
        begin
@@ -333,7 +339,8 @@ module TopModule(
        end
        
        end
-       
+     //***************************************************Reverse Control**********************************************************// 
+     //***************************************************Turn Submodule***********************************************************//
        always @(posedge clk) //turn submodule
        begin
        
@@ -355,8 +362,8 @@ module TopModule(
        end
        
        end
-       
-      
+     //*************************************************Turn Submodule*************************************************************// 
+     //*************************************************Ultrasonic Submodule*******************************************************//
       always @(posedge clk) //ultrasonic submodule
       begin
       
@@ -406,7 +413,9 @@ module TopModule(
         endcase
         
         end
-      
+        
+     //*********************************************End UltraSonic Submodule**********************************************************//
+     //*********************************************Start Stall Submodule*************************************************************//
        always @(posedge clk) //stall submodule
              begin
              
@@ -456,6 +465,7 @@ module TopModule(
                endcase
                
                end
+      //*****************************************************End Stall Submodule******************************************//
        
 
             

@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Wed Aug  1 19:19:08 2018
-| Host             : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
+| Date             : Thu Aug  2 18:31:26 2018
+| Host             : HomeSlicePC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.095        |
+| Total On-Chip Power (W)  | 0.096        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.023        |
+| Dynamic (W)              | 0.024        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,17 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      380 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      127 |     20800 |            0.61 |
+| Slice Logic    |    <0.001 |      359 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      117 |     20800 |            0.56 |
 |   CARRY4       |    <0.001 |       32 |      8150 |            0.39 |
-|   Register     |    <0.001 |      176 |     41600 |            0.42 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |    <0.001 |      307 |       --- |             --- |
+|   Register     |    <0.001 |      164 |     41600 |            0.39 |
+|   Others       |     0.000 |       16 |       --- |             --- |
+| Signals        |    <0.001 |      288 |       --- |             --- |
 | DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.020 |       45 |       106 |           42.45 |
+| I/O            |     0.020 |       43 |       106 |           40.57 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.095 |          |           |                 |
+| Total          |     0.096 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |
+| Vccint    |       1.000 |     0.013 |       0.004 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
+| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,8 +141,7 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.023 |
-|   Directions            |    <0.001 |
+| TopModule               |     0.024 |
 |   Surface               |    <0.001 |
 |     speedA              |    <0.001 |
 |     speedB              |    <0.001 |

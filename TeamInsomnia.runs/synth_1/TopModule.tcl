@@ -22,22 +22,21 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.cache/wt [current_project]
-set_property parent.project_path C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.xpr [current_project]
+set_property webtalk.parent_dir {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.cache/ip [current_project]
+set_property ip_output_repo {c:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Beacon_Module.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Directional_Control.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/PWM.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/ultrasonic_proximity.v
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Directional_Control.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/PWM.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/ultrasonic_proximity.v}
+  {C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -47,8 +46,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc
-set_property used_in_implementation false [get_files C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc]
+read_xdc {{C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/constrs_1/imports/Projects/Basys-3-Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

@@ -182,16 +182,15 @@ set_property PACKAGE_PIN C16 [get_ports {eb}]
 set_property PACKAGE_PIN K17 [get_ports {JC1}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {JC1}]
 #    set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {JC1}]
-
 #Sch name = JC2
 set_property PACKAGE_PIN M18 [get_ports {JC2}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {JC2}]
 ##Sch name = JC3
-#set_property PACKAGE_PIN N17 [get_ports {JC[2]}]
-	#set_property IOSTANDARD LVCMOS33 [get_ports {JC[2]}]
+set_property PACKAGE_PIN N17 [get_ports {JC3}]
+	set_property IOSTANDARD LVCMOS33 [get_ports {JC3}]
 ##Sch name = JC4
-#set_property PACKAGE_PIN P18 [get_ports {JC[3]}]
-	#set_property IOSTANDARD LVCMOS33 [get_ports {JC[3]}]
+set_property PACKAGE_PIN P18 [get_ports {JC4}]
+	set_property IOSTANDARD LVCMOS33 [get_ports {JC4}]
 ##Sch name = JC7
 #set_property PACKAGE_PIN L17 [get_ports {JC[4]}]
 	#set_property IOSTANDARD LVCMOS33 [get_ports {JC[4]}]
