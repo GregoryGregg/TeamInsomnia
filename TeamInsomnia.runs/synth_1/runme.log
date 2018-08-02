@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7836 
+INFO: Helper process launched with PID 24588 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 358.828 ; gain = 100.008
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 358.828 ; gain = 99.281
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TopModule' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:60]
 INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:32]
@@ -72,7 +72,7 @@ WARNING: [Synth 8-3331] design TopModule has unconnected port led[7]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[8]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[9]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.383 ; gain = 154.563
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 413.625 ; gain = 154.078
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -86,10 +86,10 @@ WARNING: [Synth 8-3295] tying undriven pin Ucarriage:brake to constant 0 [C:/Xil
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 413.383 ; gain = 154.563
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 413.625 ; gain = 154.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 413.383 ; gain = 154.563
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 413.625 ; gain = 154.078
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -105,25 +105,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 745.984 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 748.246 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 745.984 ; gain = 487.164
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 748.246 ; gain = 488.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 745.984 ; gain = 487.164
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 748.246 ; gain = 488.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 745.984 ; gain = 487.164
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 748.246 ; gain = 488.699
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sseg_deco" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "outcnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "DirA_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "DirB_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'us_state_reg' in module 'TopModule'
@@ -152,7 +151,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'st_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'us_state_reg' using encoding 'sequential' in module 'TopModule'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 745.984 ; gain = 487.164
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 748.246 ; gain = 488.699
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -165,7 +164,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
 	   5 Input      4 Bit       Adders := 2     
 	   2 Input      1 Bit       Adders := 2     
 +---Registers : 
@@ -176,13 +175,13 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 30    
 +---Muxes : 
 	   2 Input     11 Bit        Muxes := 2     
-	   2 Input     10 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 2     
 	   4 Input      3 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -201,8 +200,8 @@ Detailed RTL Component Info :
 	   4 Input      3 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
 	   4 Input      1 Bit        Muxes := 8     
-	   2 Input      1 Bit        Muxes := 4     
 Module seven_seg 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -210,7 +209,7 @@ Detailed RTL Component Info :
 Module ultrasonic_proximity 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
 	   5 Input      4 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 1     
@@ -218,8 +217,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input     10 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
 Module carriage 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -260,9 +258,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'us_brk_reg' into 'st_brk_reg' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:396]
-WARNING: [Synth 8-6014] Unused sequential element us_brk_reg was removed.  [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:396]
-INFO: [Synth 8-5546] ROM "Uultrasonic_proximity/outcnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'us_brk_reg' into 'st_brk_reg' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:403]
+WARNING: [Synth 8-6014] Unused sequential element us_brk_reg was removed.  [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:403]
 DSP Report: Generating DSP Surface/speedB/pwm1, operation Mode is: A*B.
 DSP Report: operator Surface/speedB/pwm1 is absorbed into DSP Surface/speedB/pwm1.
 DSP Report: Generating DSP Surface/speedA/pwm1, operation Mode is: A*B.
@@ -286,39 +283,14 @@ WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[3]
 WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[2]
 WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[1]
 WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (st_go_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (st_brk_reg)
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Directions/MotorDirection_r_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\st_dir_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\us_dir_reg[0] )
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[0]' (FDSE) to 'Uultrasonic_proximity/countf_reg[1]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[4]' (FDSE) to 'Uultrasonic_proximity/countf_reg[1]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[8]' (FDSE) to 'Uultrasonic_proximity/countf_reg[1]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[12]' (FDSE) to 'Uultrasonic_proximity/countf_reg[1]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[1]' (FDSE) to 'Uultrasonic_proximity/countf_reg[2]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[5]' (FDSE) to 'Uultrasonic_proximity/countf_reg[2]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[9]' (FDSE) to 'Uultrasonic_proximity/countf_reg[2]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[13]' (FDSE) to 'Uultrasonic_proximity/countf_reg[2]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[2]' (FDSE) to 'Uultrasonic_proximity/countf_reg[3]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[6]' (FDSE) to 'Uultrasonic_proximity/countf_reg[3]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[10]' (FDSE) to 'Uultrasonic_proximity/countf_reg[3]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[14]' (FDSE) to 'Uultrasonic_proximity/countf_reg[3]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[3]' (FDSE) to 'Uultrasonic_proximity/countf_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[7]' (FDSE) to 'Uultrasonic_proximity/countf_reg[11]'
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/countf_reg[11]' (FDSE) to 'Uultrasonic_proximity/countf_reg[15]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Uultrasonic_proximity/countf_reg[15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Directions/MotorDirection_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Uultrasonic_proximity/hist_reg[4] )
 INFO: [Synth 8-3886] merging instance 'brake_reg' (FD) to 'direction_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\direction_reg[0] )
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/hist_reg[4]' (FDE) to 'Uultrasonic_proximity/hist_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Uultrasonic_proximity/hist_reg[3] )
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/hist_reg[2]' (FDE) to 'Uultrasonic_proximity/hist_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Uultrasonic_proximity/hist_reg[3] )
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/hist_reg[3]' (FDE) to 'Uultrasonic_proximity/hist_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Uultrasonic_proximity/hist_reg[1] )
-INFO: [Synth 8-3886] merging instance 'Uultrasonic_proximity/hist_reg[1]' (FDE) to 'Uultrasonic_proximity/hist_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Uultrasonic_proximity/hist_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Uultrasonic_proximity/obstreg_reg )
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[7]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[6]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[5]) is unused and will be removed from module TopModule.
@@ -327,12 +299,7 @@ WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[3]) is unus
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[2]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[1]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (Useven_seg/sseg_deco_reg[0]) is unused and will be removed from module TopModule.
-WARNING: [Synth 8-3332] Sequential element (Uultrasonic_proximity/countint_reg) is unused and will be removed from module TopModule.
-WARNING: [Synth 8-3332] Sequential element (Uultrasonic_proximity/countf_reg[15]) is unused and will be removed from module TopModule.
-WARNING: [Synth 8-3332] Sequential element (Uultrasonic_proximity/outupreg_reg) is unused and will be removed from module TopModule.
-WARNING: [Synth 8-3332] Sequential element (Uultrasonic_proximity/hist_reg[0]) is unused and will be removed from module TopModule.
-WARNING: [Synth 8-3332] Sequential element (Uultrasonic_proximity/obstreg_reg) is unused and will be removed from module TopModule.
-WARNING: [Synth 8-3332] Sequential element (us_done_reg) is unused and will be removed from module TopModule.
+WARNING: [Synth 8-3332] Sequential element (st_go_reg) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (st_done_reg) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (us_dir_reg[0]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (st_dir_reg[0]) is unused and will be removed from module TopModule.
@@ -341,7 +308,7 @@ WARNING: [Synth 8-3332] Sequential element (Directions/MotorDirection_r_reg[1]) 
 WARNING: [Synth 8-3332] Sequential element (Directions/MotorDirection_r_reg[0]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (direction_reg[0]) is unused and will be removed from module TopModule.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 745.984 ; gain = 487.164
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 748.246 ; gain = 488.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -369,13 +336,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 782.109 ; gain = 523.289
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 787.410 ; gain = 527.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 804.215 ; gain = 545.395
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 829.305 ; gain = 569.758
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -387,7 +354,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -411,7 +378,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -424,7 +391,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -436,25 +403,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -471,17 +438,17 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     2|
-|2     |CARRY4  |    25|
+|2     |CARRY4  |    32|
 |3     |DSP48E1 |     2|
-|4     |LUT1    |    29|
-|5     |LUT2    |    16|
-|6     |LUT3    |    10|
-|7     |LUT4    |    37|
-|8     |LUT5    |    13|
-|9     |LUT6    |    16|
-|10    |FDRE    |   104|
+|4     |LUT1    |    32|
+|5     |LUT2    |    15|
+|6     |LUT3    |     9|
+|7     |LUT4    |    53|
+|8     |LUT5    |    25|
+|9     |LUT6    |    21|
+|10    |FDRE    |   152|
 |11    |FDSE    |    22|
-|12    |IBUF    |    13|
+|12    |IBUF    |    14|
 |13    |OBUF    |    23|
 |14    |OBUFT   |     8|
 +------+--------+------+
@@ -490,23 +457,23 @@ Report Instance Areas:
 +------+------------------------+---------------------+------+
 |      |Instance                |Module               |Cells |
 +------+------------------------+---------------------+------+
-|1     |top                     |                     |   320|
+|1     |top                     |                     |   410|
 |2     |  Directions            |Beacon_Module        |    16|
 |3     |  Surface               |Motor_Control        |    62|
 |4     |    speedA              |PWM                  |    20|
 |5     |    speedB              |PWM_0                |    42|
-|6     |  Ucarriage             |carriage             |    70|
+|6     |  Ucarriage             |carriage             |    69|
 |7     |  Useven_seg            |seven_seg            |    28|
-|8     |  Uultrasonic_proximity |ultrasonic_proximity |    62|
+|8     |  Uultrasonic_proximity |ultrasonic_proximity |   151|
 +------+------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 804.980 ; gain = 213.559
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 804.980 ; gain = 546.160
+Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 829.688 ; gain = 235.520
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 829.688 ; gain = 570.141
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -514,10 +481,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-78 Infos, 76 Warnings, 0 Critical Warnings and 0 Errors encountered.
+51 Infos, 71 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 804.980 ; gain = 558.793
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 829.688 ; gain = 583.285
 INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 804.980 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Jul 31 14:00:41 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 829.688 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Aug  1 19:17:52 2018...

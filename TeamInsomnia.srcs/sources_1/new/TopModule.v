@@ -155,7 +155,8 @@ module TopModule(
      );
      
      ultrasonic_proximity Uultrasonic_proximity( //instantiate the ultrasonic sensor
-        .clk     (clk), 
+        .clk     (clk),
+        .echo    (us_echo), 
         .trigger (us_trig),
         .dist    (us_dist),
         .obst    (us_in),
