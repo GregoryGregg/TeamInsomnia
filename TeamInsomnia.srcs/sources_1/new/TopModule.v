@@ -82,7 +82,6 @@ module TopModule(
 );
 
     reg brake; //stops the rover
-    reg st_in = 1'b0;
     reg st_obst = 1'b0;
     reg st_go = 1'b0;
     reg st_done = 1'b1;
@@ -91,6 +90,8 @@ module TopModule(
     reg[2:0] st_state = 3'b000;
     reg st_brk = 1'b0;
     reg st_brc = 1'b0;
+    wire[1:0] st_pins;
+    wire st_in;
     wire [5:0] DEBUG;
     
     wire[15:0] ss_msg; //wire for the message for the seven seg
@@ -147,7 +148,8 @@ module TopModule(
     assign JAO[9] = is_dir[0];
     assign JAO[10] = is_dir[1];
     assign led[4] = bd_dir; 
-//    assign st_in = (JC4||JC3);
+    assign st_pins[0] = JC3;
+    assign st_pins[1] = JC4;
     
     
      seven_seg Useven_seg( //instantiate the seven seg display
@@ -190,6 +192,8 @@ module TopModule(
         .Direction(direction),
         .clk(clk),
         .sw(sw),    // to be removed 
+        .st_pins(st_pins),
+        .st_in(st_in),
         .Adjust(Adjust),
         .brake(brake),
         .coast(coast),

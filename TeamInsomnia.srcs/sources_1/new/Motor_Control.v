@@ -29,6 +29,8 @@ module Motor_Control(
     input coast,
     input ea,
     input eb,
+    input[1:0] st_pins,
+    output st_in,
     output IN1,
     output IN2,
     output IN3,
@@ -78,6 +80,13 @@ module Motor_Control(
         .sw(sw),
         .enable(ENA)
     );
+    
+    stall stall_detect (
+        .clk(clk),
+        .st_pins(st_pins),
+        .st_in(st_in)
+        );
+        
         
     Direction_Conversion Decode (
         .Direction(Direction),
