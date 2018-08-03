@@ -23,8 +23,8 @@
 // JAI[2]:  Carriage Switch A
 // JAI[3]:  Carriage Switch B
 // JAI[4]:  Ultrasonic Echo
-// JAO[7]:  Ultrasonic Trigger
-// JAO[8]:  Electromagnet Enable
+// JAO[7]:  Electromagnet Enable
+// JAO[8]:  Ultrasonic Trigger
 // JAO[9]:  Carriage Direction A
 // JAO[10]: Carriage Direction B
 //
@@ -69,6 +69,7 @@ module TopModule(
     input JC3, // Input from stall hardware
     input JC4, // Input from stall hardware
     input signed [8:0]Adjust,
+    input btnC, forward, back, left, right,
     output[10:7] JAO,
     output[3:0] an, //anode for seven seg
     output[6:0] seg, //segment for seven seg
@@ -78,7 +79,7 @@ module TopModule(
     output IN4,
     output ENA,
     output ENB,
-    output[0:9] led
+    output[0:15] led
 );
 
     reg brake; //stops the rover
@@ -113,7 +114,7 @@ module TopModule(
     wire[2:0] bd_dir;
     wire MICCHECK;
     
-    assign ss_msg = us_dist;
+ //   assign ss_msg = us_dist;
 //    assign led = us_hist;
 
 //    assign led[0] = ea;
@@ -130,26 +131,44 @@ module TopModule(
     wire[1:0] is_dir;
     wire[11:0] is_led;
 
+    reg[2:0] rev_state = 3'b000;
+    reg[27:0] rev_cnt; //reverse counter
+    reg rev_dn = 1'b1; //reverse done
+    reg[27:0] rev_con = 28'b1011111010111100001000000000; //time to reverse
     
-    reg rev_cnt; //reverse counter
-    reg rev_dn; //reverse done
-    reg[26:0] rev_con = 27'b101111101011110000100000000; //time to reverse
-    
-    reg tur_cnt; //turn counter
-    reg tur_dn; //turn done
-    reg[25:0] tur_con = 26'b10111110101111000010000000; //time to turn
+    reg[2:0] tur_state = 3'b000;
+    reg[27:0] tur_cnt; //turn counter
+    reg tur_dn = 1'b1; //turn done
+    reg[27:0] tur_con = 28'b1011111010111100001000000000; //time to turn
     
     assign is_in = ~JAI[1]; //assigns JA pmod port to internal names
     assign is_sw[0] = JAI[2];
     assign is_sw[1] = JAI[3];
     assign us_echo = JAI[4];
-    assign JAO[7] = us_trig;
-    assign JAO[8] = is_mag;
+    assign JAO[7] = is_mag;
+    assign JAO[8] = us_trig;
     assign JAO[9] = is_dir[0];
-    assign JAO[10] = is_dir[1];
-    assign led[4] = bd_dir; 
-    assign st_pins[0] = JC3;
-    assign st_pins[1] = JC4;
+    assign JAO[10] = is_dir[1]; 
+    //assign st_pins[0] = JC3;
+    //assign st_pins[1] = JC4;
+    
+    assign ss_msg[3:0] = us_state;
+    assign ss_msg[7:4] = rev_state;
+    assign ss_msg[11:8] = tur_state;
+    assign ss_msg[15:12] = direction;
+    assign st_pins[0] = left;
+    assign st_pins[1] = right;
+    assign us_in = forward;
+    
+    assign led[0] = rev_dn;
+    assign led[1] = tur_dn;
+    assign led[2] = st_in;
+    assign led[3] = st_done;
+    assign led[4] = us_in;
+    assign led[5] = us_done;
+    assign led[6] = rev_dn;
+    assign led[7] = tur_dn;
+    assign led[8] = brake;
     
     
      seven_seg Useven_seg( //instantiate the seven seg display
@@ -164,7 +183,7 @@ module TopModule(
         .echo    (us_echo), 
         .trigger (us_trig),
         .dist    (us_dist),
-        .obst    (us_in),
+       // .obst    (us_in),
         .us_hist (us_hist)
       );
      
@@ -325,47 +344,88 @@ module TopModule(
        always @(posedge clk) //reverse submodule
        begin
        
-       if(us_state == 3'b001 || st_state == 3'b001) //if told to count by either submodule
-       begin
-         
-       if(rev_dn)
-       begin
-       rev_dn <= 1'b0; //restart counter
-       rev_cnt <= rev_con; //load constant into counter
-       end
        
-       rev_cnt <= rev_cnt - 1'b1; //decrement counter
+       case(rev_state)
+        3'b000:
+        begin
+        if(us_state == 3'b001 || st_state == 3'b001) //if told to count by either submodule
+        begin
+        
+        rev_dn <= 1'b0;
+        rev_state <= 3'b001;
+        
+        end
+        
+        end
+        
+        3'b001:
+        begin
+        rev_cnt <= rev_con;
+        rev_state <= 3'b010;
+        end
+        
+        3'b010:
+        begin
        
-       if(rev_cnt == 0) //if done counting
-       begin
-       rev_dn <= 1'b1; //set to done
-       end
-       end
+        rev_cnt <= rev_cnt - 1'b1; //decrement counter
        
+        if(rev_cnt == 0) //if done counting
+        begin
+        rev_state <= 3'b011; //set to done
+        end
+        end
+        
+        3'b011:
+        begin
+        rev_dn <= 1'b1;
+        rev_state <= 3'b000;
+        end
+       
+       endcase
        end
      //***************************************************Reverse Control**********************************************************// 
      //***************************************************Turn Submodule***********************************************************//
-       always @(posedge clk) //turn submodule
-       begin
-       
-       if(us_state == 3'b010 || st_state == 3'b010) //if either submodule is trying to control direction
-       begin
-       
-       if(tur_dn)
-       begin
-       tur_dn <= 1'b0; //restart counter
-       tur_cnt <= tur_con; //load constant into counter
-       end
-       
-       tur_cnt <= tur_cnt - 1'b1; //decrement counter
-       
-       if(tur_cnt == 0) //if done counting
-       begin
-       tur_dn <= 1'b1; //set done flag
-       end
-       end
-       
-       end
+ always @(posedge clk) //turn submodule
+           begin
+           
+           
+           case(tur_state)
+            3'b000:
+             begin
+             if(us_state == 3'b010 || st_state == 3'b010) //if told to count by either submodule
+             begin
+           
+             tur_dn <= 1'b0;
+             tur_state <= 3'b001;
+           
+             end
+             end
+            
+            3'b001:
+            begin
+            tur_cnt <= rev_con;
+            tur_state <= 3'b010;
+            end
+            
+            3'b010:
+            begin
+           
+            tur_cnt <= tur_cnt - 1'b1; //decrement counter
+           
+            if(tur_cnt == 0) //if done counting
+            begin
+            tur_state <= 3'b011; //set to done
+            end
+            end
+            
+            3'b011:
+            begin
+            tur_dn <= 1'b1;
+            tur_state <= 3'b000;
+            end
+           
+           endcase
+           end
      //*************************************************Turn Submodule*************************************************************// 
      //*************************************************Ultrasonic Submodule*******************************************************//
       always @(posedge clk) //ultrasonic submodule

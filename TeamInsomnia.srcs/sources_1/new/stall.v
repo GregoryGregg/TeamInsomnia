@@ -37,7 +37,7 @@ module stall(
     always @(posedge clk)
     begin
     
-    if(st_pins[0] || st_pins[1])
+    if(stall_l || stall_r)
     begin
     
     count <= count + 1'b1;
