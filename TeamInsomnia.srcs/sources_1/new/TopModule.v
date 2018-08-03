@@ -379,28 +379,36 @@ module TopModule(
             
         3'b001: //running, reverse
             begin
+            if(!us_dirf)
+            begin
             us_dirf <= 1'b1; //assert direction control
             us_dir <= 3'b100; //set direction to reverse
-            if(rev_dn) //if reverse submodule is done
+            end
+            else if(rev_dn) //if reverse submodule is done
             begin
+            us_dirf <= 1'b0; //release direction control
+            us_dir <= 3'b000; //set direction to  forward
             us_state <= 3'b010; //change to next state
             end
             end
             
         3'b010: //done reversing, start turning
             begin
+            if(!us_dirf)
+            begin
             us_dirf <= 1'b1; //assert direction control
             us_dir <= 3'b010; //set direction to right
-            if(tur_dn) //if turning is done
+            end
+            else if(tur_dn) //if turning is done
             begin
+            us_dirf <= 1'b0; //stop direction control
+            us_dir <= 3'b000; //set direction back to forward
             us_state <= 3'b011; //change to next state
             end
             end
          
         3'b011: //stop turning be done
             begin
-            us_dirf <= 1'b0; //stop direction control
-            us_dir <= 3'b000; //set direction back to forward
             us_done <= 1'b1; //set done to true
             us_state <= 3'b000; //reset state
             end
@@ -431,28 +439,36 @@ module TopModule(
                    
                3'b001: //running, reverse
                    begin
+                   if(!st_dirf)
+                   begin
                    st_dirf <= 1'b1; //assert direction control
                    st_dir <= 3'b100; //set direction to reverse
-                   if(rev_dn) //if reverse submodule is done
+                   end
+                   else if(rev_dn) //if reverse submodule is done
                    begin
+                   st_dirf <= 1'b0; //release direction control
+                   st_dir <= 3'b000; //set direction back to forward
                    st_state <= 3'b010; //change to next state
                    end
                    end
                    
                3'b010: //done reversing, start turning
                    begin
+                   if(!st_dirf)
+                   begin
                    st_dirf <= 1'b1; //assert direction control
                    st_dir <= 3'b010; //set direction to right
-                   if(tur_dn) //if turning is done
+                   end
+                   else if(tur_dn) //if turning is done
                    begin
+                   st_dirf <= 1'b0; //release direction control
+                   st_dir <= 3'b000; //set direction back to forward
                    st_state <= 3'b011; //change to next state
                    end
                    end
                 
                3'b011: //stop turning be done
                    begin
-                   st_dirf <= 1'b0; //stop direction control
-                   st_dir <= 3'b000; //set direction back to forward
                    st_done <= 1'b1; //set done to true
                    st_state <= 3'b000; //reset state
                    end
