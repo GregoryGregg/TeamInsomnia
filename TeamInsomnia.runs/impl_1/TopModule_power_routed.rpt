@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Fri Aug  3 18:12:11 2018
+| Date             : Fri Aug  3 21:45:39 2018
 | Host             : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.104        |
+| Total On-Chip Power (W)  | 0.109        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.032        |
+| Dynamic (W)              | 0.038        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      529 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      217 |     20800 |            1.04 |
-|   CARRY4       |    <0.001 |       47 |      8150 |            0.58 |
-|   Register     |    <0.001 |      217 |     41600 |            0.52 |
+| Slice Logic    |     0.001 |      623 |       --- |             --- |
+|   LUT as Logic |     0.001 |      267 |     20800 |            1.28 |
+|   CARRY4       |    <0.001 |       54 |      8150 |            0.66 |
+|   Register     |    <0.001 |      252 |     41600 |            0.61 |
 |   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     0.001 |      395 |       --- |             --- |
+| Signals        |     0.002 |      457 |       --- |             --- |
 | DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.027 |       51 |       106 |           48.11 |
+| I/O            |     0.032 |       51 |       106 |           48.11 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.104 |          |           |                 |
+| Total          |     0.109 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.005 |      0.010 |
+| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.009 |       0.008 |      0.001 |
+| Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,7 +141,7 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.032 |
+| TopModule               |     0.038 |
 |   Surface               |     0.001 |
 |     speedA              |    <0.001 |
 |     speedB              |    <0.001 |

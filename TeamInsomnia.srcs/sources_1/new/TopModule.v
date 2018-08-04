@@ -130,13 +130,18 @@ module TopModule(
     wire[1:0] is_sw;
     wire[1:0] is_dir;
     wire[11:0] is_led;
-
-    reg[2:0] rev_state = 3'b000;
+    
+    reg[2:0] brk_state = 3'b000; //brake state
+    reg[27:0] brk_cnt; //brake counter
+    reg brk_dn = 1'b1; //brake done
+    reg[27:0] brk_con = 28'b1011111010111100001000000000; //time to break
+    
+    reg[2:0] rev_state = 3'b000; //reverse state
     reg[27:0] rev_cnt; //reverse counter
     reg rev_dn = 1'b1; //reverse done
     reg[27:0] rev_con = 28'b1011111010111100001000000000; //time to reverse
     
-    reg[2:0] tur_state = 3'b000;
+    reg[2:0] tur_state = 3'b000; //turn state
     reg[27:0] tur_cnt; //turn counter
     reg tur_dn = 1'b1; //turn done
     reg[27:0] tur_con = 28'b1011111010111100001000000000; //time to turn
@@ -339,16 +344,59 @@ module TopModule(
        
        end
      //**************************************************Brake Controls************************************************************//  
-     //**************************************************Reverse Controls**********************************************************//  
+     //**************************************************Brake Delay**********************************************************//  
+            
+            always @(posedge clk) //reverse submodule
+            begin
+            
+            case(brk_state)
+             3'b000:
+             begin
+             if(us_state == 3'b001 || st_state == 3'b001) //if told to count by either submodule
+             begin
+             
+             brk_dn <= 1'b0;
+             brk_state <= 3'b001;
+             
+             end
+             
+             end
+             
+             3'b001:
+             begin
+             brk_cnt <= rev_con;
+             brk_state <= 3'b010;
+             end
+             
+             3'b010:
+             begin
+            
+             brk_cnt <= brk_cnt - 1'b1; //decrement counter
+            
+             if(brk_cnt == 0) //if done counting
+             begin
+             brk_state <= 3'b011; //set to done
+             end
+             end
+             
+             3'b011:
+             begin
+             brk_dn <= 1'b1;
+             brk_state <= 3'b000;
+             end
+            
+            endcase
+            end
+     //***************************************************Brake Delay**********************************************************// 
+     //**************************************************Reverse Delay**********************************************************//  
        
        always @(posedge clk) //reverse submodule
        begin
        
-       
        case(rev_state)
         3'b000:
         begin
-        if(us_state == 3'b001 || st_state == 3'b001) //if told to count by either submodule
+        if(us_state == 3'b001 || st_state == 3'b010) //if told to count by either submodule
         begin
         
         rev_dn <= 1'b0;
@@ -383,16 +431,15 @@ module TopModule(
        
        endcase
        end
-     //***************************************************Reverse Control**********************************************************// 
-     //***************************************************Turn Submodule***********************************************************//
- always @(posedge clk) //turn submodule
+     //**************************************************Reverse Delay**********************************************************// 
+     //***************************************************Turn Delay***********************************************************//
+           always @(posedge clk) //turn submodule
            begin
-           
            
            case(tur_state)
             3'b000:
              begin
-             if(us_state == 3'b010 || st_state == 3'b010) //if told to count by either submodule
+             if(us_state == 3'b010 || st_state == 3'b011) //if told to count by either submodule
              begin
            
              tur_dn <= 1'b0;
@@ -426,7 +473,7 @@ module TopModule(
            
            endcase
            end
-     //*************************************************Turn Submodule*************************************************************// 
+     //*************************************************Turn Delay*************************************************************// 
      //*************************************************Ultrasonic Submodule*******************************************************//
       always @(posedge clk) //ultrasonic submodule
       begin
@@ -500,8 +547,22 @@ module TopModule(
                    st_state <= 3'b001; //change to next state
                    end
                    end
+               
+               3'b001: //running, brake
+                   begin
+                   if(!st_brk)
+                   begin
+                   st_brk <= 1'b1; //set brake to high
+                   end
+                   else if(brk_dn) //when done braking
+                   begin
+                   st_brk <= 1'b0; //set brake to low
+                   st_state <= 3'b010; //change to next state
+                   end
+                   end
+                
                    
-               3'b001: //running, reverse
+               3'b010: //reverse
                    begin
                    if(!st_dirf)
                    begin
@@ -516,7 +577,7 @@ module TopModule(
                    end
                    end
                    
-               3'b010: //done reversing, start turning
+               3'b011: //done reversing, start turning
                    begin
                    if(!st_dirf)
                    begin
@@ -527,11 +588,11 @@ module TopModule(
                    begin
                    st_dirf <= 1'b0; //release direction control
                    st_dir <= 3'b000; //set direction back to forward
-                   st_state <= 3'b011; //change to next state
+                   st_state <= 3'b100; //change to next state
                    end
                    end
                 
-               3'b011: //stop turning be done
+               3'b100: //stop turning be done
                    begin
                    st_done <= 1'b1; //set done to true
                    st_state <= 3'b000; //reset state
