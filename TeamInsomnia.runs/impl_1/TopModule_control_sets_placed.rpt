@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Fri Aug  3 21:45:11 2018
+| Date         : Fri Aug  3 22:33:27 2018
 | Host         : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopModule_control_sets_placed.rpt
 | Design       : TopModule
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    17 |
-| Unused register locations in slices containing registers |    60 |
+| Number of unique control sets                            |    20 |
+| Unused register locations in slices containing registers |    71 |
 +----------------------------------------------------------+-------+
 
 
@@ -38,9 +38,11 @@ Table of Contents
 |      2 |            1 |
 |      4 |            2 |
 |      6 |            2 |
+|      7 |            1 |
 |     10 |            1 |
 |     12 |            3 |
-|    16+ |            6 |
+|     14 |            1 |
+|    16+ |            7 |
 +--------+--------------+
 
 
@@ -50,38 +52,41 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              87 |           28 |
+| No           | No                    | No                     |              89 |           29 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              37 |           12 |
-| Yes          | No                    | No                     |              20 |           10 |
+| Yes          | No                    | No                     |              41 |           13 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             108 |           45 |
+| Yes          | Yes                   | No                     |             130 |           49 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------------------+------------------------------------------+------------------+----------------+
-|  Clock Signal  |           Enable Signal          |             Set/Reset Signal             | Slice Load Count | Bel Load Count |
-+----------------+----------------------------------+------------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | Ucarriage/done0_out              | Ucarriage/done1_out                      |                1 |              1 |
-|  clk_IBUF_BUFG | Uultrasonic_proximity/outtogg    | Uultrasonic_proximity/outcnt[9]_i_1_n_0  |                1 |              1 |
-|  clk_IBUF_BUFG |                                  | led_OBUF[8]                              |                1 |              2 |
-|  clk_IBUF_BUFG | us_state                         |                                          |                2 |              4 |
-|  clk_IBUF_BUFG | FSM_onehot_brk_state[3]_i_1_n_0  |                                          |                2 |              4 |
-|  clk_IBUF_BUFG | tur_state                        |                                          |                2 |              6 |
-|  clk_IBUF_BUFG | rev_state                        |                                          |                4 |              6 |
-|  clk_IBUF_BUFG |                                  | Uultrasonic_proximity/outcnt[9]_i_1_n_0  |                4 |             10 |
-|  clk_IBUF_BUFG | FSM_onehot_brk_state_reg_n_0_[2] | FSM_onehot_brk_state_reg_n_0_[1]         |                5 |             12 |
-|  clk_IBUF_BUFG | FSM_onehot_tur_state_reg_n_0_[2] | FSM_onehot_tur_state_reg_n_0_[1]         |                7 |             12 |
-|  clk_IBUF_BUFG | FSM_onehot_rev_state_reg_n_0_[2] | FSM_onehot_rev_state_reg_n_0_[1]         |                4 |             12 |
-|  clk_IBUF_BUFG | brk_cnt                          | brk_cnt[26]_i_1_n_0                      |                7 |             16 |
-|  clk_IBUF_BUFG | rev_cnt                          | rev_cnt[26]_i_1_n_0                      |                7 |             16 |
-|  clk_IBUF_BUFG | tur_cnt                          | tur_cnt[26]_i_1_n_0                      |                7 |             16 |
-|  clk_IBUF_BUFG | Ucarriage/count0                 | Ucarriage/is_brk                         |                6 |             22 |
-|  clk_IBUF_BUFG |                                  | Surface/stall_detect/count[0]_i_1__0_n_0 |                7 |             25 |
-|  clk_IBUF_BUFG |                                  |                                          |               28 |             87 |
-+----------------+----------------------------------+------------------------------------------+------------------+----------------+
++----------------+------------------------------------------+------------------------------------------+------------------+----------------+
+|  Clock Signal  |               Enable Signal              |             Set/Reset Signal             | Slice Load Count | Bel Load Count |
++----------------+------------------------------------------+------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | Ucarriage/done0_out                      | Ucarriage/done1_out                      |                1 |              1 |
+|  clk_IBUF_BUFG | Uultrasonic_proximity/outtogg            | Uultrasonic_proximity/outcnt[9]_i_1_n_0  |                1 |              1 |
+|  clk_IBUF_BUFG |                                          | led_OBUF[8]                              |                1 |              2 |
+|  clk_IBUF_BUFG | us_state                                 |                                          |                3 |              4 |
+|  clk_IBUF_BUFG | FSM_onehot_brk_state[3]_i_1_n_0          |                                          |                1 |              4 |
+|  clk_IBUF_BUFG | rev_state                                |                                          |                2 |              6 |
+|  clk_IBUF_BUFG | tur_state                                |                                          |                3 |              6 |
+|  clk_IBUF_BUFG | Uultrasonic_proximity/outupreg           |                                          |                2 |              7 |
+|  clk_IBUF_BUFG |                                          | Uultrasonic_proximity/outcnt[9]_i_1_n_0  |                4 |             10 |
+|  clk_IBUF_BUFG | FSM_onehot_tur_state_reg_n_0_[2]         | FSM_onehot_tur_state_reg_n_0_[1]         |                5 |             12 |
+|  clk_IBUF_BUFG | FSM_onehot_rev_state_reg_n_0_[2]         | FSM_onehot_rev_state_reg_n_0_[1]         |                3 |             12 |
+|  clk_IBUF_BUFG | FSM_onehot_brk_state_reg_n_0_[2]         | FSM_onehot_brk_state_reg_n_0_[1]         |                6 |             12 |
+|  clk_IBUF_BUFG | Uultrasonic_proximity/countf[15]_i_1_n_0 |                                          |                2 |             14 |
+|  clk_IBUF_BUFG | rev_cnt                                  | rev_cnt[26]_i_1_n_0                      |                7 |             16 |
+|  clk_IBUF_BUFG | tur_cnt                                  | tur_cnt[26]_i_1_n_0                      |                7 |             16 |
+|  clk_IBUF_BUFG | brk_cnt                                  | brk_cnt[26]_i_1_n_0                      |                7 |             16 |
+|  clk_IBUF_BUFG | Ucarriage/count0                         | Ucarriage/is_brk                         |                6 |             22 |
+|  clk_IBUF_BUFG | Uultrasonic_proximity/count              | Uultrasonic_proximity/count[0]_i_1_n_0   |                6 |             22 |
+|  clk_IBUF_BUFG |                                          | Surface/stall_detect/count[0]_i_1__1_n_0 |                7 |             25 |
+|  clk_IBUF_BUFG |                                          |                                          |               29 |             89 |
++----------------+------------------------------------------+------------------------------------------+------------------+----------------+
 
 

@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri Aug  3 21:43:26 2018
-# Process ID: 13564
+# Start of session at: Fri Aug  3 22:31:40 2018
+# Process ID: 17088
 # Current directory: C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.runs/synth_1
 # Command line: vivado.exe -log TopModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopModule.tcl
 # Log file: C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.vds

@@ -37,10 +37,10 @@
 // JB[9]:  IN4
 // JB[10]: eb
 //
-// JC[1]:
-// JC[2]:
-// JC[3]:
-// JC[4]:
+// JC[1]: Beacon Input L
+// JC[2]: Beacon Input R
+// JC[3]: Stall Input L
+// JC[4]: Stall Input R
 // JC[7]:
 // JC[8]:
 // JC[9]:
@@ -59,15 +59,12 @@
 
 module TopModule(
     input clk,
-    input[1:4] JAI, //JA pins 1-4
+    input[4:1] JAI, //JA pins 1-4
     input [5:0]sw, // Speed for the motor control module set by the switches, to be removed
     input coast, // to be removed as with brake
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
-    input JC1,
-    input JC2,
-    input JC3, // Input from stall hardware
-    input JC4, // Input from stall hardware
+    input[4:1] JC, //JC pins 1-4
     input signed [8:0]Adjust,
     input btnC, forward, back, left, right,
     output[10:7] JAO,
@@ -129,7 +126,7 @@ module TopModule(
     reg is_st;    
     wire[1:0] is_sw;
     wire[1:0] is_dir;
-    wire[11:0] is_led;
+    wire[12:0] is_led;
     
     reg[2:0] brk_state = 3'b000; //brake state
     reg[27:0] brk_cnt; //brake counter
@@ -154,16 +151,13 @@ module TopModule(
     assign JAO[8] = us_trig;
     assign JAO[9] = is_dir[0];
     assign JAO[10] = is_dir[1]; 
-    //assign st_pins[0] = JC3;
-    //assign st_pins[1] = JC4;
     
     assign ss_msg[3:0] = us_state;
     assign ss_msg[7:4] = rev_state;
     assign ss_msg[11:8] = tur_state;
     assign ss_msg[15:12] = direction;
-    assign st_pins[0] = left;
-    assign st_pins[1] = right;
-    assign us_in = forward;
+    assign st_pins[0] = (JC[3] || left);
+    assign st_pins[1] = (JC[4] || right);
     
     assign led[0] = rev_dn;
     assign led[1] = tur_dn;
@@ -188,7 +182,7 @@ module TopModule(
         .echo    (us_echo), 
         .trigger (us_trig),
         .dist    (us_dist),
-       // .obst    (us_in),
+        .obst    (us_in),
         .us_hist (us_hist)
       );
      
