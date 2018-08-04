@@ -54,18 +54,33 @@
 // JXADC[8]:
 // JXADC[9]:
 // JXADC[10]:
+//
+// sw[0]: Rover Speed Control
+// sw[1]: Rover Speed Control
+// sw[2]: Rover Speed Control
+// sw[3]: Rover Speed Control
+// sw[4]: Rover Speed Control
+// sw[5]: Rover Speed Control
+// sw[6]: Rover Brake
+// sw[7]: Carriage Brake
+// sw[8]:
+// sw[9]:
+// sw[10]:
+// sw[11]:
+// sw[12]:
+// sw[13]:
+// sw[14]:
+// sw[15]: 
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module TopModule(
     input clk,
     input[4:1] JAI, //JA pins 1-4
-    input [5:0]sw, // Speed for the motor control module set by the switches, to be removed
-    input coast, // to be removed as with brake
+    input [15:0]sw, // switches
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
     input[4:1] JC, //JC pins 1-4
-    input signed [8:0]Adjust,
     input btnC, forward, back, left, right,
     output[10:7] JAO,
     output[3:0] an, //anode for seven seg
@@ -79,7 +94,9 @@ module TopModule(
     output[0:15] led
 );
 
-    reg brake; //stops the rover
+    wire[5:0] ro_speed; //rover speed
+    wire ro_coast; //puts the rover in coast
+    reg ro_brake; //stops the rover
     reg st_obst = 1'b0;
     reg st_go = 1'b0;
     reg st_done = 1'b1;
@@ -116,14 +133,14 @@ module TopModule(
 
 //    assign led[0] = ea;
 //    assign led[1] = eb;
-    assign led[3] = MICCHECK;
+//    assign led[3] = MICCHECK;
     
     reg [2:0]direction = 3'b000;
     
     wire is_brk;
     wire is_in;
     wire is_mag;
-    reg is_st;    
+    wire is_brake;    
     wire[1:0] is_sw;
     wire[1:0] is_dir;
     wire[12:0] is_led;
@@ -152,6 +169,10 @@ module TopModule(
     assign JAO[9] = is_dir[0];
     assign JAO[10] = is_dir[1]; 
     
+    assign ro_speed = sw[5:0];
+    assign ro_coast = sw[6];
+    assign is_brake = sw[7];
+    
     assign ss_msg[3:0] = us_state;
     assign ss_msg[7:4] = rev_state;
     assign ss_msg[11:8] = tur_state;
@@ -167,7 +188,9 @@ module TopModule(
     assign led[5] = us_done;
     assign led[6] = rev_dn;
     assign led[7] = tur_dn;
-    assign led[8] = brake;
+    assign led[8] = ro_brake;
+    assign led[9] = ro_coast;
+    assign led[10] = is_brake;
     
     
      seven_seg Useven_seg( //instantiate the seven seg display
@@ -190,7 +213,7 @@ module TopModule(
         .clk   (clk),
         .ips   (is_in),
         .sw    (is_sw),
-        .brake (is_st),
+        .brake (is_brake),
         .dir   (is_dir),
         .mag   (is_mag),
         .mine  (is_brk),
@@ -209,12 +232,11 @@ module TopModule(
       Motor_Control Surface (
         .Direction(direction),
         .clk(clk),
-        .sw(sw),    // to be removed 
+        .sw(ro_speed),    // to be removed 
         .st_pins(st_pins),
         .st_in(st_in),
-        .Adjust(Adjust),
-        .brake(brake),
-        .coast(coast),
+        .brake(ro_brake),
+        .coast(ro_coast),
         .ea(ea),
         .eb(eb),
         .IN1(IN1),
@@ -222,8 +244,8 @@ module TopModule(
         .IN3(IN3),
         .IN4(IN4),
         .ENA(ENA),
-        .ENB(ENB),
-        .DEBUG(DEBUG)
+        .ENB(ENB)
+//        .DEBUG(DEBUG)
      );
      
      
@@ -325,14 +347,14 @@ module TopModule(
        if(us_brk || st_brk) //if any submodule sets the brake
        begin
        
-       brake <= 1'b1; //set the brake
+       ro_brake <= 1'b1; //set the brake
        
        end
        
        else //if nothing is setting the brake
        begin
        
-       brake <= 1'b0; //turn off the brake
+       ro_brake <= 1'b0; //turn off the brake
        
        end
        

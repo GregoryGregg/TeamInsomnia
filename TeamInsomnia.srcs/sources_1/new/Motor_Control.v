@@ -24,7 +24,7 @@ module Motor_Control(
     input [2:0]Direction,
     input clk,
     input [5:0]sw,
-    input signed [8:0]Adjust,
+//    input signed [8:0]Adjust,
     input brake,
     input coast,
     input ea,
@@ -36,8 +36,8 @@ module Motor_Control(
     output IN3,
     output IN4,
     output ENA,
-    output ENB,
-    output [5:0]DEBUG
+    output ENB
+//    output [5:0]DEBUG
 );
 
    reg [14:0] ratioA_r, ratioB_r;

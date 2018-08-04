@@ -14,11 +14,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17912 
+INFO: Helper process launched with PID 20084 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 359.723 ; gain = 100.141
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 359.070 ; gain = 99.914
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'TopModule' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:60]
+INFO: [Synth 8-6157] synthesizing module 'TopModule' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:77]
 INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:32]
 	Parameter N bound to: 18 - type: integer 
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:86]
@@ -36,49 +36,37 @@ INFO: [Synth 8-6157] synthesizing module 'stall' [C:/Xilinx/Vivado/Projects/Team
 INFO: [Synth 8-6155] done synthesizing module 'stall' (6#1) [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/stall.v:15]
 INFO: [Synth 8-6157] synthesizing module 'Direction_Conversion' [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Direction_Conversion' (7#1) [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v:23]
-WARNING: [Synth 8-3848] Net swb in module/entity Motor_Control does not have driver. [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:44]
 INFO: [Synth 8-6155] done synthesizing module 'Motor_Control' (8#1) [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:346]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:390]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:433]
-WARNING: [Synth 8-6014] Unused sequential element st_obst_reg was removed.  [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:240]
-WARNING: [Synth 8-6014] Unused sequential element us_obst_reg was removed.  [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:248]
-WARNING: [Synth 8-3848] Net MICCHECK in module/entity TopModule does not have driver. [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:112]
-WARNING: [Synth 8-3848] Net is_st in module/entity TopModule does not have driver. [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:126]
-WARNING: [Synth 8-3848] Net bd_dir in module/entity TopModule does not have driver. [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:111]
-INFO: [Synth 8-6155] done synthesizing module 'TopModule' (9#1) [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:60]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port DEBUG[5]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port DEBUG[4]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port DEBUG[3]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port DEBUG[2]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port DEBUG[1]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port DEBUG[0]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[8]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[7]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[6]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[5]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[4]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[3]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[2]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[1]
-WARNING: [Synth 8-3331] design Motor_Control has unconnected port Adjust[0]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:368]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:412]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:455]
+WARNING: [Synth 8-6014] Unused sequential element st_obst_reg was removed.  [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:262]
+WARNING: [Synth 8-6014] Unused sequential element us_obst_reg was removed.  [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:270]
+WARNING: [Synth 8-3848] Net bd_dir in module/entity TopModule does not have driver. [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'TopModule' (9#1) [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:77]
 WARNING: [Synth 8-3331] design Motor_Control has unconnected port ea
 WARNING: [Synth 8-3331] design Motor_Control has unconnected port eb
 WARNING: [Synth 8-3331] design carriage has unconnected port LED[12]
-WARNING: [Synth 8-3331] design TopModule has unconnected port led[9]
-WARNING: [Synth 8-3331] design TopModule has unconnected port led[10]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[11]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[12]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[13]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[14]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[15]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[15]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[14]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[13]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[12]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[11]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[10]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[9]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[8]
 WARNING: [Synth 8-3331] design TopModule has unconnected port JC[2]
 WARNING: [Synth 8-3331] design TopModule has unconnected port JC[1]
 WARNING: [Synth 8-3331] design TopModule has unconnected port btnC
 WARNING: [Synth 8-3331] design TopModule has unconnected port forward
 WARNING: [Synth 8-3331] design TopModule has unconnected port back
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 413.820 ; gain = 154.238
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.676 ; gain = 154.520
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -87,15 +75,14 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin Ucarriage:brake to constant 0 [C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:189]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 413.820 ; gain = 154.238
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 413.676 ; gain = 154.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 413.820 ; gain = 154.238
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 413.676 ; gain = 154.520
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -111,22 +98,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 748.527 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 749.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 748.527 ; gain = 488.945
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 749.188 ; gain = 490.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 748.527 ; gain = 488.945
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 749.188 ; gain = 490.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 748.527 ; gain = 488.945
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 749.188 ; gain = 490.031
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sseg_deco" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "DirA_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -189,7 +176,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'brk_state_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'st_state_reg' using encoding 'one-hot' in module 'TopModule'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 748.527 ; gain = 488.945
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 749.188 ; gain = 490.031
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -311,24 +298,21 @@ DSP Report: Generating DSP Surface/speedB/pwm1, operation Mode is: A*B.
 DSP Report: operator Surface/speedB/pwm1 is absorbed into DSP Surface/speedB/pwm1.
 DSP Report: Generating DSP Surface/speedA/pwm1, operation Mode is: A*B.
 DSP Report: operator Surface/speedA/pwm1 is absorbed into DSP Surface/speedA/pwm1.
-WARNING: [Synth 8-3331] design TopModule has unconnected port led[9]
-WARNING: [Synth 8-3331] design TopModule has unconnected port led[10]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[11]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[12]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[13]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[14]
 WARNING: [Synth 8-3331] design TopModule has unconnected port led[15]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[15]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[14]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[13]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[12]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[11]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[10]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[9]
+WARNING: [Synth 8-3331] design TopModule has unconnected port sw[8]
 WARNING: [Synth 8-3331] design TopModule has unconnected port ea
 WARNING: [Synth 8-3331] design TopModule has unconnected port eb
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[8]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[7]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[6]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[5]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[4]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[3]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[2]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[1]
-WARNING: [Synth 8-3331] design TopModule has unconnected port Adjust[0]
 WARNING: [Synth 8-3331] design TopModule has unconnected port btnC
 WARNING: [Synth 8-3331] design TopModule has unconnected port forward
 WARNING: [Synth 8-3331] design TopModule has unconnected port back
@@ -352,7 +336,7 @@ WARNING: [Synth 8-3332] Sequential element (direction_reg[0]) is unused and will
 WARNING: [Synth 8-3332] Sequential element (us_dir_reg[0]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (st_dir_reg[0]) is unused and will be removed from module TopModule.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 748.527 ; gain = 488.945
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 749.188 ; gain = 490.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -380,13 +364,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 785.738 ; gain = 526.156
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 784.703 ; gain = 525.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 834.086 ; gain = 574.504
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 835.563 ; gain = 576.406
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -398,7 +382,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -422,7 +406,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -435,7 +419,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -447,25 +431,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -484,40 +468,40 @@ Report Cell Usage:
 |1     |BUFG    |     1|
 |2     |CARRY4  |    60|
 |3     |DSP48E1 |     2|
-|4     |LUT1    |   117|
-|5     |LUT2    |    64|
+|4     |LUT1    |   116|
+|5     |LUT2    |    66|
 |6     |LUT3    |     9|
 |7     |LUT4    |    57|
 |8     |LUT5    |    22|
 |9     |LUT6    |    50|
 |10    |FDRE    |   234|
 |11    |FDSE    |    60|
-|12    |IBUF    |    16|
-|13    |OBUF    |    30|
-|14    |OBUFT   |     7|
+|12    |IBUF    |    17|
+|13    |OBUF    |    32|
+|14    |OBUFT   |     5|
 +------+--------+------+
 
 Report Instance Areas: 
 +------+------------------------+---------------------+------+
 |      |Instance                |Module               |Cells |
 +------+------------------------+---------------------+------+
-|1     |top                     |                     |   729|
+|1     |top                     |                     |   731|
 |2     |  Surface               |Motor_Control        |   109|
 |3     |    speedA              |PWM                  |    20|
 |4     |    speedB              |PWM_0                |    42|
 |5     |    stall_detect        |stall                |    47|
-|6     |  Ucarriage             |carriage             |    69|
+|6     |  Ucarriage             |carriage             |    70|
 |7     |  Useven_seg            |seven_seg            |    40|
 |8     |  Uultrasonic_proximity |ultrasonic_proximity |   135|
 +------+------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 36 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 836.660 ; gain = 242.371
-Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 836.660 ; gain = 577.078
+Synthesis finished with 0 errors, 0 critical warnings and 33 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 838.004 ; gain = 243.336
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 838.004 ; gain = 578.848
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -525,10 +509,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-62 Infos, 73 Warnings, 0 Critical Warnings and 0 Errors encountered.
+62 Infos, 57 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 836.660 ; gain = 590.086
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 838.004 ; gain = 591.668
 INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 836.660 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 22:32:40 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 838.004 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Aug  4 12:32:58 2018...
