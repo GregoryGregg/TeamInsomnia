@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun Aug  5 00:52:17 2018
+| Date             : Sun Aug  5 15:47:45 2018
 | Host             : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.112        |
+| Total On-Chip Power (W)  | 0.115        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.040        |
+| Dynamic (W)              | 0.044        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.4         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      786 |       --- |             --- |
-|   LUT as Logic |     0.001 |      336 |     20800 |            1.62 |
-|   CARRY4       |    <0.001 |       67 |      8150 |            0.82 |
-|   Register     |    <0.001 |      333 |     41600 |            0.80 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     0.002 |      590 |       --- |             --- |
-| DSPs           |    <0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.033 |       54 |       106 |           50.94 |
+| Slice Logic    |     0.002 |      879 |       --- |             --- |
+|   LUT as Logic |     0.001 |      388 |     20800 |            1.87 |
+|   CARRY4       |    <0.001 |       75 |      8150 |            0.92 |
+|   Register     |    <0.001 |      359 |     41600 |            0.86 |
+|   Others       |     0.000 |       22 |       --- |             --- |
+| Signals        |     0.002 |      644 |       --- |             --- |
+| DSPs           |    <0.001 |        3 |        90 |            3.33 |
+| I/O            |     0.036 |       52 |       106 |           49.06 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.112 |          |           |                 |
+| Total          |     0.115 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.017 |       0.007 |      0.010 |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |
+| Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,14 +141,15 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.040 |
+| TopModule               |     0.044 |
 |   Surface               |     0.002 |
 |     speedA              |    <0.001 |
 |     speedB              |    <0.001 |
 |     stall_detect        |    <0.001 |
-|   Ucarriage             |    <0.001 |
+|   Ucarriage             |     0.002 |
+|     MagPWM              |    <0.001 |
 |   Useven_seg            |    <0.001 |
-|   Uultrasonic_proximity |     0.001 |
+|   Uultrasonic_proximity |    <0.001 |
 +-------------------------+-----------+
 
 

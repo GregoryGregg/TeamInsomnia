@@ -5,7 +5,7 @@
 // Class: ECE 3331
 // Project: Carriage control module
 // Target: Basys 3 Board
-// Last Modified: 7/30/2018
+// Last Modified: 8/5/2018
 //
 // This program controls the carriage on Team Insomnia's rover. This module make the carriage sweep side to side across the rover and changes direction when it rolls over a switch.
 // When the inductance proximity sensor on the carriage detects a washer, the module sends a stop signal to the rover, picks up the washer, moves it to the side, and drops it.
@@ -21,7 +21,7 @@ input[1:0] sw,
 input clk, ips, brake,
 output mag, mine, 
 output[1:0] dir, 
-output[12:0] LED
+output[11:0] LED
 
     );
 
@@ -33,6 +33,14 @@ output[12:0] LED
     reg[2:0] state = 3'b000;
     reg[27:0] safcnt = 28'b1000111100001101000110000000;
     reg[27:0] safreg = 28'b0;
+    reg[24:0] magtime = 25'b1011111010111100001000000;
+    reg[24:0] magcnt = 25'b0;
+    reg[9:0] magratio = 10'b1000001000;
+    reg[2:0] magstate = 3'b000;
+    reg[5:0] magpwm;
+    reg[5:0] magpick = 6'b111111;
+    reg[5:0] maghold = 6'b001101;
+    reg magdn = 1'b1;    
     reg swab; //switch a bounced signal, goes high one tick after the actual switch
     reg swbb; //switch b bounced signal
     wire swa; //switch a
@@ -42,7 +50,6 @@ output[12:0] LED
     reg magnet; //wire for magnet
     
     assign mine = obst;
-    assign mag = magnet;
     assign swa = sw[0];
     assign swb = sw[1];
     assign LED[0] = direction; //debug leds
@@ -70,6 +77,15 @@ output[12:0] LED
         .brake(brake),
         .INA(dir[0]),
         .INB(dir[1])
+        );
+        
+        PWM MagPWM( //pwm for magnet
+        .clk (clk),
+        .ratio(magratio),
+        .brake(1'b0),
+        .coast(1'b0),
+        .sw(magpwm),
+        .enable(mag)
         );
 
 
@@ -205,39 +221,6 @@ output[12:0] LED
     endcase
     end
 
-    
-
-//    always @(posedge clk) //executes if there is a mine
-//    begin
-
-//    if(obst) //if there is a mine
-//    begin
-
-//    if(done) //if the mine flag just got set to high
-//    begin
-//    done <= 1'b0; //set done to low
- 
-//    magnet <= 1'b1; //turn magnet on
-
-//    end
-
-    
-
-//    if(swa || swb) //next time the carriage hits a switch
-//    begin
-
-//    magnet <= 1'b0; //turn the magnet off
-
-//    done <= 1'b1; //set the done flag
-
-//    end
-
-//    end
-
-//    end
-
-    
-
     always @(posedge clk) //buffer block, stops the magnet from being triggered from a previously dropped mine
     begin
 
@@ -256,7 +239,55 @@ output[12:0] LED
     end
 
     end
-
+    
+    always @(posedge clk) //handles pwm for magnet
+    begin
+    
+    case(magstate)
+    
+    3'b000:
+    begin
+    if(magnet) //if magnet is supposed to be on
+    begin
+    magcnt <= magtime; //load value into counter
+    magpwm <= magpick; //set pwm to magpick
+    magstate <= 3'b001; //move to next state
+    end
+    end
+    
+    3'b001:
+    begin
+    if(!magnet) //if magnet is supposed to be off
+    begin
+    magpwm <= 6'b000000; //set pwm to 0
+    magstate <= 3'b000; //back to state 0
+    end
+    else if (magcnt != 25'b0) //if counter isn't done
+    begin
+    magcnt <= magcnt - 1'b1; //decrement counter
+    end
+    else
+    begin //if counter is 0
+    magstate <= 3'b010; //move to next state
+    end
+    end
+    
+    3'b010:
+    begin
+    if(!magnet) //if magnet is supposed to be off
+    begin
+    magpwm <= 6'b000000; //set pwm to 0
+    magstate <= 3'b000; //back to state 0
+    end
+    else
+    begin
+    magpwm <= maghold; //set mag pwm to maghold
+    end
+    end
+    
+    endcase
+    
+    end
     
 
 endmodule

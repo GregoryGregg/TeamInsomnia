@@ -91,7 +91,7 @@ module TopModule(
     output IN4,
     output ENA,
     output ENB,
-    output[0:15] led
+    output[15:0] led
 );
 
     wire[5:0] ro_speed; //rover speed
@@ -161,8 +161,8 @@ module TopModule(
     reg[27:0] tur_con = 28'b1011111010111100001000000000; //time to turn
     
     assign is_in = ~JAI[1]; //assigns JA pmod port to internal names
-    assign is_sw[0] = JAI[2];
-    assign is_sw[1] = JAI[3];
+    assign is_sw[0] = (left);
+    assign is_sw[1] = (right);
     assign us_echo = JAI[4];
     assign JAO[7] = us_trig;
     assign JAO[8] = is_mag;
@@ -177,24 +177,24 @@ module TopModule(
     assign ss_msg[7:4] = rev_state;
     assign ss_msg[11:8] = tur_state;
     assign ss_msg[15:12] = direction;
-    assign st_pins[0] = (JC[3] || left);
-    assign st_pins[1] = (JC[4] || right);
+    assign st_pins[0] = (JC[3]);
+    assign st_pins[1] = (JC[4]);
     
-    assign led[0] = rev_dn;
-    assign led[1] = tur_dn;
-    assign led[2] = st_in;
-    assign led[3] = st_done;
-    assign led[4] = us_in;
-    assign led[5] = us_done;
-    assign led[6] = rev_dn;
-    assign led[7] = tur_dn;
-    assign led[8] = ro_brake;
-    assign led[9] = ro_coast;
-    assign led[10] = is_brake;
-    assign led[11] = st_pins[0];
-    assign led[12] = st_pins[1];
+//    assign led[0] = rev_dn;
+//    assign led[1] = tur_dn;
+//    assign led[2] = st_in;
+//    assign led[3] = st_done;
+//    assign led[4] = us_in;
+//    assign led[5] = us_done;
+//    assign led[6] = rev_dn;
+//    assign led[7] = tur_dn;
+//    assign led[8] = ro_brake;
+//    assign led[9] = ro_coast;
+//    assign led[10] = is_brake;
+//    assign led[11] = st_pins[0];
+//    assign led[12] = st_pins[1];
     
-//      assign led = is_led;
+      assign led[11:0] = is_led;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
