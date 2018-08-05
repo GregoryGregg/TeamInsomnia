@@ -160,46 +160,46 @@ output[12:0] LED
      
      3'b001:
      begin
-     if(swa)
+     if(swa) //if carriage hits end of rail
      begin
-     magnet <= 1'b0;
-     state <= 3'b010;
+     magnet <= 1'b0; //turn off magnet
+     state <= 3'b010; //move to next state
      end
-     else if(swb)
+     else if(swb) //if carriage hits other end of rail
      begin
-     magnet <= 1'b0;
-     state <= 3'b011;
+     magnet <= 1'b0; //turn off magnet
+     state <= 3'b011; //move to next state
      end
      end
      
      3'b010:
      begin
-     if(ips && count == 22'b0)
+     if(ips && count == 22'b0) //if ips is triggered again
      begin
-     state <= 3'b000;
+     state <= 3'b000; //restart 
      end
-     else if(swb)
+     else if(swb) //else if carriage hits opposite end of rail
      begin
-     state <= 3'b100;
+     state <= 3'b100; //move to next state
      end
      end
      
      3'b011:
      begin
-     if(ips && count == 22'b0)
+     if(ips && count == 22'b0) //if ips is triggered again
      begin
-     state <= 3'b000;
+     state <= 3'b000; //restart
      end
-     else if(swa)
+     else if(swa) //else if carriage hits opposite end of rail
      begin
-     state <= 3'b100;
+     state <= 3'b100; //move to next state
      end
      end
      
      3'b100:
      begin
-     obst <= 1'b0;
-     state <= 3'b000;
+     obst <= 1'b0; //reset obstacle flag
+     state <= 3'b000; //restart
      end
     
     endcase

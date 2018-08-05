@@ -143,7 +143,7 @@ module TopModule(
     wire is_brake;    
     wire[1:0] is_sw;
     wire[1:0] is_dir;
-    wire[12:0] is_led;
+    wire[11:0] is_led;
     
     reg[2:0] brk_state = 3'b000; //brake state
     reg[27:0] brk_cnt; //brake counter
@@ -194,6 +194,7 @@ module TopModule(
     assign led[11] = st_pins[0];
     assign led[12] = st_pins[1];
     
+//      assign led = is_led;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
