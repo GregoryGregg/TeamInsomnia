@@ -41,12 +41,16 @@ module Motor_Control(
 );
 
    reg [14:0] ratioA_r, ratioB_r;
+   reg [14:0] FULLSPEED = 32768/63;
+   reg [5:0]  sw_REAL;
    wire [5:0] swb;
+   
    
    assign DEBUG = swb;
    
    always @(*)
    begin
+   sw_REAL = ((Direction == 3'b010)||(Direction == 3'b110)||(Direction == 3'b100)) ? (45):(sw); //Full speed for reverse or turning
    ratioA_r = ((Direction == 3'b111)||(Direction == 3'b101)) ? (0):(32768/63); // Half speeds for turning FL/FR/BL/BR
    ratioB_r = ((Direction == 3'b001)||(Direction == 3'b011)) ? (0):(32768/63); // Can be changed for Independant motor operation
    end
@@ -68,7 +72,7 @@ module Motor_Control(
         .ratio(ratioB_r),
         .brake(brake),
         .coast(coast),
-        .sw(sw),
+        .sw(sw_REAL),
         .enable(ENB)
     );
     
@@ -77,7 +81,7 @@ module Motor_Control(
         .ratio(ratioA_r),
         .brake(brake),
         .coast(coast),
-        .sw(sw),
+        .sw(sw_REAL),
         .enable(ENA)
     );
     

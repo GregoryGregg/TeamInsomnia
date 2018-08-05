@@ -29,7 +29,10 @@ output[12:0] LED
     reg obst = 1'b0; //one bit used to show if there is an obstacle
     reg direction = 1'b1; //one bit direction passed to direction control
     reg done = 1'b1; //has the mine been removed
-    reg[21:0] count; //delay count register
+    reg[22:0] count; //delay count register
+    reg[2:0] state = 3'b000;
+    reg[27:0] safcnt = 28'b1000111100001101000110000000;
+    reg[27:0] safreg = 28'b0;
     reg swab; //switch a bounced signal, goes high one tick after the actual switch
     reg swbb; //switch b bounced signal
     wire swa; //switch a
@@ -96,82 +99,156 @@ output[12:0] LED
 
         
 
-    always @(posedge clk) //checks for mines
-    begin
+//    always @(posedge clk) //checks for mines
+//    begin
 
-    if(ips && count == 22'b0) //if ips detects a mine and the delay is over
-    begin
-    obst <= 1'b1; //set mine to high
-    end
+//    if(ips && count == 22'b0) //if ips detects a mine and the delay is over
+//    begin
+//    obst <= 1'b1;
+//    end
 
-    else if (done) //if mine has been removed
-    begin
-    obst <= 1'b0; //reset mine flag
-    end
+//    else if (done) //if mine has been removed
+//    begin
+//    obst <= 1'b0; //reset mine flag
+//    end
 
-    end
+//    end
 
-    
-
-    always @(posedge clk) //sets direction of carriage based off of switch values
+    always @(posedge clk) //safety stop in case switch signals aren't recieved
     begin
     
-    if(swac)
+    if(swac) //switch direction based off of switches
     begin
     direction <= 1'b1;
     end
 
-    else if (swbc)
+    else if (swbc) //switch direction based off of switches
     begin
     direction <= 1'b0;
     end
-
-    end
-
     
-
+    
+    if(swac || swbc) //if either switch is high
+    begin
+    safreg <= safcnt; //reset counter
+    end
+    
+    else //if neither switch is high
+    begin
+    safreg <= safreg - 1'b1; //decrement counter
+    end
+    
+    if(safreg == 28'b0) //if counter gets to zero
+    begin
+    direction <= ~direction; //reverse direction
+    end
+    end
+    
     always @(posedge clk) //executes if there is a mine
     begin
-
-    if(obst) //if there is a mine
-    begin
-
-    if(done) //if the mine flag just got set to high
-    begin
-    done <= 1'b0; //set done to low
- 
-    magnet <= 1'b1; //turn magnet on
-
+    
+     case(state)
+     3'b000:
+     begin
+     if(ips && count == 22'b0)
+     begin
+     obst <= 1'b1; //set mine to high
+     magnet <= 1'b1; //turn on magnet
+     state <= 3'b001; //move to next state
+     end
+     end
+     
+     3'b001:
+     begin
+     if(swa)
+     begin
+     magnet <= 1'b0;
+     state <= 3'b010;
+     end
+     else if(swb)
+     begin
+     magnet <= 1'b0;
+     state <= 3'b011;
+     end
+     end
+     
+     3'b010:
+     begin
+     if(ips && count == 22'b0)
+     begin
+     state <= 3'b000;
+     end
+     else if(swb)
+     begin
+     state <= 3'b100;
+     end
+     end
+     
+     3'b011:
+     begin
+     if(ips && count == 22'b0)
+     begin
+     state <= 3'b000;
+     end
+     else if(swa)
+     begin
+     state <= 3'b100;
+     end
+     end
+     
+     3'b100:
+     begin
+     obst <= 1'b0;
+     state <= 3'b000;
+     end
+    
+    endcase
     end
 
     
 
-    if(swa || swb) //next time the carriage hits a switch
-    begin
+//    always @(posedge clk) //executes if there is a mine
+//    begin
 
-    magnet <= 1'b0; //turn the magnet off
+//    if(obst) //if there is a mine
+//    begin
 
-    done <= 1'b1; //set the done flag
+//    if(done) //if the mine flag just got set to high
+//    begin
+//    done <= 1'b0; //set done to low
+ 
+//    magnet <= 1'b1; //turn magnet on
 
-    end
+//    end
 
-    end
+    
 
-    end
+//    if(swa || swb) //next time the carriage hits a switch
+//    begin
+
+//    magnet <= 1'b0; //turn the magnet off
+
+//    done <= 1'b1; //set the done flag
+
+//    end
+
+//    end
+
+//    end
 
     
 
     always @(posedge clk) //buffer block, stops the magnet from being triggered from a previously dropped mine
     begin
 
-    if (obst) //if there is a mine
+    if (magnet) //if there is a mine
     begin
 
-    count <= 22'b1111111111111111111111; //load a value into the counter
+    count <= 23'b11111111111111111111111; //load a value into the counter
 
     end
 
-    if((count != 22'b0) && !mine) //if there is no mine and the counter hasn't reached 0
+    if((count != 23'b0) && !magnet) //if there is no mine and the counter hasn't reached 0
     begin
 
     count <= count - 1'b1; //decrement the count

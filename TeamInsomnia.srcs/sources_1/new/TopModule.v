@@ -23,8 +23,8 @@
 // JAI[2]:  Carriage Switch A
 // JAI[3]:  Carriage Switch B
 // JAI[4]:  Ultrasonic Echo
-// JAO[7]:  Electromagnet Enable
-// JAO[8]:  Ultrasonic Trigger
+// JAO[7]:  Ultrasonic Trigger
+// JAO[8]:  Electromagnet Enable
 // JAO[9]:  Carriage Direction A
 // JAO[10]: Carriage Direction B
 //
@@ -164,8 +164,8 @@ module TopModule(
     assign is_sw[0] = JAI[2];
     assign is_sw[1] = JAI[3];
     assign us_echo = JAI[4];
-    assign JAO[7] = is_mag;
-    assign JAO[8] = us_trig;
+    assign JAO[7] = us_trig;
+    assign JAO[8] = is_mag;
     assign JAO[9] = is_dir[0];
     assign JAO[10] = is_dir[1]; 
     
@@ -191,6 +191,8 @@ module TopModule(
     assign led[8] = ro_brake;
     assign led[9] = ro_coast;
     assign led[10] = is_brake;
+    assign led[11] = st_pins[0];
+    assign led[12] = st_pins[1];
     
     
      seven_seg Useven_seg( //instantiate the seven seg display
@@ -344,7 +346,7 @@ module TopModule(
        always @(posedge clk) //brake submodule
        begin
        
-       if(us_brk || st_brk) //if any submodule sets the brake
+       if(us_brk || st_brk || is_brk) //if any submodule sets the brake
        begin
        
        ro_brake <= 1'b1; //set the brake
@@ -589,7 +591,7 @@ module TopModule(
                    begin
                    st_dirf <= 1'b0; //release direction control
                    st_dir <= 3'b000; //set direction back to forward
-                   st_state <= 3'b010; //change to next state
+                   st_state <= 3'b011; //change to next state
                    end
                    end
                    

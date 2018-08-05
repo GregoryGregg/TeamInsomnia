@@ -35,6 +35,9 @@ output[4:0] us_hist
         reg[24:0] delcnt = 25'b0; //counts delay between measurements
         wire outtogg;
 
+        reg[4:0] hist; //history register
+        assign us_hist = hist;
+        reg[15:0] mindist = 16'b0001001000000000; //maximum distance before trigger
         reg obstreg = 1'b0; //register that holds obstacle status
         reg outupreg;
     
@@ -98,10 +101,6 @@ output[4:0] us_hist
     end
 
   end
-     
-     reg[4:0] hist;
-     assign us_hist = hist;
-     reg[15:0] mindist = 16'b0000101010100011;
         
     always @(posedge clk) //check ultrasonic
     begin
