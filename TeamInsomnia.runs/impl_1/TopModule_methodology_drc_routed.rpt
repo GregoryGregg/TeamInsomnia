@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Aug  5 19:21:31 2018
+| Date         : Sun Aug  5 22:04:12 2018
 | Host         : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file TopModule_methodology_drc_routed.rpt -pb TopModule_methodology_drc_routed.pb -rpx TopModule_methodology_drc_routed.rpx
 | Design       : TopModule
@@ -36,7 +36,7 @@ Table of Contents
 -----------------
 SYNTH-13#1 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance Surface/speedB/pwm1.
+Detected combinational multiplier in DSP instance Surface/speedA/pwm1.
 Related violations: <none>
 
 TIMING-17#1 Warning

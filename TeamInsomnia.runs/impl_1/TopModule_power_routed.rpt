@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun Aug  5 19:21:31 2018
+| Date             : Sun Aug  5 22:04:13 2018
 | Host             : DESKTOP-0IINNRC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopModule_power_routed.rpt -pb TopModule_power_summary_routed.pb -rpx TopModule_power_routed.rpx
 | Design           : TopModule
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.116        |
+| Total On-Chip Power (W)  | 0.112        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.044        |
+| Dynamic (W)              | 0.040        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.4         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      896 |       --- |             --- |
-|   LUT as Logic |     0.001 |      390 |     20800 |            1.88 |
-|   CARRY4       |    <0.001 |       75 |      8150 |            0.92 |
-|   Register     |    <0.001 |      370 |     41600 |            0.89 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
+| Slice Logic    |     0.002 |      968 |       --- |             --- |
+|   LUT as Logic |     0.001 |      400 |     20800 |            1.92 |
+|   CARRY4       |    <0.001 |       83 |      8150 |            1.02 |
+|   Register     |    <0.001 |      411 |     41600 |            0.99 |
 |   Others       |     0.000 |       24 |       --- |             --- |
-| Signals        |     0.002 |      659 |       --- |             --- |
+|   BUFG         |     0.000 |        1 |        32 |            3.13 |
+| Signals        |     0.002 |      729 |       --- |             --- |
 | DSPs           |    <0.001 |        3 |        90 |            3.33 |
-| I/O            |     0.037 |       54 |       106 |           50.94 |
+| I/O            |     0.033 |       54 |       106 |           50.94 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.116 |          |           |                 |
+| Total          |     0.112 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.008 |      0.010 |
+| Vccint    |       1.000 |     0.017 |       0.007 |      0.010 |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |
+| Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,16 +142,16 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| TopModule               |     0.044 |
+| TopModule               |     0.040 |
 |   Directions            |    <0.001 |
-|   Surface               |     0.002 |
+|   Surface               |     0.001 |
 |     speedA              |    <0.001 |
 |     speedB              |    <0.001 |
 |     stall_detect        |    <0.001 |
-|   Ucarriage             |     0.002 |
+|   Ucarriage             |     0.001 |
 |     MagPWM              |    <0.001 |
 |   Useven_seg            |    <0.001 |
-|   Uultrasonic_proximity |     0.001 |
+|   Uultrasonic_proximity |    <0.001 |
 +-------------------------+-----------+
 
 

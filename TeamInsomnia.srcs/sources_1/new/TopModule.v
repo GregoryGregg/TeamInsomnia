@@ -239,7 +239,7 @@ module TopModule(
         .MICCHECK(MICCHECK)
      );
       
-      // Motor control instantiaiton, Keep this at the bottom
+//       Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
         .Direction(direction),
         .clk(clk),

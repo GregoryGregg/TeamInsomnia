@@ -46,7 +46,7 @@ module Motor_Control(
    wire [5:0] swb;
    
    
-   assign DEBUG = swb;
+//   assign DEBUG = swb;
    
    always @(*)
    begin
