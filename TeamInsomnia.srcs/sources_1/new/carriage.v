@@ -21,7 +21,8 @@ input[1:0] sw,
 input clk, ips, brake,
 output mag, mine, 
 output[1:0] dir, 
-output[11:0] LED
+output[11:0] LED,
+output[5:0] states
 
     );
 
@@ -64,6 +65,9 @@ output[11:0] LED
     assign LED[9] = done;
     assign LED[10] = swac;
     assign LED[11] = swbc;
+    
+    assign states[2:0] = state;
+    assign states[5:3] = magstate;
 
     
 
@@ -171,6 +175,10 @@ output[11:0] LED
      obst <= 1'b1; //set mine to high
      magnet <= 1'b1; //turn on magnet
      state <= 3'b001; //move to next state
+     end
+     else
+     begin
+     obst <= 1'b0;
      end
      end
      

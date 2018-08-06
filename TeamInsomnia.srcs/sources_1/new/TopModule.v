@@ -146,6 +146,7 @@ module TopModule(
     wire[1:0] is_sw;
     wire[1:0] is_dir;
     wire[11:0] is_led;
+    wire[5:0] is_states;
     
     reg[2:0] brk_state = 3'b000; //brake state
     reg[27:0] brk_cnt; //brake counter
@@ -163,8 +164,8 @@ module TopModule(
     reg[27:0] tur_con = 28'b1011111010111100001000000000; //time to turn
     
     assign is_in = ~JAI[1]; //assigns JA pmod port to internal names
-    assign is_sw[0] = (left);
-    assign is_sw[1] = (right);
+    assign is_sw[0] = (JAI[2] || left);
+    assign is_sw[1] = (JAI[3] || right);
     assign us_echo = JAI[4];
     assign JAO[7] = us_trig;
     assign JAO[8] = is_mag;
@@ -179,6 +180,8 @@ module TopModule(
     assign ss_msg[7:4] = rev_state;
     assign ss_msg[11:8] = tur_state;
     assign ss_msg[15:12] = direction;
+//      assign ss_msg[3:0] = is_states[2:0];
+//      assign ss_msg[7:4] = is_states[5:3];
     
     assign bd_right = JC[1];
     assign bd_left = JC[2];
@@ -228,7 +231,8 @@ module TopModule(
         .dir   (is_dir),
         .mag   (is_mag),
         .mine  (is_brk),
-        .LED   (is_led)
+        .LED   (is_led),
+        .states(is_states)
         );
       
      Beacon_Module Directions( //instantiate the beacon detector module
