@@ -155,7 +155,7 @@ module TopModule(
     reg[2:0] rev_state = 3'b000; //reverse state
     reg[27:0] rev_cnt; //reverse counter
     reg rev_dn = 1'b1; //reverse done
-    reg[27:0] rev_con = 28'b1011111010111100001000000000; //time to reverse
+    reg[27:0] rev_con = 28'b10111110101111000010000000; //time to reverse
     
     reg[2:0] tur_state = 3'b000; //turn state
     reg[27:0] tur_cnt; //turn counter
@@ -185,21 +185,24 @@ module TopModule(
     assign st_pins[0] = (JC[3]);
     assign st_pins[1] = (JC[4]);
     
-//    assign led[0] = rev_dn;
-//    assign led[1] = tur_dn;
-//    assign led[2] = st_in;
-//    assign led[3] = st_done;
-//    assign led[4] = us_in;
-//    assign led[5] = us_done;
-//    assign led[6] = rev_dn;
-//    assign led[7] = tur_dn;
-//    assign led[8] = ro_brake;
-//    assign led[9] = ro_coast;
-//    assign led[10] = is_brake;
-//    assign led[11] = st_pins[0];
-//    assign led[12] = st_pins[1];
+    assign led[0] = rev_dn;
+    assign led[1] = tur_dn;
+    assign led[2] = st_in;
+    assign led[3] = st_done;
+    assign led[4] = us_in;
+    assign led[5] = us_done;
+    assign led[6] = rev_dn;
+    assign led[7] = tur_dn;
+    assign led[8] = ro_brake;
+    assign led[9] = ro_coast;
+    assign led[10] = is_brake;
+    assign led[11] = st_pins[0];
+    assign led[12] = st_pins[1];
+    assign led[13] = bd_dir[2];
+    assign led[14] = bd_dir[1];
+    assign led[15] = bd_dir[0];
     
-      assign led[11:0] = is_led;
+//      assign led[11:0] = is_led;
     
      seven_seg Useven_seg( //instantiate the seven seg display
         .clk (clk),
