@@ -126,6 +126,8 @@ module TopModule(
     wire us_in; //is there an obstacle detected by the us
     
     wire[2:0] bd_dir;
+    wire bd_left;
+    wire bd_right;
     wire MICCHECK;
     
  //   assign ss_msg = us_dist;
@@ -177,6 +179,9 @@ module TopModule(
     assign ss_msg[7:4] = rev_state;
     assign ss_msg[11:8] = tur_state;
     assign ss_msg[15:12] = direction;
+    
+    assign bd_right = JC[1];
+    assign bd_left = JC[2];
     assign st_pins[0] = (JC[3]);
     assign st_pins[1] = (JC[4]);
     
@@ -223,13 +228,13 @@ module TopModule(
         .LED   (is_led)
         );
       
-//     Beacon_Module Directions( //instantiate the beacon detector module
-//        .clk(clk),
-//        .micLeft(JC2),
-//        .micRight(JC1),
-//        .direction(bd_dir),
-//        .MICCHECK(MICCHECK)
-//     );
+     Beacon_Module Directions( //instantiate the beacon detector module
+        .clk(clk),
+        .micLeft(bd_left),
+        .micRight(bd_right),
+        .direction(bd_dir),
+        .MICCHECK(MICCHECK)
+     );
       
       // Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
