@@ -28,23 +28,23 @@
 // JAO[9]:  Carriage Direction A
 // JAO[10]: Carriage Direction B
 //
-// JB[1]:  ENA
-// JB[2]:  IN1
-// JB[3]:  IN2
-// JB[4]:  ea
-// JB[7]:  ENB
-// JB[8]:  IN3
-// JB[9]:  IN4
-// JB[10]: eb
+// JB[1]: Beacon Input L
+// JB[2]: Beacon Input R
+// JB[3]: Stall Input L
+// JB[4]: Stall Input R
+// JB[7]:
+// JB[8]:
+// JB[9]:
+// JB[10]:
 //
-// JC[1]: Beacon Input L
-// JC[2]: Beacon Input R
-// JC[3]: Stall Input L
-// JC[4]: Stall Input R
-// JC[7]:
-// JC[8]:
-// JC[9]:
-// JC[10]:
+// JC[1]:  ENA
+// JC[2]:  IN1
+// JC[3]:  IN2
+// JC[4]:  ea
+// JC[7]:  ENB
+// JC[8]:  IN3
+// JC[9]:  IN4
+// JC[10]: eb
 //
 // JXADC[1]:
 // JXADC[2]:
@@ -80,7 +80,7 @@ module TopModule(
     input [15:0]sw, // switches
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
-    input[4:1] JC, //JC pins 1-4
+    input[4:1] JB, //JC pins 1-4
     input btnC, forward, back, left, right,
     output[10:7] JAO,
     output[3:0] an, //anode for seven seg
@@ -144,7 +144,8 @@ module TopModule(
     wire is_mag;
     wire is_brake;    
     wire[1:0] is_sw;
-    wire[1:0] is_dir;
+    wire is_dirl;
+    wire is_dirr;
     wire[11:0] is_led;
     wire[5:0] is_states;
     
@@ -164,29 +165,30 @@ module TopModule(
     reg[27:0] tur_con = 28'b1011111010111100001000000000; //time to turn
     
     assign is_in = ~JAI[1]; //assigns JA pmod port to internal names
-    assign is_sw[0] = (JAI[2] || left);
-    assign is_sw[1] = (JAI[3] || right);
+    assign is_sw[0] = (JAI[2]);
+    assign is_sw[1] = (JAI[3]);
     assign us_echo = JAI[4];
     assign JAO[7] = us_trig;
     assign JAO[8] = is_mag;
-    assign JAO[9] = is_dir[0];
-    assign JAO[10] = is_dir[1]; 
+    assign JAO[9] = is_dirl;
+    assign JAO[10] = is_dirr; 
     
     assign ro_speed = sw[5:0];
     assign ro_coast = sw[6];
     assign is_brake = sw[7];
     
     assign ss_msg[3:0] = us_state;
-    assign ss_msg[7:4] = rev_state;
-    assign ss_msg[11:8] = tur_state;
+    assign ss_msg[7:4] = st_state;
+//    assign ss_msg[7:4] = rev_state;
+//    assign ss_msg[11:8] = tur_state;
     assign ss_msg[15:12] = direction;
-//      assign ss_msg[3:0] = is_states[2:0];
+    assign ss_msg[11:8] = is_states[2:0];
 //      assign ss_msg[7:4] = is_states[5:3];
     
-    assign bd_right = JC[1];
-    assign bd_left = JC[2];
-    assign st_pins[0] = (JC[3]);
-    assign st_pins[1] = (JC[4]);
+    assign bd_right = JB[1];
+    assign bd_left = JB[2];
+    assign st_pins[0] = JB[3];
+    assign st_pins[1] = JB[4];
     
     assign led[0] = rev_dn;
     assign led[1] = tur_dn;
@@ -228,20 +230,21 @@ module TopModule(
         .ips   (is_in),
         .sw    (is_sw),
         .brake (is_brake),
-        .dir   (is_dir),
+        .dirl  (is_dirl),
+        .dirr  (is_dirr),
         .mag   (is_mag),
         .mine  (is_brk),
         .LED   (is_led),
         .states(is_states)
         );
       
-     Beacon_Module Directions( //instantiate the beacon detector module
-        .clk(clk),
-        .micLeft(bd_left),
-        .micRight(bd_right),
-        .direction(bd_dir),
-        .MICCHECK(MICCHECK)
-     );
+//     Beacon_Module Directions( //instantiate the beacon detector module
+//        .clk(clk),
+//        .micLeft(bd_left),
+//        .micRight(bd_right),
+//        .direction(bd_dir),
+//        .MICCHECK(MICCHECK)
+//     );
       
 //       Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (

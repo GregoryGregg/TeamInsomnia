@@ -20,7 +20,7 @@ module carriage(
 input[1:0] sw,
 input clk, ips, brake,
 output mag, mine, 
-output[1:0] dir, 
+output dirl, dirr, 
 output[11:0] LED,
 output[5:0] states
 
@@ -54,8 +54,8 @@ output[5:0] states
     assign swa = sw[0];
     assign swb = sw[1];
     assign LED[0] = direction; //debug leds
-    assign LED[1] = dir[0];
-    assign LED[2] = dir[1];
+    assign LED[1] = dirl;
+    assign LED[2] = dirr;
     assign LED[3] = brake;
     assign LED[4] = swa;
     assign LED[5] = swb;
@@ -79,8 +79,8 @@ output[5:0] states
         Directional_Control CarriageMotor( //instantiates motor control and converts brake and one bit direction to final motor signals
         .direction(direction),
         .brake(brake),
-        .INA(dir[0]),
-        .INB(dir[1])
+        .INA(dirl),
+        .INB(dirr)
         );
         
         PWM MagPWM( //pwm for magnet

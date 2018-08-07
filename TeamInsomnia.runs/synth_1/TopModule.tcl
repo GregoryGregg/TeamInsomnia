@@ -29,7 +29,6 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Beacon_Module.v
   C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Direction_Conversion.v
   C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Directional_Control.v
   C:/Xilinx/Vivado/Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Motor_Control.v
