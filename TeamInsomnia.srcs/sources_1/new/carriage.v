@@ -19,7 +19,7 @@ module carriage(
 
 input[1:0] sw,
 input clk, ips, brake,
-output mag, mine, 
+output mag, stop, 
 output dirl, dirr, 
 output[11:0] LED,
 output[5:0] states
@@ -43,14 +43,14 @@ output[5:0] states
     reg[5:0] maghold = 6'b001101;
     reg magdn = 1'b1;    
     reg swab; //switch a bounced signal, goes high one tick after the actual switch
-    reg swbb; //switch b bounced signal
+    reg swbb; //switch b bounced signal\
     wire swa; //switch a
     wire swb; //switch b
     wire swac; //high when swa is high and swab is low
     wire swbc; //high when swb is high and swbb is low
     reg magnet; //wire for magnet
     
-    assign mine = obst;
+    assign stop = (obst || !(swab || swbb));
     assign swa = sw[0];
     assign swb = sw[1];
     assign LED[0] = direction; //debug leds
@@ -61,7 +61,7 @@ output[5:0] states
     assign LED[5] = swb;
     assign LED[6] = ips;
     assign LED[7] = mag;
-    assign LED[8] = mine;
+    assign LED[8] = obst;
     assign LED[9] = done;
     assign LED[10] = swac;
     assign LED[11] = swbc;
