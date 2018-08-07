@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1152 
+INFO: Helper process launched with PID 18240 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 358.484 ; gain = 99.391
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 358.672 ; gain = 100.285
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TopModule' [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/TopModule.v:77]
 INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:32]
@@ -30,8 +30,9 @@ INFO: [Synth 8-6157] synthesizing module 'Directional_Control' [C:/Users/Nichola
 INFO: [Synth 8-6155] done synthesizing module 'Directional_Control' (3#1) [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Directional_Control.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PWM' [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/PWM.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PWM' (4#1) [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/PWM.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:171]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:255]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:125]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:206]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:290]
 INFO: [Synth 8-6155] done synthesizing module 'carriage' (5#1) [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:18]
 INFO: [Synth 8-6157] synthesizing module 'Beacon_Module' [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Beacon_Module.v:22]
 WARNING: [Synth 8-6014] Unused sequential element direction_regms_reg was removed.  [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/Beacon_Module.v:61]
@@ -64,7 +65,7 @@ WARNING: [Synth 8-3331] design TopModule has unconnected port back
 WARNING: [Synth 8-3331] design TopModule has unconnected port left
 WARNING: [Synth 8-3331] design TopModule has unconnected port right
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.387 ; gain = 154.293
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.578 ; gain = 155.191
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -77,10 +78,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.387 ; gain = 154.293
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.578 ; gain = 155.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.387 ; gain = 154.293
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 413.578 ; gain = 155.191
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -96,26 +97,28 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 749.816 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 750.180 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 749.816 ; gain = 490.723
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 750.180 ; gain = 491.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 749.816 ; gain = 490.723
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 750.180 ; gain = 491.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 749.816 ; gain = 490.723
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 750.180 ; gain = 491.793
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sseg_deco" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'hstate_reg' in module 'carriage'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'carriage'
 INFO: [Synth 8-802] inferred FSM for state register 'magstate_reg' in module 'carriage'
+INFO: [Synth 8-5546] ROM "stop" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "direction" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "obst" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -137,6 +140,14 @@ INFO: [Synth 8-5544] ROM "rev_cnt" won't be mapped to Block RAM because address 
 INFO: [Synth 8-5544] ROM "tur_cnt" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "us_brk" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 WARNING: [Synth 8-327] inferring latch for variable 'sseg_deco_reg' [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/seven_seg.v:46]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              000
+                 iSTATE0 |                              010 |                              001
+                 iSTATE1 |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'hstate_reg' using encoding 'one-hot' in module 'carriage'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -204,7 +215,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'st_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'rev_state_reg' using encoding 'one-hot' in module 'TopModule'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 749.816 ; gain = 490.723
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 750.180 ; gain = 491.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -218,12 +229,12 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     28 Bit       Adders := 3     
-	   2 Input     25 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 2     
 	   2 Input     10 Bit       Adders := 1     
 	   5 Input      4 Bit       Adders := 1     
 +---Registers : 
 	               28 Bit    Registers := 3     
-	               25 Bit    Registers := 1     
+	               25 Bit    Registers := 2     
 	               16 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
@@ -232,6 +243,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 29    
 +---Muxes : 
 	   4 Input     28 Bit        Muxes := 3     
+	   3 Input     25 Bit        Muxes := 1     
 	   4 Input     25 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 4     
@@ -245,7 +257,8 @@ Detailed RTL Component Info :
 	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 6     
 	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 25    
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 26    
 	   5 Input      1 Bit        Muxes := 11    
 	   4 Input      1 Bit        Muxes := 18    
 ---------------------------------------------------------------------------------
@@ -297,13 +310,14 @@ Detailed RTL Component Info :
 Module carriage 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     25 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 2     
 +---Registers : 
-	               25 Bit    Registers := 1     
+	               25 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
 	                3 Bit    Registers := 2     
 	                1 Bit    Registers := 5     
 +---Muxes : 
+	   3 Input     25 Bit        Muxes := 1     
 	   4 Input     25 Bit        Muxes := 1     
 	   4 Input      6 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 2     
@@ -311,7 +325,8 @@ Detailed RTL Component Info :
 	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 4     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 9     
 	   5 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 3     
 Module Beacon_Module 
@@ -350,11 +365,12 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "Ucarriage/stop" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "Ucarriage/direction" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "tur_state" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "brk_state" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "rev_state" won't be mapped to RAM because address size (28) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element Ucarriage/magpwm_reg was removed.  [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:92]
+WARNING: [Synth 8-6014] Unused sequential element Ucarriage/magpwm_reg was removed.  [C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.srcs/sources_1/new/carriage.v:95]
 DSP Report: Generating DSP Ucarriage/MagPWM/pwm1, operation Mode is: (A:0x208)*B2.
 DSP Report: register Ucarriage/magpwm_reg is absorbed into DSP Ucarriage/MagPWM/pwm1.
 DSP Report: operator Ucarriage/MagPWM/pwm1 is absorbed into DSP Ucarriage/MagPWM/pwm1.
@@ -395,7 +411,7 @@ WARNING: [Synth 8-3332] Sequential element (us_brk_reg) is unused and will be re
 WARNING: [Synth 8-3332] Sequential element (us_dir_reg[0]) is unused and will be removed from module TopModule.
 WARNING: [Synth 8-3332] Sequential element (st_dir_reg[0]) is unused and will be removed from module TopModule.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 749.816 ; gain = 490.723
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 750.180 ; gain = 491.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -424,13 +440,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 791.637 ; gain = 532.543
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 792.441 ; gain = 534.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 848.121 ; gain = 589.027
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -442,7 +458,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -466,7 +482,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -479,7 +495,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -491,25 +507,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -526,16 +542,16 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     2|
-|2     |CARRY4    |    75|
+|2     |CARRY4    |    81|
 |3     |DSP48E1   |     1|
 |4     |DSP48E1_1 |     2|
-|5     |LUT1      |   166|
-|6     |LUT2      |    72|
-|7     |LUT3      |    26|
-|8     |LUT4      |    91|
-|9     |LUT5      |    24|
-|10    |LUT6      |    48|
-|11    |FDRE      |   281|
+|5     |LUT1      |   167|
+|6     |LUT2      |    73|
+|7     |LUT3      |    29|
+|8     |LUT4      |   101|
+|9     |LUT5      |    26|
+|10    |LUT6      |    52|
+|11    |FDRE      |   309|
 |12    |FDSE      |    83|
 |13    |IBUF      |    17|
 |14    |OBUF      |    37|
@@ -545,25 +561,25 @@ Report Instance Areas:
 +------+------------------------+---------------------+------+
 |      |Instance                |Module               |Cells |
 +------+------------------------+---------------------+------+
-|1     |top                     |                     |   925|
+|1     |top                     |                     |   980|
 |2     |  Directions            |Beacon_Module        |     6|
-|3     |  Surface               |Motor_Control        |    73|
+|3     |  Surface               |Motor_Control        |    74|
 |4     |    speedA              |PWM_0                |    19|
 |5     |    speedB              |PWM_1                |    13|
-|6     |    stall_detect        |stall                |    41|
-|7     |  Ucarriage             |carriage             |   287|
+|6     |    stall_detect        |stall                |    42|
+|7     |  Ucarriage             |carriage             |   339|
 |8     |    MagPWM              |PWM                  |    60|
 |9     |  Useven_seg            |seven_seg            |    38|
-|10    |  Uultrasonic_proximity |ultrasonic_proximity |   139|
+|10    |  Uultrasonic_proximity |ultrasonic_proximity |   141|
 +------+------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 848.891 ; gain = 253.367
-Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 848.891 ; gain = 589.797
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 850.445 ; gain = 255.457
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 850.445 ; gain = 592.059
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 95 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -571,10 +587,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-77 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+82 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:50 . Memory (MB): peak = 848.891 ; gain = 602.805
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 850.445 ; gain = 604.742
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Nicholas Gregg/Documents/Vivado_Projects/TeamInsomnia/TeamInsomnia.runs/synth_1/TopModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopModule_utilization_synth.rpt -pb TopModule_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 848.891 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Aug  6 23:38:42 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 850.445 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  7 01:28:17 2018...

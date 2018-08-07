@@ -36,6 +36,9 @@ output[5:0] states
     reg[27:0] safreg = 28'b0;
     reg[24:0] magtime = 25'b1011111010111100001000000;
     reg[24:0] magcnt = 25'b0;
+    reg[24:0] hold = 25'b1001100010010110100000000;
+    reg[24:0] hcount = 25'b0;
+    reg[2:0] hstate = 3'b000;
     reg[9:0] magratio = 10'b1000001000;
     reg[2:0] magstate = 3'b000;
     reg[5:0] magpwm;
@@ -50,7 +53,7 @@ output[5:0] states
     wire swbc; //high when swb is high and swbb is low
     reg magnet; //wire for magnet
     
-    assign stop = !(swab || swbb);
+    assign stop = (hcount == 25'b0)? 1'b1:1'b0;
     assign mine = obst;
     assign swa = sw[0];
     assign swb = sw[1];
@@ -117,7 +120,39 @@ output[5:0] states
       end
 
 
-
+    always @(posedge clk)
+    begin
+    case(hstate)
+    3'b000:
+    begin
+    if (swac || swbc)
+    begin
+    hcount <= hcount + 1'b1;
+    hstate <= 3'b001;
+    end
+    end
+    
+    3'b001:
+    begin
+    if(hcount < hold)
+    begin
+    hcount <= hcount + 1'b1;
+    end
+    else
+    begin
+    hstate <= 3'b010;
+    end
+    end
+    
+    3'b010:
+    begin
+    hcount <= 25'b0;
+    hstate <= 3'b000;
+    end
+    
+    endcase
+    
+    end
         
 
 //    always @(posedge clk) //checks for mines
