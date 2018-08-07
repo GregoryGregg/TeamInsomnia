@@ -94,9 +94,9 @@ end
 always @(posedge clk)
     begin
     if (directionbit) begin
-    MotorDirection_r <= 3'b010;
+    MotorDirection_r <= 3'b001;
     end else if (directionbit<=0) begin
-    MotorDirection_r <= 3'b110;
+    MotorDirection_r <= 3'b111;
     end else begin
     MotorDirection_r <= 3'b000;
     end
