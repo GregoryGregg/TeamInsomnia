@@ -364,14 +364,14 @@ module TopModule(
        always @(posedge clk) //brake submodule
        begin
        
-       if(is_stop && !(st_dirf || us_dirf || st_brk))
+       if(us_brk || st_brk)
        begin
        
        ro_brake <= 1'b1;
        
        end
        
-       else if(us_brk || st_brk) //if any submodule sets the brake
+       else if(is_stop && !(us_dirf || st_dirf)) //if any submodule sets the brake
        begin
        
        ro_brake <= 1'b1; //set the brake
@@ -567,10 +567,6 @@ module TopModule(
             us_state <= 3'b000; //reset state
             end
             
-        default: //if none of the other states are reached
-            begin
-            us_brk <= 1'b0; //stop the rover
-            end
         
         endcase
         
@@ -641,10 +637,6 @@ module TopModule(
                    st_state <= 3'b000; //reset state
                    end
                    
-               default: //if none of the other states are reached
-                   begin
-                   st_brk <= 1'b0; //stop the rover
-                   end
                
                endcase
                
