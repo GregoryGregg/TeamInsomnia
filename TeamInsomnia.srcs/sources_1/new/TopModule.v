@@ -80,7 +80,7 @@ module TopModule(
     input [15:0]sw, // switches
     input ea, // input from the encoder of motor a
     input eb, // input from the encoder of motor b
-    input[4:1] JB, //JC pins 1-4
+    input[4:1] JC, //JC pins 1-4
     input btnC, forward, back, left, right,
     output[10:7] JAO,
     output[3:0] an, //anode for seven seg
@@ -148,6 +148,7 @@ module TopModule(
     wire is_dirr;
     wire[11:0] is_led;
     wire[5:0] is_states;
+    wire is_stop;
     
     reg[2:0] brk_state = 3'b000; //brake state
     reg[27:0] brk_cnt; //brake counter
@@ -157,7 +158,7 @@ module TopModule(
     reg[2:0] rev_state = 3'b000; //reverse state
     reg[27:0] rev_cnt; //reverse counter
     reg rev_dn = 1'b1; //reverse done
-    reg[27:0] rev_con = 28'b10111110101111000010000000; //time to reverse
+    reg[27:0] rev_con = 28'b101111101011110000100000000; //time to reverse
     
     reg[2:0] tur_state = 3'b000; //turn state
     reg[27:0] tur_cnt; //turn counter
@@ -185,10 +186,10 @@ module TopModule(
     assign ss_msg[11:8] = is_states[2:0];
 //      assign ss_msg[7:4] = is_states[5:3];
     
-    assign bd_right = JB[1];
-    assign bd_left = JB[2];
-    assign st_pins[0] = JB[3];
-    assign st_pins[1] = JB[4];
+    assign bd_right = JC[1];
+    assign bd_left = JC[2];
+    assign st_pins[0] = JC[3];
+    assign st_pins[1] = JC[4];
     
     assign led[0] = rev_dn;
     assign led[1] = tur_dn;
@@ -233,18 +234,19 @@ module TopModule(
         .dirl  (is_dirl),
         .dirr  (is_dirr),
         .mag   (is_mag),
+        .stop  (is_stop),
         .mine  (is_brk),
         .LED   (is_led),
         .states(is_states)
         );
       
-//     Beacon_Module Directions( //instantiate the beacon detector module
-//        .clk(clk),
-//        .micLeft(bd_left),
-//        .micRight(bd_right),
-//        .direction(bd_dir),
-//        .MICCHECK(MICCHECK)
-//     );
+     Beacon_Module Directions( //instantiate the beacon detector module
+        .clk(clk),
+        .micLeft(bd_left),
+        .micRight(bd_right),
+        .direction(bd_dir),
+        .MICCHECK(MICCHECK)
+     );
       
 //       Motor control instantiaiton, Keep this at the bottom
       Motor_Control Surface (
@@ -362,7 +364,14 @@ module TopModule(
        always @(posedge clk) //brake submodule
        begin
        
-       if(us_brk || st_brk || is_brk) //if any submodule sets the brake
+       if(is_stop && !(st_dirf || us_dirf || st_brk))
+       begin
+       
+       ro_brake <= 1'b1;
+       
+       end
+       
+       else if(us_brk || st_brk) //if any submodule sets the brake
        begin
        
        ro_brake <= 1'b1; //set the brake

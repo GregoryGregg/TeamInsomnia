@@ -18,7 +18,7 @@ module stall(
     output st_in
     );
     
-    reg[24:0] const = 25'b1111111001010000001010101;
+    reg[24:0] const = 25'b111010100110000;
     reg[24:0] count;
     reg stall_l;
     reg stall_r;

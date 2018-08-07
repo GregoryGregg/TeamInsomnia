@@ -36,6 +36,8 @@ reg direction_fin;
 reg [2:0]MotorDirection_r;
 reg[15:0] countLeft;
 reg[15:0] countRight;
+reg[30:0] counter = 30'd10000000;
+
 
 reg[9:0] hist;
 reg update = 1'b0;
@@ -59,7 +61,7 @@ always @(posedge clk)                   // Repeat to maintain metastability.
     direction_regms <= direction_reg;
     end
 
-always @(posedge clk)
+always @(posedge check)
 begin
     
     if(!micLeft)
@@ -93,9 +95,9 @@ end
     
 always @(posedge clk)
     begin
-    if (directionbit) begin
+    if (direction_reg) begin
     MotorDirection_r <= 3'b001;
-    end else if (directionbit<=0) begin
+    end else if (direction_reg<=0) begin
     MotorDirection_r <= 3'b111;
     end else begin
     MotorDirection_r <= 3'b000;
@@ -103,31 +105,31 @@ always @(posedge clk)
 
     end
     
-assign MICCHECK = directionbit;     
+assign MICCHECK = direction_reg;     
 assign direction = MotorDirection_r;       // direction =0 means go left. direction =1 means go right
 
-    always @(posedge clk) //average code
-    begin
+//    always @(posedge clk) //average code
+//    begin
        
-       if(update)
-       begin
+//       if(update)
+//       begin
        
-       hist <= hist >> 1;
+//       hist <= hist >> 1;
        
-       hist[9] <= direction_fin; //make the lsb in history current direction
+//       hist[9] <= direction_fin; //make the lsb in history current direction
        
-       if((hist[0] + hist[1] + hist[2] + hist[3] + hist[4] + hist[5] + hist[6] + hist[7] + hist[8] + hist[9] >= 4)) //if three or more of the last five us readings are high
-       begin
-       directionbit <= 1'b1; //warn of obstacle
-       end
+//       if((hist[0] + hist[1] + hist[2] + hist[3] + hist[4] + hist[5] + hist[6] + hist[7] + hist[8] + hist[9] >= 4)) //if three or more of the last five us readings are high
+//       begin
+//       directionbit <= 1'b1; //warn of obstacle
+//       end
        
-       else
-       begin
-       directionbit <= 1'b0; //is no obstacle
-       end
+//       else
+//       begin
+//       directionbit <= 1'b0; //is no obstacle
+//       end
        
-    end
+//    end
     
-    end
+//    end
 endmodule
 

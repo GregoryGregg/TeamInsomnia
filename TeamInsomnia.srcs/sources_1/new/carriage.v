@@ -19,7 +19,7 @@ module carriage(
 
 input[1:0] sw,
 input clk, ips, brake,
-output mag, stop, 
+output mag, stop, mine, 
 output dirl, dirr, 
 output[11:0] LED,
 output[5:0] states
@@ -50,7 +50,8 @@ output[5:0] states
     wire swbc; //high when swb is high and swbb is low
     reg magnet; //wire for magnet
     
-    assign stop = (obst || !(swab || swbb));
+    assign stop = !(swab || swbb);
+    assign mine = obst;
     assign swa = sw[0];
     assign swb = sw[1];
     assign LED[0] = direction; //debug leds
